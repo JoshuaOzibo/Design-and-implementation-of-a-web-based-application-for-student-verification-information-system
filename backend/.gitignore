@@ -67,3 +67,5 @@ playwright-report/
 
 # Misc
 *.tgz
+
+project_phase.text
