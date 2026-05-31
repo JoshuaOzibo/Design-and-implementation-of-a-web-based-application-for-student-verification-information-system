@@ -1,4 +1,5 @@
 import express from "express";
+import authRouter from "./auth.routes.js";
 
 const router = express.Router();
 
@@ -12,7 +13,8 @@ router.get("/health", (req, res) => {
   });
 });
 
-// We can add other routes later here, e.g. router.use("/auth", authRouter)
+// Authentication routes
+router.use("/auth", authRouter);
 
 export default router;
 export { router };
