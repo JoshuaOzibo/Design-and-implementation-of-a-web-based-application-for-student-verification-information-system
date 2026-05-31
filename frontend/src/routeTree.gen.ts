@@ -16,8 +16,6 @@ import { Route as AppIndexRouteImport } from './routes/app.index'
 import { Route as AppVerifyRouteImport } from './routes/app.verify'
 import { Route as AppStudentsRouteImport } from './routes/app.students'
 import { Route as AppSettingsRouteImport } from './routes/app.settings'
-import { Route as AppSecurityRouteImport } from './routes/app.security'
-import { Route as AppReportsRouteImport } from './routes/app.reports'
 import { Route as AppQrRouteImport } from './routes/app.qr'
 import { Route as AppLogsRouteImport } from './routes/app.logs'
 import { Route as AppDashboardRouteImport } from './routes/app.dashboard'
@@ -58,16 +56,6 @@ const AppSettingsRoute = AppSettingsRouteImport.update({
   path: '/settings',
   getParentRoute: () => AppRoute,
 } as any)
-const AppSecurityRoute = AppSecurityRouteImport.update({
-  id: '/security',
-  path: '/security',
-  getParentRoute: () => AppRoute,
-} as any)
-const AppReportsRoute = AppReportsRouteImport.update({
-  id: '/reports',
-  path: '/reports',
-  getParentRoute: () => AppRoute,
-} as any)
 const AppQrRoute = AppQrRouteImport.update({
   id: '/qr',
   path: '/qr',
@@ -96,8 +84,6 @@ export interface FileRoutesByFullPath {
   '/app/dashboard': typeof AppDashboardRoute
   '/app/logs': typeof AppLogsRoute
   '/app/qr': typeof AppQrRoute
-  '/app/reports': typeof AppReportsRoute
-  '/app/security': typeof AppSecurityRoute
   '/app/settings': typeof AppSettingsRoute
   '/app/students': typeof AppStudentsRoute
   '/app/verify': typeof AppVerifyRoute
@@ -110,8 +96,6 @@ export interface FileRoutesByTo {
   '/app/dashboard': typeof AppDashboardRoute
   '/app/logs': typeof AppLogsRoute
   '/app/qr': typeof AppQrRoute
-  '/app/reports': typeof AppReportsRoute
-  '/app/security': typeof AppSecurityRoute
   '/app/settings': typeof AppSettingsRoute
   '/app/students': typeof AppStudentsRoute
   '/app/verify': typeof AppVerifyRoute
@@ -126,8 +110,6 @@ export interface FileRoutesById {
   '/app/dashboard': typeof AppDashboardRoute
   '/app/logs': typeof AppLogsRoute
   '/app/qr': typeof AppQrRoute
-  '/app/reports': typeof AppReportsRoute
-  '/app/security': typeof AppSecurityRoute
   '/app/settings': typeof AppSettingsRoute
   '/app/students': typeof AppStudentsRoute
   '/app/verify': typeof AppVerifyRoute
@@ -143,8 +125,6 @@ export interface FileRouteTypes {
     | '/app/dashboard'
     | '/app/logs'
     | '/app/qr'
-    | '/app/reports'
-    | '/app/security'
     | '/app/settings'
     | '/app/students'
     | '/app/verify'
@@ -157,8 +137,6 @@ export interface FileRouteTypes {
     | '/app/dashboard'
     | '/app/logs'
     | '/app/qr'
-    | '/app/reports'
-    | '/app/security'
     | '/app/settings'
     | '/app/students'
     | '/app/verify'
@@ -172,8 +150,6 @@ export interface FileRouteTypes {
     | '/app/dashboard'
     | '/app/logs'
     | '/app/qr'
-    | '/app/reports'
-    | '/app/security'
     | '/app/settings'
     | '/app/students'
     | '/app/verify'
@@ -238,20 +214,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppSettingsRouteImport
       parentRoute: typeof AppRoute
     }
-    '/app/security': {
-      id: '/app/security'
-      path: '/security'
-      fullPath: '/app/security'
-      preLoaderRoute: typeof AppSecurityRouteImport
-      parentRoute: typeof AppRoute
-    }
-    '/app/reports': {
-      id: '/app/reports'
-      path: '/reports'
-      fullPath: '/app/reports'
-      preLoaderRoute: typeof AppReportsRouteImport
-      parentRoute: typeof AppRoute
-    }
     '/app/qr': {
       id: '/app/qr'
       path: '/qr'
@@ -287,8 +249,6 @@ interface AppRouteChildren {
   AppDashboardRoute: typeof AppDashboardRoute
   AppLogsRoute: typeof AppLogsRoute
   AppQrRoute: typeof AppQrRoute
-  AppReportsRoute: typeof AppReportsRoute
-  AppSecurityRoute: typeof AppSecurityRoute
   AppSettingsRoute: typeof AppSettingsRoute
   AppStudentsRoute: typeof AppStudentsRoute
   AppVerifyRoute: typeof AppVerifyRoute
@@ -300,8 +260,6 @@ const AppRouteChildren: AppRouteChildren = {
   AppDashboardRoute: AppDashboardRoute,
   AppLogsRoute: AppLogsRoute,
   AppQrRoute: AppQrRoute,
-  AppReportsRoute: AppReportsRoute,
-  AppSecurityRoute: AppSecurityRoute,
   AppSettingsRoute: AppSettingsRoute,
   AppStudentsRoute: AppStudentsRoute,
   AppVerifyRoute: AppVerifyRoute,

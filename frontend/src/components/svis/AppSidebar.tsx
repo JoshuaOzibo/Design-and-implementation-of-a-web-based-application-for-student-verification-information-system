@@ -1,6 +1,6 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import {
-  LayoutDashboard, ShieldCheck, Users, QrCode, FileText, Lock, BarChart3, Settings,
+  LayoutDashboard, ShieldCheck, Users, QrCode, FileText, Settings,
 } from "lucide-react";
 import {
   Sidebar, SidebarContent, SidebarGroup, SidebarGroupContent, SidebarGroupLabel,
@@ -16,8 +16,6 @@ const main = [
 ];
 const ops = [
   { title: "Verification Logs", url: "/app/logs", icon: FileText },
-  { title: "Security", url: "/app/security", icon: Lock },
-  { title: "Reports", url: "/app/reports", icon: BarChart3 },
 ];
 const sys = [{ title: "Settings", url: "/app/settings", icon: Settings }];
 
