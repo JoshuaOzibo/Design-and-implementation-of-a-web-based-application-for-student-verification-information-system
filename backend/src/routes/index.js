@@ -6,6 +6,7 @@ import verificationRouter from "./verification.routes.js";
 import logRouter from "./log.routes.js";
 import uploadRouter from "./upload.routes.js";
 import analyticsRouter from "./analytics.routes.js";
+import docsRouter from "./docs.routes.js";
 
 const router = express.Router();
 
@@ -39,6 +40,9 @@ router.use("/upload", uploadRouter);
 
 // Dashboard Analytics routes
 router.use("/analytics", analyticsRouter);
+
+// API Documentation specs endpoint
+router.use("/docs", docsRouter);
 
 export default router;
 export { router };

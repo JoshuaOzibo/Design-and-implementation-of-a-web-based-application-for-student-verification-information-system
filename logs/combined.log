@@ -539,3 +539,32 @@
 {"level":"info","message":"🚀 Server running on http://localhost:5000","timestamp":"2026-05-31 13:32:11:3211"}
 {"level":"info","message":"Environment: development","timestamp":"2026-05-31 13:32:11:3211"}
 {"level":"info","message":"=========================================","timestamp":"2026-05-31 13:32:11:3211"}
+{"level":"warn","message":"⚠️ Cloudinary credentials missing. File uploads will fallback to local filesystem storage.","timestamp":"2026-05-31 13:39:24:3924"}
+{"level":"info","message":"Connecting to MongoDB database...","timestamp":"2026-05-31 13:39:24:3924"}
+{"level":"info","message":"MongoDB Connected successfully: ac-sfajjqr-shard-00-02.wijeevb.mongodb.net","timestamp":"2026-05-31 13:39:27:3927"}
+{"level":"info","message":"=========================================","timestamp":"2026-05-31 13:39:27:3927"}
+{"level":"info","message":"🚀 Server running on http://localhost:5000","timestamp":"2026-05-31 13:39:27:3927"}
+{"level":"info","message":"Environment: development","timestamp":"2026-05-31 13:39:27:3927"}
+{"level":"info","message":"=========================================","timestamp":"2026-05-31 13:39:27:3927"}
+{"level":"warn","message":"⚠️ Cloudinary credentials missing. File uploads will fallback to local filesystem storage.","timestamp":"2026-05-31 13:39:33:3933"}
+{"level":"info","message":"Connecting to MongoDB database...","timestamp":"2026-05-31 13:39:33:3933"}
+{"level":"info","message":"MongoDB Connected successfully: ac-sfajjqr-shard-00-02.wijeevb.mongodb.net","timestamp":"2026-05-31 13:39:35:3935"}
+{"level":"info","message":"=========================================","timestamp":"2026-05-31 13:39:35:3935"}
+{"level":"info","message":"🚀 Server running on http://localhost:5000","timestamp":"2026-05-31 13:39:35:3935"}
+{"level":"info","message":"Environment: development","timestamp":"2026-05-31 13:39:35:3935"}
+{"level":"info","message":"=========================================","timestamp":"2026-05-31 13:39:35:3935"}
+{"level":"warn","message":"⚠️ Cloudinary credentials missing. File uploads will fallback to local filesystem storage.","timestamp":"2026-05-31 13:40:05:405"}
+{"level":"info","message":"Connecting to MongoDB database...","timestamp":"2026-05-31 13:40:05:405"}
+{"level":"info","message":"MongoDB Connected successfully: ac-sfajjqr-shard-00-02.wijeevb.mongodb.net","timestamp":"2026-05-31 13:40:07:407"}
+{"level":"info","message":"=========================================","timestamp":"2026-05-31 13:40:07:407"}
+{"level":"info","message":"🚀 Server running on http://localhost:5000","timestamp":"2026-05-31 13:40:07:407"}
+{"level":"info","message":"Environment: development","timestamp":"2026-05-31 13:40:07:407"}
+{"level":"info","message":"=========================================","timestamp":"2026-05-31 13:40:07:407"}
+{"level":"http","message":"\u001b[0mGET /api/v1/docs \u001b[32m200\u001b[0m 7.047 ms - -\u001b[0m","timestamp":"2026-05-31 13:40:14:4014"}
+{"level":"warn","message":"⚠️ Cloudinary credentials missing. File uploads will fallback to local filesystem storage.","timestamp":"2026-05-31 13:40:40:4040"}
+{"level":"info","message":"Connecting to MongoDB database...","timestamp":"2026-05-31 13:40:40:4040"}
+{"level":"info","message":"MongoDB Connected successfully: ac-sfajjqr-shard-00-00.wijeevb.mongodb.net","timestamp":"2026-05-31 13:40:42:4042"}
+{"level":"info","message":"=========================================","timestamp":"2026-05-31 13:40:43:4043"}
+{"level":"info","message":"🚀 Server running on http://localhost:5000","timestamp":"2026-05-31 13:40:43:4043"}
+{"level":"info","message":"Environment: development","timestamp":"2026-05-31 13:40:43:4043"}
+{"level":"info","message":"=========================================","timestamp":"2026-05-31 13:40:43:4043"}
