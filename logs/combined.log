@@ -18,3 +18,99 @@
 {"level":"info","message":"🚀 Server running on http://localhost:5000","timestamp":"2026-05-31 12:36:09:369"}
 {"level":"info","message":"Environment: development","timestamp":"2026-05-31 12:36:09:369"}
 {"level":"info","message":"=========================================","timestamp":"2026-05-31 12:36:09:369"}
+{"level":"info","message":"Connecting to MongoDB database...","timestamp":"2026-05-31 12:41:03:413"}
+{"level":"info","message":"Connecting to MongoDB database...","timestamp":"2026-05-31 12:41:03:413"}
+{"level":"info","message":"MongoDB Connected successfully: ac-sfajjqr-shard-00-00.wijeevb.mongodb.net","timestamp":"2026-05-31 12:41:05:415"}
+{"level":"info","message":"=========================================","timestamp":"2026-05-31 12:41:05:415"}
+{"level":"info","message":"🚀 Server running on http://localhost:5000","timestamp":"2026-05-31 12:41:05:415"}
+{"level":"info","message":"Environment: development","timestamp":"2026-05-31 12:41:05:415"}
+{"level":"info","message":"=========================================","timestamp":"2026-05-31 12:41:05:415"}
+{"level":"info","message":"MongoDB Connected successfully: ac-sfajjqr-shard-00-00.wijeevb.mongodb.net","timestamp":"2026-05-31 12:41:05:415"}
+{"level":"info","message":"=========================================","timestamp":"2026-05-31 12:41:05:415"}
+{"level":"info","message":"🚀 Server running on http://localhost:5000","timestamp":"2026-05-31 12:41:05:415"}
+{"level":"info","message":"Environment: development","timestamp":"2026-05-31 12:41:05:415"}
+{"level":"info","message":"=========================================","timestamp":"2026-05-31 12:41:05:415"}
+{"level":"info","message":"Connecting to MongoDB database...","timestamp":"2026-05-31 12:41:10:4110"}
+{"level":"info","message":"Connecting to MongoDB database...","timestamp":"2026-05-31 12:41:11:4111"}
+{"level":"info","message":"MongoDB Connected successfully: ac-sfajjqr-shard-00-00.wijeevb.mongodb.net","timestamp":"2026-05-31 12:41:12:4112"}
+{"level":"info","message":"=========================================","timestamp":"2026-05-31 12:41:12:4112"}
+{"level":"info","message":"🚀 Server running on http://localhost:5000","timestamp":"2026-05-31 12:41:12:4112"}
+{"level":"info","message":"Environment: development","timestamp":"2026-05-31 12:41:12:4112"}
+{"level":"info","message":"=========================================","timestamp":"2026-05-31 12:41:12:4112"}
+{"level":"info","message":"MongoDB Connected successfully: ac-sfajjqr-shard-00-00.wijeevb.mongodb.net","timestamp":"2026-05-31 12:41:12:4112"}
+{"level":"info","message":"=========================================","timestamp":"2026-05-31 12:41:12:4112"}
+{"level":"info","message":"🚀 Server running on http://localhost:5000","timestamp":"2026-05-31 12:41:12:4112"}
+{"level":"info","message":"Environment: development","timestamp":"2026-05-31 12:41:12:4112"}
+{"level":"info","message":"=========================================","timestamp":"2026-05-31 12:41:12:4112"}
+{"level":"info","message":"Connecting to MongoDB database...","timestamp":"2026-05-31 12:41:18:4118"}
+{"level":"info","message":"Connecting to MongoDB database...","timestamp":"2026-05-31 12:41:18:4118"}
+{"level":"info","message":"MongoDB Connected successfully: ac-sfajjqr-shard-00-00.wijeevb.mongodb.net","timestamp":"2026-05-31 12:41:19:4119"}
+{"level":"info","message":"=========================================","timestamp":"2026-05-31 12:41:19:4119"}
+{"level":"info","message":"🚀 Server running on http://localhost:5000","timestamp":"2026-05-31 12:41:19:4119"}
+{"level":"info","message":"Environment: development","timestamp":"2026-05-31 12:41:19:4119"}
+{"level":"info","message":"=========================================","timestamp":"2026-05-31 12:41:19:4119"}
+{"level":"info","message":"MongoDB Connected successfully: ac-sfajjqr-shard-00-00.wijeevb.mongodb.net","timestamp":"2026-05-31 12:41:19:4119"}
+{"level":"info","message":"=========================================","timestamp":"2026-05-31 12:41:19:4119"}
+{"level":"info","message":"🚀 Server running on http://localhost:5000","timestamp":"2026-05-31 12:41:19:4119"}
+{"level":"info","message":"Environment: development","timestamp":"2026-05-31 12:41:19:4119"}
+{"level":"info","message":"=========================================","timestamp":"2026-05-31 12:41:19:4119"}
+{"level":"info","message":"Connecting to MongoDB database...","timestamp":"2026-05-31 12:41:28:4128"}
+{"level":"info","message":"Connecting to MongoDB database...","timestamp":"2026-05-31 12:41:28:4128"}
+{"level":"info","message":"MongoDB Connected successfully: ac-sfajjqr-shard-00-00.wijeevb.mongodb.net","timestamp":"2026-05-31 12:41:30:4130"}
+{"level":"info","message":"MongoDB Connected successfully: ac-sfajjqr-shard-00-00.wijeevb.mongodb.net","timestamp":"2026-05-31 12:41:30:4130"}
+{"level":"info","message":"=========================================","timestamp":"2026-05-31 12:41:30:4130"}
+{"level":"info","message":"🚀 Server running on http://localhost:5000","timestamp":"2026-05-31 12:41:30:4130"}
+{"level":"info","message":"Environment: development","timestamp":"2026-05-31 12:41:30:4130"}
+{"level":"info","message":"=========================================","timestamp":"2026-05-31 12:41:30:4130"}
+{"level":"info","message":"=========================================","timestamp":"2026-05-31 12:41:30:4130"}
+{"level":"info","message":"🚀 Server running on http://localhost:5000","timestamp":"2026-05-31 12:41:30:4130"}
+{"level":"info","message":"Environment: development","timestamp":"2026-05-31 12:41:30:4130"}
+{"level":"info","message":"=========================================","timestamp":"2026-05-31 12:41:30:4130"}
+{"level":"info","message":"Connecting to MongoDB database...","timestamp":"2026-05-31 12:41:40:4140"}
+{"level":"info","message":"MongoDB Connected successfully: ac-sfajjqr-shard-00-00.wijeevb.mongodb.net","timestamp":"2026-05-31 12:41:44:4144"}
+{"level":"info","message":"=========================================","timestamp":"2026-05-31 12:41:44:4144"}
+{"level":"info","message":"🚀 Server running on http://localhost:5000","timestamp":"2026-05-31 12:41:44:4144"}
+{"level":"info","message":"Environment: development","timestamp":"2026-05-31 12:41:44:4144"}
+{"level":"info","message":"=========================================","timestamp":"2026-05-31 12:41:44:4144"}
+{"level":"info","message":"Connecting to MongoDB database...","timestamp":"2026-05-31 12:42:00:420"}
+{"level":"info","message":"MongoDB Connected successfully: ac-sfajjqr-shard-00-00.wijeevb.mongodb.net","timestamp":"2026-05-31 12:42:02:422"}
+{"level":"info","message":"=========================================","timestamp":"2026-05-31 12:42:02:422"}
+{"level":"info","message":"🚀 Server running on http://localhost:5000","timestamp":"2026-05-31 12:42:02:422"}
+{"level":"info","message":"Environment: development","timestamp":"2026-05-31 12:42:02:422"}
+{"level":"info","message":"=========================================","timestamp":"2026-05-31 12:42:02:422"}
+{"level":"info","message":"Connecting to MongoDB database...","timestamp":"2026-05-31 12:42:10:4210"}
+{"level":"info","message":"MongoDB Connected successfully: ac-sfajjqr-shard-00-01.wijeevb.mongodb.net","timestamp":"2026-05-31 12:42:12:4212"}
+{"level":"info","message":"=========================================","timestamp":"2026-05-31 12:42:12:4212"}
+{"level":"info","message":"🚀 Server running on http://localhost:5000","timestamp":"2026-05-31 12:42:12:4212"}
+{"level":"info","message":"Environment: development","timestamp":"2026-05-31 12:42:12:4212"}
+{"level":"info","message":"=========================================","timestamp":"2026-05-31 12:42:12:4212"}
+{"level":"info","message":"Connecting to MongoDB database...","timestamp":"2026-05-31 12:42:54:4254"}
+{"level":"info","message":"MongoDB Connected successfully: ac-sfajjqr-shard-00-01.wijeevb.mongodb.net","timestamp":"2026-05-31 12:42:58:4258"}
+{"level":"info","message":"=========================================","timestamp":"2026-05-31 12:42:58:4258"}
+{"level":"info","message":"🚀 Server running on http://localhost:5000","timestamp":"2026-05-31 12:42:58:4258"}
+{"level":"info","message":"Environment: development","timestamp":"2026-05-31 12:42:58:4258"}
+{"level":"info","message":"=========================================","timestamp":"2026-05-31 12:42:58:4258"}
+{"level":"info","message":"Connecting to MongoDB database...","timestamp":"2026-05-31 12:43:07:437"}
+{"level":"info","message":"MongoDB Connected successfully: ac-sfajjqr-shard-00-01.wijeevb.mongodb.net","timestamp":"2026-05-31 12:43:14:4314"}
+{"level":"info","message":"=========================================","timestamp":"2026-05-31 12:43:14:4314"}
+{"level":"info","message":"🚀 Server running on http://localhost:5000","timestamp":"2026-05-31 12:43:14:4314"}
+{"level":"info","message":"Environment: development","timestamp":"2026-05-31 12:43:14:4314"}
+{"level":"info","message":"=========================================","timestamp":"2026-05-31 12:43:14:4314"}
+{"level":"info","message":"Connecting to MongoDB database...","timestamp":"2026-05-31 12:43:16:4316"}
+{"level":"info","message":"MongoDB Connected successfully: ac-sfajjqr-shard-00-02.wijeevb.mongodb.net","timestamp":"2026-05-31 12:43:18:4318"}
+{"level":"info","message":"=========================================","timestamp":"2026-05-31 12:43:18:4318"}
+{"level":"info","message":"🚀 Server running on http://localhost:5000","timestamp":"2026-05-31 12:43:18:4318"}
+{"level":"info","message":"Environment: development","timestamp":"2026-05-31 12:43:18:4318"}
+{"level":"info","message":"=========================================","timestamp":"2026-05-31 12:43:18:4318"}
+{"level":"info","message":"Connecting to MongoDB database...","timestamp":"2026-05-31 12:44:11:4411"}
+{"level":"info","message":"MongoDB Connected successfully: ac-sfajjqr-shard-00-02.wijeevb.mongodb.net","timestamp":"2026-05-31 12:44:13:4413"}
+{"level":"info","message":"=========================================","timestamp":"2026-05-31 12:44:13:4413"}
+{"level":"info","message":"🚀 Server running on http://localhost:5000","timestamp":"2026-05-31 12:44:13:4413"}
+{"level":"info","message":"Environment: development","timestamp":"2026-05-31 12:44:13:4413"}
+{"level":"info","message":"=========================================","timestamp":"2026-05-31 12:44:13:4413"}
+{"level":"info","message":"Connecting to MongoDB database...","timestamp":"2026-05-31 12:48:15:4815"}
+{"level":"info","message":"MongoDB Connected successfully: ac-sfajjqr-shard-00-00.wijeevb.mongodb.net","timestamp":"2026-05-31 12:48:17:4817"}
+{"level":"info","message":"=========================================","timestamp":"2026-05-31 12:48:17:4817"}
+{"level":"info","message":"🚀 Server running on http://localhost:5000","timestamp":"2026-05-31 12:48:17:4817"}
+{"level":"info","message":"Environment: development","timestamp":"2026-05-31 12:48:17:4817"}
+{"level":"info","message":"=========================================","timestamp":"2026-05-31 12:48:17:4817"}
