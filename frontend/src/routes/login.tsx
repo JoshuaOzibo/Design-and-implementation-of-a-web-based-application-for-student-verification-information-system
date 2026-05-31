@@ -10,6 +10,8 @@ import { z } from "zod";
 import { Logo } from "@/components/svis/Logo";
 import { Lock, ShieldCheck } from "lucide-react";
 import { toast } from "sonner";
+import { authApi } from "../api/auth.api";
+import { useAuth } from "../hooks/useAuth";
 
 export const Route = createFileRoute("/login")({
   head: () => ({ meta: [{ title: "Staff Login · SVIS" }] }),
@@ -26,15 +28,31 @@ type Values = z.infer<typeof schema>;
 
 function Login() {
   const navigate = useNavigate();
+  const { login } = useAuth();
+  
   const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm<Values>({
     resolver: zodResolver(schema),
     defaultValues: { staffId: "", email: "", password: "", remember: true },
   });
 
-  const onSubmit = async (_v: Values) => {
-    await new Promise((r) => setTimeout(r, 600));
-    toast.success("Signed in securely");
-    navigate({ to: "/app/dashboard" });
+  const onSubmit = async (v: Values) => {
+    try {
+      const res = await authApi.login({
+        staffId: v.staffId,
+        email: v.email,
+        password: v.password,
+      });
+
+      if (res.success) {
+        login(res.data.accessToken, res.data.user);
+        toast.success("Signed in securely");
+        navigate({ to: "/app/dashboard" });
+      } else {
+        toast.error(res.message || "Failed to sign in");
+      }
+    } catch (err: any) {
+      toast.error(err.message || "Authentication error occurred");
+    }
   };
 
   return (
@@ -102,3 +120,4 @@ function Login() {
     </div>
   );
 }
+export default Login;
