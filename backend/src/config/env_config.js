@@ -17,6 +17,7 @@ const envSchema = z.object({
   CLOUDINARY_CLOUD_NAME: z.string().optional(),
   CLOUDINARY_API_KEY: z.string().optional(),
   CLOUDINARY_API_SECRET: z.string().optional(),
+  APP_URL: z.string().url().default("http://localhost:5000"),
 });
 
 const parseEnv = () => {
@@ -37,6 +38,7 @@ export const config = {
   port: env.PORT,
   env: env.NODE_ENV,
   mongo_uri: env.MONGODB_URI,
+  appUrl: env.APP_URL,
   jwt: {
     secret: env.JWT_SECRET,
     refreshSecret: env.JWT_REFRESH_SECRET,

@@ -2,6 +2,14 @@ import mongoose from "mongoose";
 import { config } from "./env_config.js";
 import logger from "../utils/logger.js";
 
+// Import all models to register their schemas in Mongoose
+import "../models/Faculty.js";
+import "../models/Department.js";
+import "../models/User.js";
+import "../models/Student.js";
+import "../models/QRIdentity.js";
+import "../models/VerificationLog.js";
+
 const connectDB = async () => {
   try {
     logger.info("Connecting to MongoDB database...");
