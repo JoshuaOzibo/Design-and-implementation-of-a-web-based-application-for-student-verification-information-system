@@ -4,6 +4,8 @@ import studentRouter from "./student.routes.js";
 import qrRouter from "./qr.routes.js";
 import verificationRouter from "./verification.routes.js";
 import logRouter from "./log.routes.js";
+import uploadRouter from "./upload.routes.js";
+import analyticsRouter from "./analytics.routes.js";
 
 const router = express.Router();
 
@@ -31,6 +33,12 @@ router.use("/verify", verificationRouter);
 
 // Verification Logs routes
 router.use("/logs", logRouter);
+
+// File Upload routes
+router.use("/upload", uploadRouter);
+
+// Dashboard Analytics routes
+router.use("/analytics", analyticsRouter);
 
 export default router;
 export { router };

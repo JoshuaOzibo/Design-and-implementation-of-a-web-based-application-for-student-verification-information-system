@@ -5,12 +5,17 @@ import morgan from "morgan";
 import cookieParser from "cookie-parser";
 import compression from "compression";
 import rateLimit from "express-rate-limit";
+import path from "path";
+import { fileURLToPath } from "url";
 
 import { config } from "./config/env_config.js";
 import logger from "./utils/logger.js";
 import ApiError from "./utils/ApiError.js";
 import { errorConverter, errorHandler } from "./middleware/error_handler.js";
 import router from "./routes/index.js";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
 
@@ -21,8 +26,12 @@ const morganStream = {
 };
 app.use(morgan(morganFormat, { stream: morganStream }));
 
-// Set security HTTP headers
-app.use(helmet());
+// Set security HTTP headers (disable crossOriginResourcePolicy to allow serving local images)
+app.use(
+  helmet({
+    crossOriginResourcePolicy: false,
+  })
+);
 
 // Enable CORS
 app.use(
@@ -43,6 +52,9 @@ app.use(cookieParser());
 
 // Gzip compression
 app.use(compression());
+
+// Serve uploads folder statically for local file storage fallback
+app.use("/uploads", express.static(path.join(__dirname, "../uploads")));
 
 // Limit repeated requests to public APIs
 if (config.env === "production") {
