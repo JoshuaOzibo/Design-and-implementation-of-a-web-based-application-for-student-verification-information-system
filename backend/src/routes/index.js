@@ -2,6 +2,8 @@ import express from "express";
 import authRouter from "./auth.routes.js";
 import studentRouter from "./student.routes.js";
 import qrRouter from "./qr.routes.js";
+import verificationRouter from "./verification.routes.js";
+import logRouter from "./log.routes.js";
 
 const router = express.Router();
 
@@ -23,6 +25,12 @@ router.use("/students", studentRouter);
 
 // QR Code Identity routes
 router.use("/qr", qrRouter);
+
+// Verification Engine routes
+router.use("/verify", verificationRouter);
+
+// Verification Logs routes
+router.use("/logs", logRouter);
 
 export default router;
 export { router };
