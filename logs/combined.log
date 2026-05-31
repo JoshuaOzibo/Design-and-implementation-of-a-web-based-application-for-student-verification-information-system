@@ -1,0 +1,20 @@
+{"level":"info","message":"Connecting to MongoDB database...","timestamp":"2026-05-31 12:27:41:2741"}
+{"level":"info","message":"MongoDB Connected successfully: ac-sfajjqr-shard-00-01.wijeevb.mongodb.net","timestamp":"2026-05-31 12:27:44:2744"}
+{"level":"info","message":"=========================================","timestamp":"2026-05-31 12:27:44:2744"}
+{"level":"info","message":"🚀 Server running on http://localhost:5000","timestamp":"2026-05-31 12:27:44:2744"}
+{"level":"info","message":"Environment: development","timestamp":"2026-05-31 12:27:44:2744"}
+{"level":"info","message":"=========================================","timestamp":"2026-05-31 12:27:44:2744"}
+{"level":"http","message":"\u001b[0mGET /api/v1/health \u001b[32m200\u001b[0m 13.267 ms - 120\u001b[0m","timestamp":"2026-05-31 12:30:46:3046"}
+{"level":"info","message":"Connecting to MongoDB database...","timestamp":"2026-05-31 12:30:59:3059"}
+{"level":"info","message":"MongoDB Connected successfully: ac-sfajjqr-shard-00-00.wijeevb.mongodb.net","timestamp":"2026-05-31 12:31:01:311"}
+{"level":"info","message":"=========================================","timestamp":"2026-05-31 12:31:01:311"}
+{"level":"info","message":"🚀 Server running on http://localhost:5000","timestamp":"2026-05-31 12:31:01:311"}
+{"level":"info","message":"Environment: development","timestamp":"2026-05-31 12:31:01:311"}
+{"level":"info","message":"=========================================","timestamp":"2026-05-31 12:31:01:311"}
+{"level":"http","message":"\u001b[0mGET /api/v1/health \u001b[32m200\u001b[0m 9.867 ms - 120\u001b[0m","timestamp":"2026-05-31 12:31:12:3112"}
+{"level":"info","message":"Connecting to MongoDB database...","timestamp":"2026-05-31 12:36:07:367"}
+{"level":"info","message":"MongoDB Connected successfully: ac-sfajjqr-shard-00-01.wijeevb.mongodb.net","timestamp":"2026-05-31 12:36:09:369"}
+{"level":"info","message":"=========================================","timestamp":"2026-05-31 12:36:09:369"}
+{"level":"info","message":"🚀 Server running on http://localhost:5000","timestamp":"2026-05-31 12:36:09:369"}
+{"level":"info","message":"Environment: development","timestamp":"2026-05-31 12:36:09:369"}
+{"level":"info","message":"=========================================","timestamp":"2026-05-31 12:36:09:369"}
