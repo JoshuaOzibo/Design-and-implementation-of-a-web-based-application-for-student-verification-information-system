@@ -12,12 +12,12 @@ export interface QRResponse {
 
 export const qrApi = {
   generateQR: async (studentId: string): Promise<QRResponse> => {
-    const { data } = await axiosInstance.post<QRResponse>("/qr/generate", { studentId });
+    const { data } = await axiosInstance.post<QRResponse>(`/qr/generate/${studentId}`);
     return data;
   },
 
   regenerateQR: async (studentId: string): Promise<QRResponse> => {
-    const { data } = await axiosInstance.post<QRResponse>("/qr/regenerate", { studentId });
+    const { data } = await axiosInstance.post<QRResponse>(`/qr/regenerate/${studentId}`);
     return data;
   },
 };

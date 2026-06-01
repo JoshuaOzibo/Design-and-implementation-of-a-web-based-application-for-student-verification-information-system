@@ -19,6 +19,9 @@ router.get("/", validate(queryStudentsSchema), studentController.getStudents);
 // Get student by matric number
 router.get("/matric/:matricNumber", studentController.getStudentByMatric);
 
+router.get("/meta/faculties", studentController.getFaculties);
+router.get("/meta/departments", studentController.getDepartments);
+
 // Get student by ID
 router.get("/:id", studentController.getStudentById);
 

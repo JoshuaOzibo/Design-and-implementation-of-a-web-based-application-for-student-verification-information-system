@@ -106,3 +106,27 @@ export const getStudents = async (req, res, next) => {
     next(error);
   }
 };
+
+export const getFaculties = async (req, res, next) => {
+  try {
+    const faculties = await studentService.getFaculties();
+    res.status(200).json({
+      success: true,
+      data: faculties,
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+export const getDepartments = async (req, res, next) => {
+  try {
+    const departments = await studentService.getDepartments();
+    res.status(200).json({
+      success: true,
+      data: departments,
+    });
+  } catch (error) {
+    next(error);
+  }
+};

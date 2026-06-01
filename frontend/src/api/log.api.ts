@@ -9,6 +9,7 @@ export interface LogRecord {
   reason?: string;
   createdAt: string;
   student?: {
+    _id: string;
     fullName: string;
     email: string;
   };

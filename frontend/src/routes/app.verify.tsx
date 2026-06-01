@@ -4,69 +4,166 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
-import { findStudent, students } from "@/lib/mock-data";
 import { VerificationBadge, StatusPill } from "@/components/svis/VerificationBadge";
 import { QRCode } from "@/components/svis/QRCode";
-import { Search, ScanLine, IdCard, ShieldCheck, ExternalLink } from "lucide-react";
+import { Search, ScanLine, IdCard, ShieldCheck, ExternalLink, Loader2, MapPin } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { toast } from "sonner";
+import { useMutation, useQuery } from "@tanstack/react-query";
+import { verifyApi } from "../api/verify.api";
+import { studentApi } from "../api/student.api";
+import { Label } from "@/components/ui/label";
 
 export const Route = createFileRoute("/app/verify")({
   head: () => ({ meta: [{ title: "Verify Student · SVIS" }] }),
   component: Verify,
 });
 
-type Result = { student: ReturnType<typeof findStudent>; ok: boolean } | null;
+interface VerificationResult {
+  student: any;
+  ok: boolean;
+  reason?: string;
+}
 
 function Verify() {
-  const [result, setResult] = useState<Result>(null);
+  const [result, setResult] = useState<VerificationResult | null>(null);
   const [q, setQ] = useState("");
+  const [location, setLocation] = useState("Main Gate");
 
-  const onVerify = (val: string) => {
-    const s = findStudent(val);
-    if (s) { setResult({ student: s, ok: true }); toast.success("Identity verified"); }
-    else { setResult({ student: undefined, ok: false }); toast.error("No matching record"); }
+  // Fetch some sample students to display in the UI as examples
+  const { data: studentsRes } = useQuery({
+    queryKey: ["verify-sample-students"],
+    queryFn: () => studentApi.getStudents({ limit: 3 }),
+  });
+  const samples = studentsRes?.data?.results || [];
+
+  // Verification Mutation
+  const verifyMutation = useMutation({
+    mutationFn: verifyApi.verifyStudent,
+    onSuccess: (res) => {
+      if (res.data.verified) {
+        setResult({ student: res.data.student, ok: true });
+        toast.success("Identity verified successfully");
+      } else {
+        setResult({ student: res.data.student, ok: false, reason: res.data.reason });
+        toast.error(res.data.reason || "Identity verification failed");
+      }
+    },
+    onError: (err: any) => {
+      setResult({ student: null, ok: false, reason: err.response?.data?.message || "No matching student record found." });
+      toast.error(err.response?.data?.message || "Failed to process student verification");
+    },
+  });
+
+  const handleVerify = (method: "matric" | "id" | "qr", identifier: string) => {
+    if (!identifier.trim()) {
+      toast.error("Please enter a valid student identifier");
+      return;
+    }
+    verifyMutation.mutate({
+      method,
+      identifier: identifier.trim(),
+      location,
+    });
   };
 
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-2xl font-semibold tracking-tight">Student verification</h1>
-        <p className="text-sm text-muted-foreground">Confirm identity using matric number, student ID, or QR scan.</p>
+        <h1 className="text-2xl font-semibold tracking-tight">Student verification checkpoint</h1>
+        <p className="text-sm text-muted-foreground">Confirm identities using matric numbers, physical ID cards, or digital dynamic QR codes.</p>
       </div>
 
       <div className="grid gap-6 lg:grid-cols-5">
         <Card className="lg:col-span-2">
-          <CardHeader className="pb-3"><CardTitle className="text-base">Verification methods</CardTitle></CardHeader>
-          <CardContent>
+          <CardHeader className="pb-3">
+            <CardTitle className="text-base">Verification settings & methods</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-5">
+            {/* Checkpoint Location Selection */}
+            <div className="space-y-1.5 border-b pb-4">
+              <Label htmlFor="location" className="flex items-center gap-1.5 text-xs text-muted-foreground">
+                <MapPin className="h-3.5 w-3.5 text-primary" /> Active Checkpoint Location
+              </Label>
+              <Input
+                id="location"
+                value={location}
+                onChange={(e) => setLocation(e.target.value)}
+                placeholder="e.g. Main Gate, Library Checkpoint"
+              />
+            </div>
+
             <Tabs defaultValue="matric" className="w-full">
               <TabsList className="grid w-full grid-cols-3">
-                <TabsTrigger value="matric"><IdCard className="mr-1.5 h-4 w-4" />Matric</TabsTrigger>
-                <TabsTrigger value="id"><Search className="mr-1.5 h-4 w-4" />Student ID</TabsTrigger>
-                <TabsTrigger value="qr"><ScanLine className="mr-1.5 h-4 w-4" />QR Scan</TabsTrigger>
+                <TabsTrigger value="matric">
+                  <IdCard className="mr-1.5 h-3.5 w-3.5" />
+                  Matric
+                </TabsTrigger>
+                <TabsTrigger value="id">
+                  <Search className="mr-1.5 h-3.5 w-3.5" />
+                  ID Card
+                </TabsTrigger>
+                <TabsTrigger value="qr">
+                  <ScanLine className="mr-1.5 h-3.5 w-3.5" />
+                  QR Scan
+                </TabsTrigger>
               </TabsList>
 
-              <TabsContent value="matric" className="mt-5 space-y-3">
-                <Input placeholder="e.g. UNI/2022/1234" value={q} onChange={(e) => setQ(e.target.value)} />
-                <Button className="w-full" onClick={() => onVerify(q || "UNI/2022/1234")}>
-                  <ShieldCheck className="mr-2 h-4 w-4" />Verify identity
+              <TabsContent value="matric" className="mt-4 space-y-3">
+                <Input
+                  placeholder="Enter Matric Number (e.g. SCI/19/0001)"
+                  value={q}
+                  onChange={(e) => setQ(e.target.value)}
+                />
+                <Button
+                  className="w-full"
+                  disabled={verifyMutation.isPending}
+                  onClick={() => handleVerify("matric", q)}
+                >
+                  {verifyMutation.isPending ? (
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                  ) : (
+                    <ShieldCheck className="mr-2 h-4 w-4" />
+                  )}
+                  Verify Matric Code
                 </Button>
-                <p className="text-xs text-muted-foreground">Try: UNI/2022/1234 (demo data)</p>
               </TabsContent>
 
-              <TabsContent value="id" className="mt-5 space-y-3">
-                <Input placeholder="e.g. STU-1003" value={q} onChange={(e) => setQ(e.target.value)} />
-                <Button className="w-full" onClick={() => onVerify(q || "STU-1003")}>
-                  <ShieldCheck className="mr-2 h-4 w-4" />Verify identity
+              <TabsContent value="id" className="mt-4 space-y-3">
+                <Input
+                  placeholder="Enter Student ID (e.g. Mongo ObjectID)"
+                  value={q}
+                  onChange={(e) => setQ(e.target.value)}
+                />
+                <Button
+                  className="w-full"
+                  disabled={verifyMutation.isPending}
+                  onClick={() => handleVerify("id", q)}
+                >
+                  {verifyMutation.isPending ? (
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                  ) : (
+                    <ShieldCheck className="mr-2 h-4 w-4" />
+                  )}
+                  Verify ID Card
                 </Button>
               </TabsContent>
 
-              <TabsContent value="qr" className="mt-5">
-                <div className="flex flex-col items-center justify-center rounded-md border border-dashed border-border bg-muted/30 p-8 text-center">
-                  <ScanLine className="mb-3 h-10 w-10 text-muted-foreground" />
-                  <p className="text-sm font-medium">Position the QR within the frame</p>
-                  <p className="mt-1 text-xs text-muted-foreground">Camera access required</p>
-                  <Button variant="outline" className="mt-4" onClick={() => onVerify("UNI/2022/1234")}>Simulate scan</Button>
+              <TabsContent value="qr" className="mt-4 space-y-3">
+                <div className="flex flex-col items-center justify-center rounded-md border border-dashed border-border bg-muted/20 p-6 text-center">
+                  <ScanLine className="mb-2 h-8 w-8 text-primary animate-pulse" />
+                  <p className="text-xs font-semibold">Simulate Dynamic Scanner Camera</p>
+                  <p className="mt-1 text-[11px] text-muted-foreground">Scans student dynamic tokens at checkpoint</p>
+                  {samples.length > 0 && (
+                    <Button
+                      variant="outline"
+                      className="mt-4 w-full text-xs"
+                      disabled={verifyMutation.isPending}
+                      onClick={() => handleVerify("qr", `VERIFY-${samples[0].matricNumber.replace(/\//g, "-")}`)}
+                    >
+                      Simulate scanning card
+                    </Button>
+                  )}
                 </div>
               </TabsContent>
             </Tabs>
@@ -77,77 +174,120 @@ function Verify() {
           <AnimatePresence mode="wait">
             {!result && (
               <motion.div key="empty" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-                <Card className="border-dashed">
-                  <CardContent className="flex flex-col items-center justify-center py-20 text-center">
+                <Card className="border-dashed h-[300px] flex items-center justify-center">
+                  <CardContent className="flex flex-col items-center justify-center text-center">
                     <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-primary/10 text-primary">
                       <ShieldCheck className="h-7 w-7" />
                     </div>
-                    <h3 className="text-base font-semibold">Awaiting verification</h3>
-                    <p className="mt-1 max-w-sm text-sm text-muted-foreground">
-                      Select a verification method and provide the student identifier to display their record.
+                    <h3 className="text-base font-semibold">Awaiting scan or input</h3>
+                    <p className="mt-1 max-w-sm text-xs text-muted-foreground">
+                      Fill out verification fields or scan a QR card. Verified student academic logs will display dynamically here.
                     </p>
                   </CardContent>
                 </Card>
               </motion.div>
             )}
+
             {result?.ok && result.student && (
               <motion.div key="ok" initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }}>
-                <Card>
+                <Card className="border-success/30 bg-success/5">
                   <CardContent className="p-6">
                     <div className="flex flex-wrap items-start gap-6">
-                      <img src={result.student.photo} alt={result.student.fullName} className="h-32 w-32 rounded-md border border-border object-cover" />
+                      <div className="h-32 w-32 overflow-hidden rounded-md border border-border bg-muted">
+                        {result.student.photo ? (
+                          <img src={result.student.photo} alt={result.student.fullName} className="h-full w-full object-cover" />
+                        ) : (
+                          <div className="flex h-full w-full items-center justify-center font-semibold text-xl">
+                            {result.student.fullName.slice(0, 2).toUpperCase()}
+                          </div>
+                        )}
+                      </div>
                       <div className="min-w-0 flex-1">
                         <div className="flex flex-wrap items-center gap-3">
                           <h2 className="text-xl font-semibold">{result.student.fullName}</h2>
                           <VerificationBadge status="verified" />
                           <StatusPill status={result.student.status} />
                         </div>
-                        <div className="mt-1 text-sm text-muted-foreground">{result.student.matric} · {result.student.id}</div>
+                        <div className="mt-1 text-sm text-muted-foreground">
+                          {result.student.matricNumber} · {typeof result.student.department === "object" ? result.student.department.name : result.student.department}
+                        </div>
                         <div className="mt-5 grid gap-4 sm:grid-cols-2">
-                          <Field label="Department" value={result.student.department} />
-                          <Field label="Faculty" value={result.student.faculty} />
+                          <Field label="Faculty" value={typeof result.student.faculty === "object" ? result.student.faculty.name : result.student.faculty} />
                           <Field label="Level" value={result.student.level + "L"} />
-                          <Field label="Session" value={result.student.session} />
-                          <Field label="Email" value={result.student.email} />
-                          <Field label="Phone" value={result.student.phone} />
+                          <Field label="Session" value={result.student.academicSession} />
+                          <Field label="Verification Status" value="CLEARED - PASSED" />
                         </div>
                       </div>
-                      <div className="flex flex-col items-center gap-2 rounded-md border border-border p-3">
-                        <QRCode value={result.student.matric} size={120} />
-                        <div className="text-[10px] text-muted-foreground">Tamper-evident</div>
+                      <div className="flex flex-col items-center gap-2 rounded-md border border-border bg-white p-3">
+                        <QRCode value={result.student.matricNumber} size={100} />
+                        <div className="text-[9px] text-muted-foreground font-mono">Dynamic Key</div>
                       </div>
                     </div>
                     <div className="mt-6 flex flex-wrap gap-2 border-t border-border pt-4">
                       <Button asChild variant="outline" size="sm">
-                        <Link to="/app/student/$id" params={{ id: result.student.id }}>
-                          <ExternalLink className="mr-1.5 h-3.5 w-3.5" />Open profile
+                        <Link to="/app/student/$id" params={{ id: result.student._id }}>
+                          <ExternalLink className="mr-1.5 h-3.5 w-3.5" />
+                          Open profile file
                         </Link>
                       </Button>
-                      <Button variant="outline" size="sm" onClick={() => toast.message("Recorded in verification log")}>Approve entry</Button>
-                      <Button variant="ghost" size="sm" className="text-destructive" onClick={() => toast.error("Flagged for review")}>Flag</Button>
+                      <Button variant="outline" size="sm" onClick={() => setResult(null)}>
+                        Clear screen
+                      </Button>
                     </div>
                   </CardContent>
                 </Card>
               </motion.div>
             )}
+
             {result && !result.ok && (
               <motion.div key="bad" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-                <Card className="border-destructive/40">
+                <Card className="border-destructive/40 bg-destructive/5">
                   <CardContent className="flex flex-col items-center justify-center py-16 text-center">
-                    <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-destructive/10 text-destructive">
+                    <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-destructive/10 text-destructive animate-bounce">
                       <ShieldCheck className="h-6 w-6" />
                     </div>
                     <VerificationBadge status="invalid" />
-                    <p className="mt-3 max-w-sm text-sm text-muted-foreground">No student record matched the identifier provided. Verify the input or contact the registrar.</p>
+                    <h3 className="text-base font-semibold mt-4 text-destructive">Verification Denied</h3>
+                    <p className="mt-2 max-w-sm text-xs text-muted-foreground">
+                      {result.reason || "No matching student record was found in the institution database."}
+                    </p>
+                    {result.student && (
+                      <div className="mt-4 border p-4 rounded-md w-full max-w-md text-left bg-white">
+                        <div className="font-semibold text-sm mb-2">{result.student.fullName} ({result.student.matricNumber})</div>
+                        <div className="text-xs text-muted-foreground">Status: <span className="font-bold text-destructive uppercase">{result.student.status}</span></div>
+                        <Button asChild variant="outline" size="sm" className="mt-4 w-full">
+                          <Link to="/app/student/$id" params={{ id: result.student._id }}>View Profile Details</Link>
+                        </Button>
+                      </div>
+                    )}
+                    <Button variant="outline" size="sm" className="mt-6" onClick={() => setResult(null)}>
+                      Retry verification
+                    </Button>
                   </CardContent>
                 </Card>
               </motion.div>
             )}
           </AnimatePresence>
 
-          <div className="mt-4 text-xs text-muted-foreground">
-            Sample identifiers: <code className="rounded bg-muted px-1.5 py-0.5">{students[0].matric}</code> · <code className="rounded bg-muted px-1.5 py-0.5">{students[2].matric}</code>
-          </div>
+          {samples.length > 0 && (
+            <div className="mt-6 text-xs text-muted-foreground border-t pt-4">
+              <span className="font-semibold">Sample checkpoint codes for evaluation:</span>
+              <div className="mt-1.5 flex flex-wrap gap-2">
+                {samples.map((s) => (
+                  <button
+                    key={s._id}
+                    className="rounded bg-muted hover:bg-primary/10 border px-2 py-1 font-mono transition-colors text-left"
+                    onClick={() => {
+                      setQ(s.matricNumber);
+                      toast.info(`Loaded sample ${s.fullName}`);
+                    }}
+                  >
+                    {s.matricNumber} ({s.fullName})
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>
@@ -162,3 +302,5 @@ function Field({ label, value }: { label: string; value: string }) {
     </div>
   );
 }
+
+export default Verify;

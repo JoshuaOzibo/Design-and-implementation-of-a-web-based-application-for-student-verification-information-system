@@ -1,6 +1,8 @@
 import Student from "../models/Student.js";
 import QRIdentity from "../models/QRIdentity.js";
 import ApiError from "../utils/ApiError.js";
+import Faculty from "../models/Faculty.js";
+import Department from "../models/Department.js";
 
 /**
  * Create a new student profile
@@ -152,4 +154,12 @@ export const queryStudents = async (filter, options) => {
     totalPages,
     totalResults,
   };
+};
+
+export const getFaculties = async () => {
+  return await Faculty.find({}).sort({ name: 1 });
+};
+
+export const getDepartments = async () => {
+  return await Department.find({}).sort({ name: 1 });
 };

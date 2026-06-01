@@ -62,6 +62,16 @@ export const studentApi = {
     const { data } = await axiosInstance.delete<{ success: boolean; message: string }>(`/students/${id}`);
     return data;
   },
+
+  getFaculties: async (): Promise<{ success: boolean; data: Array<{ _id: string; name: string; code: string }> }> => {
+    const { data } = await axiosInstance.get<{ success: boolean; data: Array<{ _id: string; name: string; code: string }> }>("/students/meta/faculties");
+    return data;
+  },
+
+  getDepartments: async (): Promise<{ success: boolean; data: Array<{ _id: string; name: string; code: string; faculty: string }> }> => {
+    const { data } = await axiosInstance.get<{ success: boolean; data: Array<{ _id: string; name: string; code: string; faculty: string }> }>("/students/meta/departments");
+    return data;
+  },
 };
 
 export default studentApi;
