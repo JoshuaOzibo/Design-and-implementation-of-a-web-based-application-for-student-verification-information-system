@@ -32,12 +32,20 @@ function Page() {
     enabled: !!studentRes?.data,
   });
 
+  // Query 3: Student QR Details
+  const { data: qrRes } = useQuery({
+    queryKey: ["student-qr", id],
+    queryFn: () => qrApi.generateQR(id),
+    enabled: !!studentRes?.data,
+  });
+
   // Rotate QR Mutation
   const rotateQRMutation = useMutation({
     mutationFn: qrApi.regenerateQR,
     onSuccess: () => {
       toast.success("Student cryptographic identity rotated successfully");
       queryClient.invalidateQueries({ queryKey: ["student", id] });
+      queryClient.invalidateQueries({ queryKey: ["student-qr", id] });
     },
     onError: (err: any) => {
       toast.error(err.response?.data?.message || "Failed to rotate cryptographic card");
@@ -62,7 +70,7 @@ function Page() {
           {studentError ? (studentError as any).response?.data?.message || "Error loading profile" : "Student profile not found"}
         </p>
         <Button asChild variant="outline">
-          <Link to="/app/students">
+          <Link to="/app/students" search={{ register: undefined }}>
             <ArrowLeft className="mr-1.5 h-4 w-4" /> Back to list
           </Link>
         </Button>
@@ -80,7 +88,7 @@ function Page() {
     <div className="space-y-6">
       <div className="flex flex-wrap items-center gap-3">
         <Button asChild variant="ghost" size="sm">
-          <Link to="/app/students">
+          <Link to="/app/students" search={{ register: undefined }}>
             <ArrowLeft className="mr-1.5 h-4 w-4" />
             Back
           </Link>
@@ -139,7 +147,7 @@ function Page() {
             <CardTitle className="text-base">QR identity card</CardTitle>
           </CardHeader>
           <CardContent className="flex flex-col items-center gap-3">
-            <QRCode value={student.matricNumber} size={160} />
+            <QRCode value={qrRes?.data?.verificationUrl || student.matricNumber} size={160} />
             <div className="text-center">
               <div className="text-xs font-mono text-muted-foreground select-all truncate max-w-[200px]">
                 {student.matricNumber}

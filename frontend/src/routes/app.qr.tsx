@@ -37,12 +37,22 @@ function Page() {
 
   const s = students.find((x) => x._id === selectedId);
 
+  // Fetch cryptographic QR details for selected student
+  const { data: qrRes } = useQuery({
+    queryKey: ["qr-student-identity", selectedId],
+    queryFn: () => qrApi.generateQR(selectedId),
+    enabled: !!selectedId,
+  });
+
   // Rotate QR Mutation
   const rotateQRMutation = useMutation({
     mutationFn: qrApi.regenerateQR,
     onSuccess: () => {
       toast.success("Cryptographic student QR token regenerated successfully");
       queryClient.invalidateQueries({ queryKey: ["qr-students-list"] });
+      if (selectedId) {
+        queryClient.invalidateQueries({ queryKey: ["qr-student-identity", selectedId] });
+      }
     },
     onError: (err: any) => {
       toast.error(err.response?.data?.message || "Failed to regenerate QR token");
@@ -360,7 +370,7 @@ function Page() {
                     </div>
                     <div className="flex flex-col items-center gap-2 rounded-md border bg-slate-50 p-3">
                       <div id="print-qr-svg-holder">
-                        <QRCode value={s.matricNumber} size={110} />
+                        <QRCode value={qrRes?.data?.verificationUrl || s.matricNumber} size={110} />
                       </div>
                       <div className="text-[8px] font-semibold text-slate-400 uppercase tracking-wide">Scan to Verify</div>
                     </div>

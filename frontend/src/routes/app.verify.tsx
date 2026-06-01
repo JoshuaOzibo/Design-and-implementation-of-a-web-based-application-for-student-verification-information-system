@@ -13,6 +13,7 @@ import { toast } from "sonner";
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { verifyApi } from "../api/verify.api";
 import { studentApi } from "../api/student.api";
+import { qrApi } from "../api/qr.api";
 import { Label } from "@/components/ui/label";
 
 export const Route = createFileRoute("/app/verify")({
@@ -38,6 +39,13 @@ function Verify() {
     queryFn: () => studentApi.getStudents({ limit: 3 }),
   });
   const samples = studentsRes?.data?.results || [];
+
+  // Fetch QR details for successfully verified student
+  const { data: verifiedQrRes } = useQuery({
+    queryKey: ["verified-student-qr", result?.student?._id],
+    queryFn: () => qrApi.generateQR(result?.student?._id || ""),
+    enabled: !!result?.student?._id,
+  });
 
   // Verification Mutation
   const verifyMutation = useMutation({
@@ -156,7 +164,12 @@ function Verify() {
                   <div className="space-y-3">
                     <QRScanner
                       onScanSuccess={(decodedText) => {
-                        handleVerify("qr", decodedText);
+                        let token = decodedText.trim();
+                        if (token.includes("/verify/")) {
+                          const parts = token.split("/verify/");
+                          token = parts[parts.length - 1].split("?")[0];
+                        }
+                        handleVerify("qr", token);
                         setIsScanning(false);
                       }}
                     />
@@ -248,7 +261,7 @@ function Verify() {
                         </div>
                       </div>
                       <div className="flex flex-col items-center gap-2 rounded-md border border-border bg-white p-3">
-                        <QRCode value={result.student.matricNumber} size={100} />
+                        <QRCode value={verifiedQrRes?.data?.verificationUrl || result.student.matricNumber} size={100} />
                         <div className="text-[9px] text-muted-foreground font-mono">Dynamic Key</div>
                       </div>
                     </div>
