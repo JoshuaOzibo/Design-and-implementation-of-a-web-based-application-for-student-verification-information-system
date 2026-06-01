@@ -1,6 +1,6 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import {
-  LayoutDashboard, ShieldCheck, Users, QrCode, FileText, Settings,
+  LayoutDashboard, ShieldCheck, Users, QrCode, FileText, Settings, UserPlus,
 } from "lucide-react";
 import {
   Sidebar, SidebarContent, SidebarGroup, SidebarGroupContent, SidebarGroupLabel,
@@ -8,26 +8,41 @@ import {
 } from "@/components/ui/sidebar";
 import { Logo } from "./Logo";
 
-const main = [
+interface SidebarItem {
+  title: string;
+  url: string;
+  search?: Record<string, string>;
+  icon: any;
+}
+
+const main: SidebarItem[] = [
   { title: "Dashboard", url: "/app/dashboard", icon: LayoutDashboard },
   { title: "Verify Student", url: "/app/verify", icon: ShieldCheck },
   { title: "Students", url: "/app/students", icon: Users },
+  { title: "Register Student", url: "/app/students", search: { register: "true" }, icon: UserPlus },
   { title: "QR Management", url: "/app/qr", icon: QrCode },
 ];
-const ops = [
+const ops: SidebarItem[] = [
   { title: "Verification Logs", url: "/app/logs", icon: FileText },
 ];
-const sys = [{ title: "Settings", url: "/app/settings", icon: Settings }];
+const sys: SidebarItem[] = [{ title: "Settings", url: "/app/settings", icon: Settings }];
 
 export function AppSidebar() {
   const path = useRouterState({ select: (s) => s.location.pathname });
-  const renderItems = (items: typeof main) =>
+  const renderItems = (items: SidebarItem[]) =>
     items.map((it) => {
-      const active = path === it.url || path.startsWith(it.url + "/");
+      // Check if it's the exact match
+      const hasRegisterSearch = it.search?.register === "true";
+      const isRegisterActive = hasRegisterSearch && window.location.search.includes("register=true");
+      
+      const active = hasRegisterSearch 
+        ? (path === it.url && isRegisterActive)
+        : (path === it.url && !window.location.search.includes("register=true")) || (path.startsWith(it.url + "/") && !hasRegisterSearch);
+      
       return (
-        <SidebarMenuItem key={it.url}>
+        <SidebarMenuItem key={it.title}>
           <SidebarMenuButton asChild isActive={active}>
-            <Link to={it.url} className="flex items-center gap-2.5">
+            <Link to={it.url} search={it.search as any} className="flex items-center gap-2.5">
               <it.icon className="h-4 w-4" />
               <span>{it.title}</span>
             </Link>

@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -13,19 +13,24 @@ import {
   Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter, DialogClose,
 } from "@/components/ui/dialog";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { studentApi, StudentProfile } from "../api/student.api";
 import { qrApi } from "../api/qr.api";
 import { toast } from "sonner";
 import { Label } from "@/components/ui/label";
 
 export const Route = createFileRoute("/app/students")({
+  validateSearch: (search: Record<string, unknown>) => ({
+    register: (search.register as string) || undefined,
+  }),
   head: () => ({ meta: [{ title: "Students · SVIS" }] }),
   component: Page,
 });
 
 function Page() {
   const queryClient = useQueryClient();
+  const navigate = useNavigate();
+  const { register: registerParam } = Route.useSearch();
   const [q, setQ] = useState("");
   const [facultyFilter, setFacultyFilter] = useState<string>("all");
   const [page, setPage] = useState(1);
@@ -140,6 +145,14 @@ function Page() {
     setStatus("active");
     setIsFormOpen(true);
   };
+
+  useEffect(() => {
+    if (registerParam === "true") {
+      openCreateDialog();
+      // Clear query params to prevent re-opening on refresh
+      navigate({ search: {} });
+    }
+  }, [registerParam]);
 
   const openEditDialog = (s: StudentProfile) => {
     setEditingStudent(s);
