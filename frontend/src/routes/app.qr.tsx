@@ -262,7 +262,7 @@ function Page() {
           <CardContent>
             <p className="text-sm text-muted-foreground">No students enrolled in the registry database yet.</p>
             <Button asChild className="mt-4">
-              <Link to="/app/students">Enroll a Student</Link>
+              <Link to="/app/students" search={{ register: "true" }}>Enroll a Student</Link>
             </Button>
           </CardContent>
         </Card>

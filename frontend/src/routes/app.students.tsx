@@ -92,7 +92,7 @@ function Page() {
       setIsFormOpen(false);
     },
     onError: (err: any) => {
-      toast.error(err.response?.data?.message || "Failed to create student profile");
+      toast.error(err.message || "Failed to create student profile");
     },
   });
 
@@ -104,7 +104,7 @@ function Page() {
       setIsFormOpen(false);
     },
     onError: (err: any) => {
-      toast.error(err.response?.data?.message || "Failed to update student profile");
+      toast.error(err.message || "Failed to update student profile");
     },
   });
 
@@ -116,7 +116,7 @@ function Page() {
       queryClient.invalidateQueries({ queryKey: ["dashboard-analytics"] });
     },
     onError: (err: any) => {
-      toast.error(err.response?.data?.message || "Failed to delete student profile");
+      toast.error(err.message || "Failed to delete student profile");
     },
   });
 
@@ -126,7 +126,7 @@ function Page() {
       toast.success("Student cryptographic identity rotated successfully");
     },
     onError: (err: any) => {
-      toast.error(err.response?.data?.message || "Failed to rotate cryptographic card");
+      toast.error(err.message || "Failed to rotate cryptographic card");
     },
   });
 
@@ -150,7 +150,7 @@ function Page() {
     if (registerParam === "true") {
       openCreateDialog();
       // Clear query params to prevent re-opening on refresh
-      navigate({ search: {} });
+      navigate({ to: "/app/students", search: (prev: any) => ({ ...prev, register: undefined }) });
     }
   }, [registerParam]);
 
