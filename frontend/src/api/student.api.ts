@@ -72,6 +72,17 @@ export const studentApi = {
     const { data } = await axiosInstance.get<{ success: boolean; data: Array<{ _id: string; name: string; code: string; faculty: string }> }>("/students/meta/departments");
     return data;
   },
+
+  uploadPhoto: async (fileBlob: Blob | File): Promise<{ success: boolean; data: { url: string; publicId: string } }> => {
+    const formData = new FormData();
+    formData.append("photo", fileBlob, "student-photo.jpg");
+    const { data } = await axiosInstance.post<{ success: boolean; data: { url: string; publicId: string } }>("/upload", formData, {
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+    });
+    return data;
+  },
 };
 
 export default studentApi;

@@ -1,4 +1,5 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
+import { compressImage } from "../utils/compression";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -52,6 +53,10 @@ function Page() {
   const [level, setLevel] = useState<"100" | "200" | "300" | "400" | "500">("100");
   const [academicSession, setAcademicSession] = useState("2025/2026");
   const [status, setStatus] = useState<"active" | "suspended" | "graduated" | "pending">("active");
+  const [photoUrl, setPhotoUrl] = useState("");
+  const [imageFile, setImageFile] = useState<File | null>(null);
+  const [imagePreview, setImagePreview] = useState<string>("");
+  const [isUploading, setIsUploading] = useState(false);
 
   // Fetch Students list
   const { data: studentsRes, isLoading: loadingStudents } = useQuery({
@@ -143,6 +148,9 @@ function Page() {
     setLevel("100");
     setAcademicSession("2025/2026");
     setStatus("active");
+    setPhotoUrl("");
+    setImageFile(null);
+    setImagePreview("");
     setIsFormOpen(true);
   };
 
@@ -152,6 +160,23 @@ function Page() {
       navigate({ to: "/app/students", search: (prev: any) => ({ ...prev, register: undefined }) });
     }
   }, [registerParam]);
+
+  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      setImageFile(file);
+      const localUrl = URL.createObjectURL(file);
+      setImagePreview(localUrl);
+    }
+  };
+
+  useEffect(() => {
+    return () => {
+      if (imagePreview && imagePreview.startsWith("blob:")) {
+        URL.revokeObjectURL(imagePreview);
+      }
+    };
+  }, [imagePreview]);
 
   const openEditDialog = (s: StudentProfile) => {
     setEditingStudent(s);
@@ -167,33 +192,60 @@ function Page() {
     setLevel(s.level);
     setAcademicSession(s.academicSession);
     setStatus(s.status);
+    setPhotoUrl(s.photo || "");
+    setImageFile(null);
+    setImagePreview(s.photo || "");
     setIsFormOpen(true);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!faculty || !department) {
       toast.error("Please select a valid Faculty and Department association");
       return;
     }
-    const payload = {
-      matricNumber,
-      fullName,
-      email,
-      phone,
-      dob,
-      address,
-      faculty,
-      department,
-      level,
-      academicSession,
-      status,
-    };
 
-    if (editingStudent) {
-      updateMutation.mutate({ id: editingStudent._id, payload });
-    } else {
-      createMutation.mutate(payload);
+    setIsUploading(true);
+    let finalPhotoUrl = photoUrl;
+
+    try {
+      if (imageFile) {
+        // Compress image
+        const compressedBlob = await compressImage(imageFile, 800, 800, 0.8);
+        
+        // Upload to Cloudinary/backend
+        const uploadRes = await studentApi.uploadPhoto(compressedBlob);
+        if (uploadRes.success && uploadRes.data?.url) {
+          finalPhotoUrl = uploadRes.data.url;
+        } else {
+          throw new Error("Could not retrieve secure URL from upload response.");
+        }
+      }
+
+      const payload = {
+        matricNumber,
+        fullName,
+        email,
+        phone,
+        dob,
+        address,
+        faculty,
+        department,
+        level,
+        academicSession,
+        status,
+        photo: finalPhotoUrl || undefined,
+      };
+
+      if (editingStudent) {
+        await updateMutation.mutateAsync({ id: editingStudent._id, payload });
+      } else {
+        await createMutation.mutateAsync(payload);
+      }
+    } catch (err: any) {
+      toast.error(err.message || "Failed to save student profile");
+    } finally {
+      setIsUploading(false);
     }
   };
 
@@ -387,6 +439,39 @@ function Page() {
             </DialogHeader>
 
             <div className="grid grid-cols-2 gap-4 py-4">
+              <div className="col-span-2 flex flex-col items-center justify-center gap-3 p-4 border-2 border-dashed border-border hover:border-primary/50 rounded-xl bg-card/50 transition-all">
+                {imagePreview ? (
+                  <div className="relative group w-24 h-24 rounded-full overflow-hidden border border-border bg-muted flex items-center justify-center">
+                    <img src={imagePreview} alt="Student preview" className="w-full h-full object-cover" />
+                    <label className="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity cursor-pointer text-white text-xs font-medium">
+                      Change
+                      <input
+                        type="file"
+                        accept="image/*"
+                        className="hidden"
+                        onChange={handleImageChange}
+                      />
+                    </label>
+                  </div>
+                ) : (
+                  <label className="flex flex-col items-center justify-center gap-2 cursor-pointer w-full py-4 text-center">
+                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                      <Upload className="h-5 w-5" />
+                    </div>
+                    <div>
+                      <p className="text-sm font-medium">Upload Student Photo</p>
+                      <p className="text-xs text-muted-foreground mt-0.5">Drag and drop or click to select (JPEG/PNG)</p>
+                    </div>
+                    <input
+                      type="file"
+                      accept="image/*"
+                      className="hidden"
+                      onChange={handleImageChange}
+                    />
+                  </label>
+                )}
+              </div>
+
               <div className="space-y-1.5">
                 <Label htmlFor="fullName">Full Name</Label>
                 <Input
@@ -553,12 +638,12 @@ function Page() {
               </DialogClose>
               <Button
                 type="submit"
-                disabled={createMutation.isPending || updateMutation.isPending}
+                disabled={createMutation.isPending || updateMutation.isPending || isUploading}
               >
-                {createMutation.isPending || updateMutation.isPending ? (
+                {createMutation.isPending || updateMutation.isPending || isUploading ? (
                   <>
                     <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                    Saving...
+                    {isUploading ? "Uploading..." : "Saving..."}
                   </>
                 ) : (
                   "Save Changes"
