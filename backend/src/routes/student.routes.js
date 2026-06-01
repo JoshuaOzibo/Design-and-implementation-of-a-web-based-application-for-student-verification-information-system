@@ -25,14 +25,14 @@ router.get("/meta/departments", studentController.getDepartments);
 // Get student by ID
 router.get("/:id", studentController.getStudentById);
 
-// Create new student profile (Admin only)
-router.post("/", restrictTo("Admin"), validate(createStudentSchema), studentController.createStudent);
+// Create new student profile (Admin & Verification Officer)
+router.post("/", restrictTo("Admin", "Verification Officer"), validate(createStudentSchema), studentController.createStudent);
 
-// Update student profile (Admin only)
-router.patch("/:id", restrictTo("Admin"), validate(updateStudentSchema), studentController.updateStudent);
+// Update student profile (Admin & Verification Officer)
+router.patch("/:id", restrictTo("Admin", "Verification Officer"), validate(updateStudentSchema), studentController.updateStudent);
 
-// Delete student profile (Admin only)
-router.delete("/:id", restrictTo("Admin"), studentController.deleteStudent);
+// Delete student profile (Admin & Verification Officer)
+router.delete("/:id", restrictTo("Admin", "Verification Officer"), studentController.deleteStudent);
 
 export default router;
 export { router };

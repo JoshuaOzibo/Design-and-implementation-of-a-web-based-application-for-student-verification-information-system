@@ -149,7 +149,6 @@ function Page() {
   useEffect(() => {
     if (registerParam === "true") {
       openCreateDialog();
-      // Clear query params to prevent re-opening on refresh
       navigate({ to: "/app/students", search: (prev: any) => ({ ...prev, register: undefined }) });
     }
   }, [registerParam]);
@@ -160,7 +159,6 @@ function Page() {
     setFullName(s.fullName);
     setEmail(s.email);
     setPhone(s.phone);
-    // Format dob to YYYY-MM-DD for standard input date value
     const dobString = s.dob ? new Date(s.dob).toISOString().split("T")[0] : "";
     setDob(dobString);
     setAddress(s.address);

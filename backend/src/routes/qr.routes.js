@@ -10,11 +10,11 @@ router.use(protect);
 // Verify QR code identity (all authenticated staff roles can verify)
 router.get("/verify/:verificationId", qrController.verifyQR);
 
-// Generate QR code for student (Admin only)
-router.post("/generate/:studentId", restrictTo("Admin"), qrController.generateQR);
+// Generate QR code for student (Admin & Verification Officer)
+router.post("/generate/:studentId", restrictTo("Admin", "Verification Officer"), qrController.generateQR);
 
-// Regenerate QR code for student (Admin only)
-router.post("/regenerate/:studentId", restrictTo("Admin"), qrController.regenerateQR);
+// Regenerate QR code for student (Admin & Verification Officer)
+router.post("/regenerate/:studentId", restrictTo("Admin", "Verification Officer"), qrController.regenerateQR);
 
 export default router;
 export { router };

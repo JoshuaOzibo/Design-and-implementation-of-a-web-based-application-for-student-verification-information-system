@@ -8,11 +8,11 @@ const router = express.Router();
 // Apply auth protection to all upload endpoints
 router.use(protect);
 
-// Upload single student photo file (Admin only)
-router.post("/", restrictTo("Admin"), upload.single("photo"), uploadController.uploadFile);
+// Upload single student photo file (Admin & Verification Officer)
+router.post("/", restrictTo("Admin", "Verification Officer"), upload.single("photo"), uploadController.uploadFile);
 
-// Delete single photo file (Admin only)
-router.delete("/", restrictTo("Admin"), uploadController.deleteFile);
+// Delete single photo file (Admin & Verification Officer)
+router.delete("/", restrictTo("Admin", "Verification Officer"), uploadController.deleteFile);
 
 export default router;
 export { router };
