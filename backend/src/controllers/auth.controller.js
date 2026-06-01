@@ -95,3 +95,34 @@ export const logout = async (req, res, next) => {
     next(error);
   }
 };
+
+/**
+ * Update staff profile handler
+ */
+export const updateProfile = async (req, res, next) => {
+  try {
+    const updatedUser = await authService.updateProfile(req.user._id, req.body);
+    res.status(200).json({
+      success: true,
+      message: "Profile updated successfully",
+      data: updatedUser,
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+/**
+ * Update staff password handler
+ */
+export const updatePassword = async (req, res, next) => {
+  try {
+    await authService.updatePassword(req.user._id, req.body);
+    res.status(200).json({
+      success: true,
+      message: "Password updated successfully",
+    });
+  } catch (error) {
+    next(error);
+  }
+};

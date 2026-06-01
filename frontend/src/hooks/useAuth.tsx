@@ -15,6 +15,7 @@ interface AuthContextType {
   isLoading: boolean;
   login: (accessToken: string, user: UserProfile) => void;
   logout: () => void;
+  updateUser: (user: UserProfile) => void;
   isAdmin: boolean;
 }
 
@@ -56,6 +57,11 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     localStorage.removeItem("user");
   };
 
+  const updateUser = (profile: UserProfile) => {
+    setUser(profile);
+    localStorage.setItem("user", JSON.stringify(profile));
+  };
+
   const isAdmin = user?.role === "Admin";
 
   return (
@@ -67,6 +73,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         isLoading,
         login,
         logout,
+        updateUser,
         isAdmin,
       }}
     >

@@ -18,5 +18,11 @@ router.post("/refresh", authController.refresh);
 // Logout staff member (protected)
 router.post("/logout", protect, authController.logout);
 
+// Update staff profile (protected)
+router.put("/profile", protect, authController.updateProfile);
+
+// Update staff password (protected)
+router.put("/password", protect, authController.updatePassword);
+
 export default router;
 export { router };

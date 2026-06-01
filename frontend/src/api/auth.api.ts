@@ -36,6 +36,16 @@ export const authApi = {
     const { data } = await axiosInstance.post<{ success: boolean; data: { accessToken: string } }>("/auth/refresh");
     return data;
   },
+
+  updateProfile: async (payload: { fullName: string; email: string; staffId: string }): Promise<{ success: boolean; message: string; data: any }> => {
+    const { data } = await axiosInstance.put<{ success: boolean; message: string; data: any }>("/auth/profile", payload);
+    return data;
+  },
+
+  updatePassword: async (payload: Record<string, string>): Promise<{ success: boolean; message: string }> => {
+    const { data } = await axiosInstance.put<{ success: boolean; message: string }>("/auth/password", payload);
+    return data;
+  },
 };
 
 export default authApi;

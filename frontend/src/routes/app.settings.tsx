@@ -1,12 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
-import { Switch } from "@/components/ui/switch";
-import { Separator } from "@/components/ui/separator";
 import { toast } from "sonner";
+import { useState } from "react";
+import { useAuth } from "../hooks/useAuth";
+import { authApi } from "../api/auth.api";
+import { Loader2, KeyRound, UserRound } from "lucide-react";
 
 export const Route = createFileRoute("/app/settings")({
   head: () => ({ meta: [{ title: "Settings · SVIS" }] }),
@@ -14,146 +15,222 @@ export const Route = createFileRoute("/app/settings")({
 });
 
 function Page() {
+  const { user, updateUser } = useAuth();
+  
+  const [profileForm, setProfileForm] = useState({
+    fullName: user?.fullName || "",
+    email: user?.email || "",
+    staffId: user?.staffId || "",
+  });
+
+  const [passwordForm, setPasswordForm] = useState({
+    currentPassword: "",
+    newPassword: "",
+    confirmPassword: "",
+  });
+
+  const [updatingProfile, setUpdatingProfile] = useState(false);
+  const [updatingPassword, setUpdatingPassword] = useState(false);
+
+  const handleProfileSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!profileForm.fullName || !profileForm.email || !profileForm.staffId) {
+      toast.error("All profile fields are required");
+      return;
+    }
+
+    setUpdatingProfile(true);
+    try {
+      const res = await authApi.updateProfile({
+        fullName: profileForm.fullName,
+        email: profileForm.email,
+        staffId: profileForm.staffId,
+      });
+
+      if (res.success) {
+        toast.success("Profile details updated successfully");
+        if (user) {
+          updateUser({
+            ...user,
+            fullName: profileForm.fullName,
+            email: profileForm.email,
+            staffId: profileForm.staffId,
+          });
+        }
+      } else {
+        toast.error(res.message || "Failed to update profile");
+      }
+    } catch (error: any) {
+      toast.error(error.response?.data?.message || "Failed to update profile details");
+    } finally {
+      setUpdatingProfile(false);
+    }
+  };
+
+  const handlePasswordSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!passwordForm.currentPassword || !passwordForm.newPassword || !passwordForm.confirmPassword) {
+      toast.error("All password fields are required");
+      return;
+    }
+
+    if (passwordForm.newPassword.length < 6) {
+      toast.error("New password must be at least 6 characters long");
+      return;
+    }
+
+    if (passwordForm.newPassword !== passwordForm.confirmPassword) {
+      toast.error("New password and confirmation do not match");
+      return;
+    }
+
+    setUpdatingPassword(true);
+    try {
+      const res = await authApi.updatePassword({
+        currentPassword: passwordForm.currentPassword,
+        newPassword: passwordForm.newPassword,
+      });
+
+      if (res.success) {
+        toast.success("Password updated successfully");
+        setPasswordForm({
+          currentPassword: "",
+          newPassword: "",
+          confirmPassword: "",
+        });
+      } else {
+        toast.error(res.message || "Failed to update password");
+      }
+    } catch (error: any) {
+      toast.error(error.response?.data?.message || "Failed to update password");
+    } finally {
+      setUpdatingPassword(false);
+    }
+  };
+
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 max-w-4xl">
       <div>
-        <h1 className="text-2xl font-semibold tracking-tight">Settings</h1>
-        <p className="text-sm text-muted-foreground">Institutional configuration, accounts, and platform preferences.</p>
+        <h1 className="text-2xl font-semibold tracking-tight">Account Settings</h1>
+        <p className="text-sm text-muted-foreground">Manage your personal profile details, staff ID, and secure password.</p>
       </div>
 
-      <Tabs defaultValue="institution">
-        <TabsList className="flex w-full flex-wrap justify-start">
-          <TabsTrigger value="institution">Institution</TabsTrigger>
-          <TabsTrigger value="users">Users</TabsTrigger>
-          <TabsTrigger value="roles">Roles</TabsTrigger>
-          <TabsTrigger value="notifications">Notifications</TabsTrigger>
-          <TabsTrigger value="system">System</TabsTrigger>
-          <TabsTrigger value="security">Security</TabsTrigger>
-          <TabsTrigger value="profile">Profile</TabsTrigger>
-        </TabsList>
+      <div className="grid gap-6 md:grid-cols-2">
+        {/* Profile Card */}
+        <Card>
+          <CardHeader className="flex flex-row items-center gap-2 pb-3">
+            <UserRound className="h-5 w-5 text-primary" />
+            <CardTitle className="text-base">Profile details</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <form onSubmit={handleProfileSubmit} className="space-y-4">
+              <div>
+                <Label htmlFor="fullName" className="text-xs">Full Name</Label>
+                <Input
+                  id="fullName"
+                  className="mt-1.5"
+                  value={profileForm.fullName}
+                  onChange={(e) => setProfileForm({ ...profileForm, fullName: e.target.value })}
+                />
+              </div>
+              <div>
+                <Label htmlFor="staffId" className="text-xs">Staff ID</Label>
+                <Input
+                  id="staffId"
+                  className="mt-1.5"
+                  value={profileForm.staffId}
+                  onChange={(e) => setProfileForm({ ...profileForm, staffId: e.target.value })}
+                />
+              </div>
+              <div>
+                <Label htmlFor="email" className="text-xs">Email Address</Label>
+                <Input
+                  id="email"
+                  type="email"
+                  className="mt-1.5"
+                  value={profileForm.email}
+                  onChange={(e) => setProfileForm({ ...profileForm, email: e.target.value })}
+                />
+              </div>
+              <div>
+                <Label className="text-xs">Assigned System Role</Label>
+                <Input
+                  className="mt-1.5 bg-muted/30 select-none text-muted-foreground capitalize"
+                  disabled
+                  value={user?.role || "Verification Officer"}
+                />
+              </div>
+              <Button type="submit" className="w-full mt-2" disabled={updatingProfile}>
+                {updatingProfile ? (
+                  <>
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                    Saving Changes...
+                  </>
+                ) : (
+                  "Save Profile Info"
+                )}
+              </Button>
+            </form>
+          </CardContent>
+        </Card>
 
-        <TabsContent value="institution" className="mt-6">
-          <Card>
-            <CardHeader><CardTitle className="text-base">Institution information</CardTitle></CardHeader>
-            <CardContent className="grid gap-4 md:grid-cols-2">
-              <Field label="Institution name" defaultValue="University of Excellence" />
-              <Field label="Abbreviation" defaultValue="UoE" />
-              <Field label="ICT contact email" defaultValue="ict@university.edu" />
-              <Field label="Support phone" defaultValue="+234 800 000 0000" />
-              <Field label="Registrar office" defaultValue="Senate Building, Room 102" />
-              <Field label="Academic session" defaultValue="2024/2025" />
-            </CardContent>
-            <div className="flex justify-end gap-2 border-t border-border p-4">
-              <Button variant="ghost">Cancel</Button>
-              <Button onClick={() => toast.success("Institution details saved")}>Save changes</Button>
-            </div>
-          </Card>
-        </TabsContent>
-
-        <TabsContent value="users" className="mt-6">
-          <Card>
-            <CardHeader><CardTitle className="text-base">User management</CardTitle></CardHeader>
-            <CardContent className="space-y-3 text-sm text-muted-foreground">
-              {[
-                { name: "Dr. Anita Bello", role: "Examination Officer" },
-                { name: "Mr. John Okeke", role: "Library Staff" },
-                { name: "Mrs. Sade Adelaja", role: "Hostel Administrator" },
-                { name: "Prof. Hassan Bala", role: "Administrator" },
-                { name: "Ms. Joy Eze", role: "Security Personnel" },
-              ].map((u) => (
-                <div key={u.name} className="flex items-center justify-between rounded-md border border-border p-3">
-                  <div>
-                    <div className="font-medium text-foreground">{u.name}</div>
-                    <div className="text-xs">{u.role}</div>
-                  </div>
-                  <Button variant="ghost" size="sm">Manage</Button>
-                </div>
-              ))}
-            </CardContent>
-          </Card>
-        </TabsContent>
-
-        <TabsContent value="roles" className="mt-6">
-          <Card>
-            <CardHeader><CardTitle className="text-base">Roles & permissions</CardTitle></CardHeader>
-            <CardContent className="space-y-3">
-              {["Administrator", "Examination Officer", "Library Staff", "Hostel Administrator", "Security Personnel", "Faculty Staff"].map((r) => (
-                <div key={r} className="flex items-center justify-between rounded-md border border-border p-3">
-                  <div className="text-sm font-medium">{r}</div>
-                  <Button variant="outline" size="sm">Edit permissions</Button>
-                </div>
-              ))}
-            </CardContent>
-          </Card>
-        </TabsContent>
-
-        <TabsContent value="notifications" className="mt-6">
-          <Card>
-            <CardHeader><CardTitle className="text-base">Notification preferences</CardTitle></CardHeader>
-            <CardContent className="space-y-4">
-              <Toggle label="Email on failed verification" defaultChecked />
-              <Toggle label="Daily verification digest" defaultChecked />
-              <Toggle label="Alert on suspicious activity" defaultChecked />
-              <Toggle label="Weekly faculty report" />
-            </CardContent>
-          </Card>
-        </TabsContent>
-
-        <TabsContent value="system" className="mt-6">
-          <Card>
-            <CardHeader><CardTitle className="text-base">System preferences</CardTitle></CardHeader>
-            <CardContent className="space-y-4">
-              <Toggle label="Enable QR offline cache (15 min)" defaultChecked />
-              <Toggle label="Show staff photos in verification result" />
-              <Toggle label="Show department code on ID card" defaultChecked />
-              <Separator />
-              <Field label="Default verification location" defaultValue="Main Library" />
-            </CardContent>
-          </Card>
-        </TabsContent>
-
-        <TabsContent value="security" className="mt-6">
-          <Card>
-            <CardHeader><CardTitle className="text-base">Security settings</CardTitle></CardHeader>
-            <CardContent className="space-y-4">
-              <Toggle label="Require multi-factor authentication" defaultChecked />
-              <Toggle label="Bind sessions to device fingerprint" defaultChecked />
-              <Toggle label="Auto sign-out after 15 minutes of inactivity" defaultChecked />
-              <Field label="Password rotation policy (days)" defaultValue="90" />
-            </CardContent>
-          </Card>
-        </TabsContent>
-
-        <TabsContent value="profile" className="mt-6">
-          <Card>
-            <CardHeader><CardTitle className="text-base">Profile</CardTitle></CardHeader>
-            <CardContent className="grid gap-4 md:grid-cols-2">
-              <Field label="Full name" defaultValue="Dr. Anita Bello" />
-              <Field label="Staff ID" defaultValue="ICT/2019/0421" />
-              <Field label="Email" defaultValue="anita.bello@university.edu" />
-              <Field label="Department" defaultValue="Examinations" />
-            </CardContent>
-          </Card>
-        </TabsContent>
-      </Tabs>
+        {/* Password Card */}
+        <Card>
+          <CardHeader className="flex flex-row items-center gap-2 pb-3">
+            <KeyRound className="h-5 w-5 text-primary" />
+            <CardTitle className="text-base">Change password</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <form onSubmit={handlePasswordSubmit} className="space-y-4">
+              <div>
+                <Label htmlFor="currentPassword" className="text-xs">Current Password</Label>
+                <Input
+                  id="currentPassword"
+                  type="password"
+                  className="mt-1.5"
+                  placeholder="••••••••"
+                  value={passwordForm.currentPassword}
+                  onChange={(e) => setPasswordForm({ ...passwordForm, currentPassword: e.target.value })}
+                />
+              </div>
+              <div>
+                <Label htmlFor="newPassword" className="text-xs">New Password</Label>
+                <Input
+                  id="newPassword"
+                  type="password"
+                  className="mt-1.5"
+                  placeholder="••••••••"
+                  value={passwordForm.newPassword}
+                  onChange={(e) => setPasswordForm({ ...passwordForm, newPassword: e.target.value })}
+                />
+              </div>
+              <div>
+                <Label htmlFor="confirmPassword" className="text-xs">Confirm New Password</Label>
+                <Input
+                  id="confirmPassword"
+                  type="password"
+                  className="mt-1.5"
+                  placeholder="••••••••"
+                  value={passwordForm.confirmPassword}
+                  onChange={(e) => setPasswordForm({ ...passwordForm, confirmPassword: e.target.value })}
+                />
+              </div>
+              <Button type="submit" variant="secondary" className="w-full mt-2" disabled={updatingPassword}>
+                {updatingPassword ? (
+                  <>
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                    Updating Password...
+                  </>
+                ) : (
+                  "Update Password"
+                )}
+              </Button>
+            </form>
+          </CardContent>
+        </Card>
+      </div>
     </div>
   );
 }
 
-function Field({ label, defaultValue }: { label: string; defaultValue?: string }) {
-  return (
-    <div>
-      <Label className="text-xs">{label}</Label>
-      <Input className="mt-1.5" defaultValue={defaultValue} />
-    </div>
-  );
-}
-
-function Toggle({ label, defaultChecked }: { label: string; defaultChecked?: boolean }) {
-  return (
-    <div className="flex items-center justify-between rounded-md border border-border p-3">
-      <div className="text-sm">{label}</div>
-      <Switch defaultChecked={defaultChecked} />
-    </div>
-  );
-}
+export default Page;

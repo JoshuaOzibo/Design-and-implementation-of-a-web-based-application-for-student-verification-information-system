@@ -119,3 +119,65 @@ export const logoutStaff = async (userId) => {
     await user.save();
   }
 };
+
+/**
+ * Update staff profile details
+ */
+export const updateProfile = async (userId, { fullName, email, staffId }) => {
+  const user = await User.findById(userId);
+  if (!user) {
+    throw new ApiError(404, "User not found");
+  }
+
+  // Check if staff ID conflicts with another user
+  if (staffId && staffId !== user.staffId) {
+    const existingStaff = await User.findOne({ staffId });
+    if (existingStaff) {
+      throw new ApiError(400, "A staff member with this Staff ID already exists");
+    }
+    user.staffId = staffId;
+  }
+
+  // Check if email conflicts with another user
+  if (email && email.toLowerCase() !== user.email) {
+    const existingEmail = await User.findOne({ email: email.toLowerCase() });
+    if (existingEmail) {
+      throw new ApiError(400, "A staff member with this email already exists");
+    }
+    user.email = email.toLowerCase();
+  }
+
+  if (fullName) {
+    user.fullName = fullName;
+  }
+
+  await user.save();
+
+  const userJson = user.toObject();
+  delete userJson.password;
+  delete userJson.refreshToken;
+
+  return userJson;
+};
+
+/**
+ * Update staff password
+ */
+export const updatePassword = async (userId, { currentPassword, newPassword }) => {
+  if (!currentPassword || !newPassword) {
+    throw new ApiError(400, "Current and new passwords are required");
+  }
+
+  const user = await User.findById(userId).select("+password");
+  if (!user) {
+    throw new ApiError(404, "User not found");
+  }
+
+  const isMatch = await user.matchPassword(currentPassword);
+  if (!isMatch) {
+    throw new ApiError(400, "Incorrect current password");
+  }
+
+  user.password = newPassword;
+  await user.save();
+};

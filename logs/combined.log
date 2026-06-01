@@ -1366,3 +1366,90 @@
 {"level":"http","message":"\u001b[0mPOST /api/v1/qr/generate/6a1d47cba4d7d071f0e87be1 \u001b[32m201\u001b[0m 476.598 ms - 472\u001b[0m","timestamp":"2026-06-01 13:45:11:4511"}
 {"level":"http","message":"\u001b[0mOPTIONS /api/v1/logs?page=1&limit=12&range=week \u001b[32m204\u001b[0m 0.187 ms - 0\u001b[0m","timestamp":"2026-06-01 13:45:13:4513"}
 {"level":"http","message":"\u001b[0mGET /api/v1/logs?page=1&limit=12&range=week \u001b[32m200\u001b[0m 654.955 ms - -\u001b[0m","timestamp":"2026-06-01 13:45:13:4513"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/analytics \u001b[32m204\u001b[0m 0.190 ms - 0\u001b[0m","timestamp":"2026-06-01 13:46:27:4627"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/logs?limit=6 \u001b[32m204\u001b[0m 0.399 ms - 0\u001b[0m","timestamp":"2026-06-01 13:46:27:4627"}
+{"level":"http","message":"\u001b[0mGET /api/v1/logs?limit=6 \u001b[36m304\u001b[0m 637.058 ms - -\u001b[0m","timestamp":"2026-06-01 13:46:28:4628"}
+{"level":"http","message":"\u001b[0mGET /api/v1/analytics \u001b[36m304\u001b[0m 1116.999 ms - -\u001b[0m","timestamp":"2026-06-01 13:46:29:4629"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/students?page=1&limit=8 \u001b[32m204\u001b[0m 0.166 ms - 0\u001b[0m","timestamp":"2026-06-01 13:46:40:4640"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/students/meta/faculties \u001b[32m204\u001b[0m 0.143 ms - 0\u001b[0m","timestamp":"2026-06-01 13:46:40:4640"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/students/meta/departments \u001b[32m204\u001b[0m 0.131 ms - 0\u001b[0m","timestamp":"2026-06-01 13:46:40:4640"}
+{"level":"http","message":"\u001b[0mGET /api/v1/students/meta/departments \u001b[36m304\u001b[0m 293.882 ms - -\u001b[0m","timestamp":"2026-06-01 13:46:40:4640"}
+{"level":"http","message":"\u001b[0mGET /api/v1/students/meta/faculties \u001b[36m304\u001b[0m 299.562 ms - -\u001b[0m","timestamp":"2026-06-01 13:46:40:4640"}
+{"level":"http","message":"\u001b[0mGET /api/v1/students?page=1&limit=8 \u001b[36m304\u001b[0m 611.142 ms - -\u001b[0m","timestamp":"2026-06-01 13:46:40:4640"}
+{"level":"http","message":"\u001b[0mGET /uploads/student-photo-1780314802124-709885157.jpg \u001b[36m304\u001b[0m 1.085 ms - -\u001b[0m","timestamp":"2026-06-01 13:46:40:4640"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/qr/regenerate/6a1d47cca4d7d071f0e87be5 \u001b[32m204\u001b[0m 0.105 ms - 0\u001b[0m","timestamp":"2026-06-01 13:46:58:4658"}
+{"level":"http","message":"\u001b[0mPOST /api/v1/qr/regenerate/6a1d47cca4d7d071f0e87be5 \u001b[32m200\u001b[0m 696.367 ms - -\u001b[0m","timestamp":"2026-06-01 13:46:59:4659"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/logs?page=1&limit=12&range=week \u001b[32m204\u001b[0m 0.099 ms - 0\u001b[0m","timestamp":"2026-06-01 13:47:06:476"}
+{"level":"http","message":"\u001b[0mGET /api/v1/logs?page=1&limit=12&range=week \u001b[36m304\u001b[0m 692.545 ms - -\u001b[0m","timestamp":"2026-06-01 13:47:07:477"}
+{"level":"http","message":"\u001b[0mGET /uploads/student-photo-1780314802124-709885157.jpg \u001b[36m304\u001b[0m 0.918 ms - -\u001b[0m","timestamp":"2026-06-01 13:47:09:479"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/students?limit=100 \u001b[32m204\u001b[0m 0.155 ms - 0\u001b[0m","timestamp":"2026-06-01 13:47:09:479"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/qr/generate/6a1d72b257a3991a7b7c5903 \u001b[32m204\u001b[0m 0.138 ms - 0\u001b[0m","timestamp":"2026-06-01 13:47:09:479"}
+{"level":"http","message":"\u001b[0mPOST /api/v1/qr/generate/6a1d72b257a3991a7b7c5903 \u001b[32m201\u001b[0m 507.047 ms - -\u001b[0m","timestamp":"2026-06-01 13:47:10:4710"}
+{"level":"http","message":"\u001b[0mGET /api/v1/students?limit=100 \u001b[36m304\u001b[0m 633.851 ms - -\u001b[0m","timestamp":"2026-06-01 13:47:10:4710"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/qr/regenerate/6a1d72b257a3991a7b7c5903 \u001b[32m204\u001b[0m 0.135 ms - 0\u001b[0m","timestamp":"2026-06-01 13:47:14:4714"}
+{"level":"http","message":"\u001b[0mPOST /api/v1/qr/regenerate/6a1d72b257a3991a7b7c5903 \u001b[32m200\u001b[0m 680.324 ms - -\u001b[0m","timestamp":"2026-06-01 13:47:14:4714"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/students?limit=100 \u001b[32m204\u001b[0m 0.179 ms - 0\u001b[0m","timestamp":"2026-06-01 13:47:14:4714"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/qr/generate/6a1d72b257a3991a7b7c5903 \u001b[32m204\u001b[0m 0.144 ms - 0\u001b[0m","timestamp":"2026-06-01 13:47:14:4714"}
+{"level":"http","message":"\u001b[0mPOST /api/v1/qr/generate/6a1d72b257a3991a7b7c5903 \u001b[32m201\u001b[0m 469.359 ms - -\u001b[0m","timestamp":"2026-06-01 13:47:15:4715"}
+{"level":"http","message":"\u001b[0mGET /api/v1/students?limit=100 \u001b[36m304\u001b[0m 628.911 ms - -\u001b[0m","timestamp":"2026-06-01 13:47:15:4715"}
+{"level":"http","message":"\u001b[0mPOST /api/v1/qr/regenerate/6a1d72b257a3991a7b7c5903 \u001b[32m200\u001b[0m 683.098 ms - -\u001b[0m","timestamp":"2026-06-01 13:47:17:4717"}
+{"level":"http","message":"\u001b[0mPOST /api/v1/qr/generate/6a1d72b257a3991a7b7c5903 \u001b[32m201\u001b[0m 492.546 ms - -\u001b[0m","timestamp":"2026-06-01 13:47:18:4718"}
+{"level":"http","message":"\u001b[0mGET /api/v1/students?limit=100 \u001b[36m304\u001b[0m 645.036 ms - -\u001b[0m","timestamp":"2026-06-01 13:47:18:4718"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/analytics \u001b[32m204\u001b[0m 0.172 ms - 0\u001b[0m","timestamp":"2026-06-01 13:48:22:4822"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/logs?limit=6 \u001b[32m204\u001b[0m 0.253 ms - 0\u001b[0m","timestamp":"2026-06-01 13:48:22:4822"}
+{"level":"http","message":"\u001b[0mGET /api/v1/logs?limit=6 \u001b[36m304\u001b[0m 622.983 ms - -\u001b[0m","timestamp":"2026-06-01 13:48:23:4823"}
+{"level":"http","message":"\u001b[0mGET /api/v1/analytics \u001b[36m304\u001b[0m 1095.189 ms - -\u001b[0m","timestamp":"2026-06-01 13:48:23:4823"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/students?limit=3 \u001b[32m204\u001b[0m 0.217 ms - 0\u001b[0m","timestamp":"2026-06-01 13:48:30:4830"}
+{"level":"http","message":"\u001b[0mGET /api/v1/students?limit=3 \u001b[36m304\u001b[0m 645.413 ms - -\u001b[0m","timestamp":"2026-06-01 13:48:30:4830"}
+{"level":"http","message":"\u001b[0mGET /uploads/student-photo-1780314802124-709885157.jpg \u001b[36m304\u001b[0m 2.337 ms - -\u001b[0m","timestamp":"2026-06-01 13:48:45:4845"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/students?page=1&limit=8 \u001b[32m204\u001b[0m 0.202 ms - 0\u001b[0m","timestamp":"2026-06-01 13:48:45:4845"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/students/meta/faculties \u001b[32m204\u001b[0m 0.297 ms - 0\u001b[0m","timestamp":"2026-06-01 13:48:45:4845"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/students/meta/departments \u001b[32m204\u001b[0m 0.218 ms - 0\u001b[0m","timestamp":"2026-06-01 13:48:45:4845"}
+{"level":"http","message":"\u001b[0mGET /api/v1/students/meta/faculties \u001b[36m304\u001b[0m 339.677 ms - -\u001b[0m","timestamp":"2026-06-01 13:48:45:4845"}
+{"level":"http","message":"\u001b[0mGET /api/v1/students/meta/departments \u001b[36m304\u001b[0m 327.523 ms - -\u001b[0m","timestamp":"2026-06-01 13:48:45:4845"}
+{"level":"http","message":"\u001b[0mGET /api/v1/students?page=1&limit=8 \u001b[36m304\u001b[0m 639.098 ms - -\u001b[0m","timestamp":"2026-06-01 13:48:46:4846"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/logs?page=1&limit=12&range=week \u001b[32m204\u001b[0m 0.216 ms - 0\u001b[0m","timestamp":"2026-06-01 13:48:55:4855"}
+{"level":"http","message":"\u001b[0mGET /api/v1/logs?page=1&limit=12&range=week \u001b[36m304\u001b[0m 636.232 ms - -\u001b[0m","timestamp":"2026-06-01 13:48:56:4856"}
+{"level":"warn","message":"⚠️ Cloudinary credentials missing. File uploads will fallback to local filesystem storage.","timestamp":"2026-06-01 14:07:36:736"}
+{"level":"info","message":"Connecting to MongoDB database...","timestamp":"2026-06-01 14:07:36:736"}
+{"level":"warn","message":"⚠️ Cloudinary credentials missing. File uploads will fallback to local filesystem storage.","timestamp":"2026-06-01 14:07:36:736"}
+{"level":"info","message":"Connecting to MongoDB database...","timestamp":"2026-06-01 14:07:36:736"}
+{"level":"info","message":"MongoDB Connected successfully: ac-sfajjqr-shard-00-02.wijeevb.mongodb.net","timestamp":"2026-06-01 14:07:38:738"}
+{"level":"info","message":"MongoDB Connected successfully: ac-sfajjqr-shard-00-02.wijeevb.mongodb.net","timestamp":"2026-06-01 14:07:38:738"}
+{"level":"info","message":"=========================================","timestamp":"2026-06-01 14:07:38:738"}
+{"level":"info","message":"🚀 Server running on http://localhost:5000","timestamp":"2026-06-01 14:07:38:738"}
+{"level":"info","message":"Environment: development","timestamp":"2026-06-01 14:07:38:738"}
+{"level":"info","message":"=========================================","timestamp":"2026-06-01 14:07:38:738"}
+{"level":"info","message":"=========================================","timestamp":"2026-06-01 14:07:38:738"}
+{"level":"info","message":"🚀 Server running on http://localhost:5000","timestamp":"2026-06-01 14:07:38:738"}
+{"level":"info","message":"Environment: development","timestamp":"2026-06-01 14:07:38:738"}
+{"level":"info","message":"=========================================","timestamp":"2026-06-01 14:07:38:738"}
+{"level":"warn","message":"⚠️ Cloudinary credentials missing. File uploads will fallback to local filesystem storage.","timestamp":"2026-06-01 14:08:01:81"}
+{"level":"info","message":"Connecting to MongoDB database...","timestamp":"2026-06-01 14:08:01:81"}
+{"level":"warn","message":"⚠️ Cloudinary credentials missing. File uploads will fallback to local filesystem storage.","timestamp":"2026-06-01 14:08:01:81"}
+{"level":"info","message":"Connecting to MongoDB database...","timestamp":"2026-06-01 14:08:01:81"}
+{"level":"info","message":"MongoDB Connected successfully: ac-sfajjqr-shard-00-02.wijeevb.mongodb.net","timestamp":"2026-06-01 14:08:02:82"}
+{"level":"info","message":"=========================================","timestamp":"2026-06-01 14:08:02:82"}
+{"level":"info","message":"🚀 Server running on http://localhost:5000","timestamp":"2026-06-01 14:08:02:82"}
+{"level":"info","message":"Environment: development","timestamp":"2026-06-01 14:08:02:82"}
+{"level":"info","message":"=========================================","timestamp":"2026-06-01 14:08:02:82"}
+{"level":"info","message":"MongoDB Connected successfully: ac-sfajjqr-shard-00-02.wijeevb.mongodb.net","timestamp":"2026-06-01 14:08:02:82"}
+{"level":"info","message":"=========================================","timestamp":"2026-06-01 14:08:02:82"}
+{"level":"info","message":"🚀 Server running on http://localhost:5000","timestamp":"2026-06-01 14:08:02:82"}
+{"level":"info","message":"Environment: development","timestamp":"2026-06-01 14:08:02:82"}
+{"level":"info","message":"=========================================","timestamp":"2026-06-01 14:08:02:82"}
+{"level":"warn","message":"⚠️ Cloudinary credentials missing. File uploads will fallback to local filesystem storage.","timestamp":"2026-06-01 14:08:13:813"}
+{"level":"info","message":"Connecting to MongoDB database...","timestamp":"2026-06-01 14:08:13:813"}
+{"level":"warn","message":"⚠️ Cloudinary credentials missing. File uploads will fallback to local filesystem storage.","timestamp":"2026-06-01 14:08:13:813"}
+{"level":"info","message":"Connecting to MongoDB database...","timestamp":"2026-06-01 14:08:13:813"}
+{"level":"info","message":"MongoDB Connected successfully: ac-sfajjqr-shard-00-02.wijeevb.mongodb.net","timestamp":"2026-06-01 14:08:15:815"}
+{"level":"info","message":"MongoDB Connected successfully: ac-sfajjqr-shard-00-02.wijeevb.mongodb.net","timestamp":"2026-06-01 14:08:15:815"}
+{"level":"info","message":"=========================================","timestamp":"2026-06-01 14:08:15:815"}
+{"level":"info","message":"🚀 Server running on http://localhost:5000","timestamp":"2026-06-01 14:08:15:815"}
+{"level":"info","message":"Environment: development","timestamp":"2026-06-01 14:08:15:815"}
+{"level":"info","message":"=========================================","timestamp":"2026-06-01 14:08:15:815"}
+{"level":"info","message":"=========================================","timestamp":"2026-06-01 14:08:15:815"}
+{"level":"info","message":"🚀 Server running on http://localhost:5000","timestamp":"2026-06-01 14:08:15:815"}
+{"level":"info","message":"Environment: development","timestamp":"2026-06-01 14:08:15:815"}
+{"level":"info","message":"=========================================","timestamp":"2026-06-01 14:08:15:815"}
+{"level":"http","message":"\u001b[0mGET /api/v1/health \u001b[32m200\u001b[0m 9.755 ms - 120\u001b[0m","timestamp":"2026-06-01 14:12:20:1220"}
