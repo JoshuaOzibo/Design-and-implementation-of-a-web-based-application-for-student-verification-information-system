@@ -4,6 +4,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
+import { QRScanner } from "../components/svis/QRScanner";
 import { VerificationBadge, StatusPill } from "@/components/svis/VerificationBadge";
 import { QRCode } from "@/components/svis/QRCode";
 import { Search, ScanLine, IdCard, ShieldCheck, ExternalLink, Loader2, MapPin } from "lucide-react";
@@ -29,6 +30,7 @@ function Verify() {
   const [result, setResult] = useState<VerificationResult | null>(null);
   const [q, setQ] = useState("");
   const [location, setLocation] = useState("Main Gate");
+  const [isScanning, setIsScanning] = useState(false);
 
   // Fetch some sample students to display in the UI as examples
   const { data: studentsRes } = useQuery({
@@ -150,21 +152,48 @@ function Verify() {
               </TabsContent>
 
               <TabsContent value="qr" className="mt-4 space-y-3">
-                <div className="flex flex-col items-center justify-center rounded-md border border-dashed border-border bg-muted/20 p-6 text-center">
-                  <ScanLine className="mb-2 h-8 w-8 text-primary animate-pulse" />
-                  <p className="text-xs font-semibold">Simulate Dynamic Scanner Camera</p>
-                  <p className="mt-1 text-[11px] text-muted-foreground">Scans student dynamic tokens at checkpoint</p>
-                  {samples.length > 0 && (
+                {isScanning ? (
+                  <div className="space-y-3">
+                    <QRScanner
+                      onScanSuccess={(decodedText) => {
+                        handleVerify("qr", decodedText);
+                        setIsScanning(false);
+                      }}
+                    />
                     <Button
                       variant="outline"
-                      className="mt-4 w-full text-xs"
-                      disabled={verifyMutation.isPending}
-                      onClick={() => handleVerify("qr", `VERIFY-${samples[0].matricNumber.replace(/\//g, "-")}`)}
+                      className="w-full text-xs"
+                      onClick={() => setIsScanning(false)}
                     >
-                      Simulate scanning card
+                      Stop Camera Scanner
                     </Button>
-                  )}
-                </div>
+                  </div>
+                ) : (
+                  <div className="flex flex-col items-center justify-center rounded-md border border-dashed border-border bg-muted/20 p-6 text-center">
+                    <ScanLine className="mb-2 h-8 w-8 text-primary animate-pulse" />
+                    <p className="text-xs font-semibold">Dynamic Scanner Camera</p>
+                    <p className="mt-1 text-[11px] text-muted-foreground">Scan student dynamic QR codes at checkpoint</p>
+                    
+                    <Button
+                      className="mt-4 w-full text-xs"
+                      onClick={() => setIsScanning(true)}
+                    >
+                      <ScanLine className="mr-1.5 h-3.5 w-3.5" />
+                      Start Camera Scanner
+                    </Button>
+
+                    {samples.length > 0 && (
+                      <Button
+                        variant="ghost"
+                        className="mt-2 w-full text-[10px] text-muted-foreground hover:text-foreground"
+                        disabled={verifyMutation.isPending}
+                        onClick={() => handleVerify("qr", `VERIFY-${samples[0].matricNumber.replace(/\//g, "-")}`)}
+                      >
+                        Simulate scanning card
+                      </Button>
+                    )}
+                  </div>
+                )}
               </TabsContent>
             </Tabs>
           </CardContent>
