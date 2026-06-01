@@ -5,7 +5,7 @@ const verificationLogSchema = new mongoose.Schema(
     staff: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
-      required: [true, "Staff association is required"],
+      required: false,
       index: true,
     },
     student: {

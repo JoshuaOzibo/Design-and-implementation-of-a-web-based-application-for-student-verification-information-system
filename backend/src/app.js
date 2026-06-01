@@ -26,10 +26,20 @@ const morganStream = {
 };
 app.use(morgan(morganFormat, { stream: morganStream }));
 
-// Set security HTTP headers (disable crossOriginResourcePolicy to allow serving local images)
 app.use(
   helmet({
     crossOriginResourcePolicy: false,
+    contentSecurityPolicy: {
+      directives: {
+        defaultSrc: ["'self'"],
+        scriptSrc: ["'self'", "'unsafe-inline'"],
+        scriptSrcAttr: ["'unsafe-inline'"],
+        styleSrc: ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com"],
+        fontSrc: ["'self'", "https://fonts.gstatic.com"],
+        imgSrc: ["'self'", "data:", "https://res.cloudinary.com", "https://images.unsplash.com"],
+        connectSrc: ["'self'"],
+      },
+    },
   })
 );
 

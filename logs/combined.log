@@ -920,3 +920,355 @@
 {"level":"http","message":"\u001b[0mGET /api/v1/students/6a1d6e9657a3991a7b7c58ff \u001b[32m200\u001b[0m 481.897 ms - 832\u001b[0m","timestamp":"2026-06-01 12:36:14:3614"}
 {"level":"http","message":"\u001b[0mOPTIONS /api/v1/logs?student=6a1d6e9657a3991a7b7c58ff&limit=5 \u001b[32m204\u001b[0m 0.191 ms - 0\u001b[0m","timestamp":"2026-06-01 12:36:14:3614"}
 {"level":"http","message":"\u001b[0mGET /api/v1/logs?student=6a1d6e9657a3991a7b7c58ff&limit=5 \u001b[32m200\u001b[0m 472.212 ms - 91\u001b[0m","timestamp":"2026-06-01 12:36:14:3614"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/students/6a1d6e9657a3991a7b7c58ff \u001b[32m204\u001b[0m 0.327 ms - 0\u001b[0m","timestamp":"2026-06-01 12:43:22:4322"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/logs?student=6a1d6e9657a3991a7b7c58ff&limit=5 \u001b[32m204\u001b[0m 0.184 ms - 0\u001b[0m","timestamp":"2026-06-01 12:43:22:4322"}
+{"level":"http","message":"\u001b[0mGET /api/v1/logs?student=6a1d6e9657a3991a7b7c58ff&limit=5 \u001b[36m304\u001b[0m 456.849 ms - -\u001b[0m","timestamp":"2026-06-01 12:43:22:4322"}
+{"level":"http","message":"\u001b[0mGET /api/v1/students/6a1d6e9657a3991a7b7c58ff \u001b[36m304\u001b[0m 6550.712 ms - -\u001b[0m","timestamp":"2026-06-01 12:43:29:4329"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/students?page=1&limit=8 \u001b[32m204\u001b[0m 0.153 ms - 0\u001b[0m","timestamp":"2026-06-01 12:44:18:4418"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/students/meta/faculties \u001b[32m204\u001b[0m 0.206 ms - 0\u001b[0m","timestamp":"2026-06-01 12:44:18:4418"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/students/meta/departments \u001b[32m204\u001b[0m 0.170 ms - 0\u001b[0m","timestamp":"2026-06-01 12:44:18:4418"}
+{"level":"http","message":"\u001b[0mGET /api/v1/students/meta/departments \u001b[36m304\u001b[0m 293.025 ms - -\u001b[0m","timestamp":"2026-06-01 12:44:18:4418"}
+{"level":"http","message":"\u001b[0mGET /api/v1/students/meta/faculties \u001b[36m304\u001b[0m 298.370 ms - -\u001b[0m","timestamp":"2026-06-01 12:44:18:4418"}
+{"level":"http","message":"\u001b[0mGET /api/v1/students?page=1&limit=8 \u001b[36m304\u001b[0m 755.965 ms - -\u001b[0m","timestamp":"2026-06-01 12:44:19:4419"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/students?page=1&limit=8 \u001b[32m204\u001b[0m 0.212 ms - 0\u001b[0m","timestamp":"2026-06-01 12:44:32:4432"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/students/meta/faculties \u001b[32m204\u001b[0m 0.521 ms - 0\u001b[0m","timestamp":"2026-06-01 12:44:32:4432"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/students/meta/departments \u001b[32m204\u001b[0m 0.475 ms - 0\u001b[0m","timestamp":"2026-06-01 12:44:32:4432"}
+{"level":"http","message":"\u001b[0mGET /api/v1/students/meta/departments \u001b[36m304\u001b[0m 307.641 ms - -\u001b[0m","timestamp":"2026-06-01 12:44:32:4432"}
+{"level":"http","message":"\u001b[0mGET /api/v1/students/meta/faculties \u001b[36m304\u001b[0m 312.422 ms - -\u001b[0m","timestamp":"2026-06-01 12:44:32:4432"}
+{"level":"http","message":"\u001b[0mGET /api/v1/students?page=1&limit=8 \u001b[36m304\u001b[0m 1510.210 ms - -\u001b[0m","timestamp":"2026-06-01 12:44:33:4433"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/students?limit=3 \u001b[32m204\u001b[0m 0.267 ms - 0\u001b[0m","timestamp":"2026-06-01 12:46:02:462"}
+{"level":"http","message":"\u001b[0mGET /api/v1/students?limit=3 \u001b[32m200\u001b[0m 613.773 ms - -\u001b[0m","timestamp":"2026-06-01 12:46:03:463"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/verify \u001b[32m204\u001b[0m 0.141 ms - 0\u001b[0m","timestamp":"2026-06-01 12:46:07:467"}
+{"level":"http","message":"\u001b[0mPOST /api/v1/verify \u001b[32m200\u001b[0m 628.019 ms - 988\u001b[0m","timestamp":"2026-06-01 12:46:07:467"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/verify \u001b[32m204\u001b[0m 0.115 ms - 0\u001b[0m","timestamp":"2026-06-01 12:47:10:4710"}
+{"isOperational":true,"level":"error","message":"POST /api/v1/verify - Status: 404 - Message: QR Identity code not recognized or invalid QR Identity code not recognized or invalid","stack":"Error: QR Identity code not recognized or invalid\n    at Module.verifyQR (file:///C:/Users/user/Desktop/cj_work/student_verification_system/backend/src/services/qr.service.js:110:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async Module.verifyStudent (file:///C:/Users/user/Desktop/cj_work/student_verification_system/backend/src/services/verification.service.js:135:24)\n    at async verifyStudent (file:///C:/Users/user/Desktop/cj_work/student_verification_system/backend/src/controllers/verification.controller.js:11:20)","statusCode":404,"timestamp":"2026-06-01 12:47:10:4710"}
+{"level":"http","message":"\u001b[0mPOST /api/v1/verify \u001b[33m404\u001b[0m 422.970 ms - 658\u001b[0m","timestamp":"2026-06-01 12:47:10:4710"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/verify \u001b[32m204\u001b[0m 0.165 ms - 0\u001b[0m","timestamp":"2026-06-01 12:47:37:4737"}
+{"isOperational":true,"level":"error","message":"POST /api/v1/verify - Status: 401 - Message: Authentication failed. Invalid or expired token. Authentication failed. Invalid or expired token.","stack":"Error: Authentication failed. Invalid or expired token.\n    at protect (file:///C:/Users/user/Desktop/cj_work/student_verification_system/backend/src/middleware/auth.js:26:13)\n    at Layer.handleRequest (C:\\Users\\user\\Desktop\\cj_work\\student_verification_system\\backend\\node_modules\\router\\lib\\layer.js:152:17)\n    at trimPrefix (C:\\Users\\user\\Desktop\\cj_work\\student_verification_system\\backend\\node_modules\\router\\index.js:342:13)\n    at C:\\Users\\user\\Desktop\\cj_work\\student_verification_system\\backend\\node_modules\\router\\index.js:297:9\n    at processParams (C:\\Users\\user\\Desktop\\cj_work\\student_verification_system\\backend\\node_modules\\router\\index.js:582:12)\n    at next (C:\\Users\\user\\Desktop\\cj_work\\student_verification_system\\backend\\node_modules\\router\\index.js:291:5)\n    at router.handle (C:\\Users\\user\\Desktop\\cj_work\\student_verification_system\\backend\\node_modules\\router\\index.js:186:3)\n    at router (C:\\Users\\user\\Desktop\\cj_work\\student_verification_system\\backend\\node_modules\\router\\index.js:60:12)\n    at Layer.handleRequest (C:\\Users\\user\\Desktop\\cj_work\\student_verification_system\\backend\\node_modules\\router\\lib\\layer.js:152:17)\n    at trimPrefix (C:\\Users\\user\\Desktop\\cj_work\\student_verification_system\\backend\\node_modules\\router\\index.js:342:13)","statusCode":401,"timestamp":"2026-06-01 12:47:37:4737"}
+{"level":"http","message":"\u001b[0mPOST /api/v1/verify \u001b[33m401\u001b[0m 2.205 ms - -\u001b[0m","timestamp":"2026-06-01 12:47:37:4737"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/auth/refresh \u001b[32m204\u001b[0m 0.139 ms - 0\u001b[0m","timestamp":"2026-06-01 12:47:37:4737"}
+{"level":"http","message":"\u001b[0mPOST /api/v1/auth/refresh \u001b[32m200\u001b[0m 154.522 ms - 253\u001b[0m","timestamp":"2026-06-01 12:47:37:4737"}
+{"isOperational":true,"level":"error","message":"POST /api/v1/verify - Status: 404 - Message: QR Identity code not recognized or invalid QR Identity code not recognized or invalid","stack":"Error: QR Identity code not recognized or invalid\n    at Module.verifyQR (file:///C:/Users/user/Desktop/cj_work/student_verification_system/backend/src/services/qr.service.js:110:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async Module.verifyStudent (file:///C:/Users/user/Desktop/cj_work/student_verification_system/backend/src/services/verification.service.js:135:24)\n    at async verifyStudent (file:///C:/Users/user/Desktop/cj_work/student_verification_system/backend/src/controllers/verification.controller.js:11:20)","statusCode":404,"timestamp":"2026-06-01 12:47:37:4737"}
+{"level":"http","message":"\u001b[0mPOST /api/v1/verify \u001b[33m404\u001b[0m 467.123 ms - 658\u001b[0m","timestamp":"2026-06-01 12:47:37:4737"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/students?limit=3 \u001b[32m204\u001b[0m 0.241 ms - 0\u001b[0m","timestamp":"2026-06-01 12:49:18:4918"}
+{"level":"http","message":"\u001b[0mGET /api/v1/students?limit=3 \u001b[36m304\u001b[0m 737.662 ms - -\u001b[0m","timestamp":"2026-06-01 12:49:19:4919"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/students?limit=3 \u001b[32m204\u001b[0m 0.182 ms - 0\u001b[0m","timestamp":"2026-06-01 12:51:06:516"}
+{"level":"http","message":"\u001b[0mGET /api/v1/students?limit=3 \u001b[36m304\u001b[0m 630.831 ms - -\u001b[0m","timestamp":"2026-06-01 12:51:06:516"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/students?page=1&limit=8 \u001b[32m204\u001b[0m 0.167 ms - 0\u001b[0m","timestamp":"2026-06-01 12:51:10:5110"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/students/meta/faculties \u001b[32m204\u001b[0m 0.215 ms - 0\u001b[0m","timestamp":"2026-06-01 12:51:10:5110"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/students/meta/departments \u001b[32m204\u001b[0m 0.129 ms - 0\u001b[0m","timestamp":"2026-06-01 12:51:10:5110"}
+{"level":"http","message":"\u001b[0mGET /api/v1/students/meta/faculties \u001b[36m304\u001b[0m 303.412 ms - -\u001b[0m","timestamp":"2026-06-01 12:51:10:5110"}
+{"level":"http","message":"\u001b[0mGET /api/v1/students/meta/departments \u001b[36m304\u001b[0m 310.908 ms - -\u001b[0m","timestamp":"2026-06-01 12:51:10:5110"}
+{"level":"http","message":"\u001b[0mGET /api/v1/students?page=1&limit=8 \u001b[36m304\u001b[0m 605.016 ms - -\u001b[0m","timestamp":"2026-06-01 12:51:10:5110"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/students/6a1d6e9657a3991a7b7c58ff \u001b[32m204\u001b[0m 0.160 ms - 0\u001b[0m","timestamp":"2026-06-01 12:51:12:5112"}
+{"level":"http","message":"\u001b[0mGET /api/v1/students/6a1d6e9657a3991a7b7c58ff \u001b[36m304\u001b[0m 453.075 ms - -\u001b[0m","timestamp":"2026-06-01 12:51:12:5112"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/logs?student=6a1d6e9657a3991a7b7c58ff&limit=5 \u001b[32m204\u001b[0m 0.147 ms - 0\u001b[0m","timestamp":"2026-06-01 12:51:12:5112"}
+{"level":"http","message":"\u001b[0mGET /api/v1/logs?student=6a1d6e9657a3991a7b7c58ff&limit=5 \u001b[32m200\u001b[0m 634.146 ms - -\u001b[0m","timestamp":"2026-06-01 12:51:13:5113"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/students?page=1&limit=8 \u001b[32m204\u001b[0m 0.124 ms - 0\u001b[0m","timestamp":"2026-06-01 12:51:26:5126"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/students/meta/faculties \u001b[32m204\u001b[0m 0.158 ms - 0\u001b[0m","timestamp":"2026-06-01 12:51:26:5126"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/students/meta/departments \u001b[32m204\u001b[0m 0.175 ms - 0\u001b[0m","timestamp":"2026-06-01 12:51:26:5126"}
+{"level":"http","message":"\u001b[0mGET /api/v1/students/meta/departments \u001b[36m304\u001b[0m 305.847 ms - -\u001b[0m","timestamp":"2026-06-01 12:51:27:5127"}
+{"level":"http","message":"\u001b[0mGET /api/v1/students/meta/faculties \u001b[36m304\u001b[0m 315.657 ms - -\u001b[0m","timestamp":"2026-06-01 12:51:27:5127"}
+{"level":"http","message":"\u001b[0mGET /api/v1/students?page=1&limit=8 \u001b[36m304\u001b[0m 635.823 ms - -\u001b[0m","timestamp":"2026-06-01 12:51:27:5127"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/upload \u001b[32m204\u001b[0m 0.102 ms - 0\u001b[0m","timestamp":"2026-06-01 12:53:06:536"}
+{"level":"info","message":"Successfully stored locally: http://localhost:5000/uploads/student-photo-1780314786640-530577950.jpg","timestamp":"2026-06-01 12:53:06:536"}
+{"level":"http","message":"\u001b[0mPOST /api/v1/upload \u001b[32m201\u001b[0m 151.453 ms - 216\u001b[0m","timestamp":"2026-06-01 12:53:06:536"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/students \u001b[32m204\u001b[0m 0.139 ms - 0\u001b[0m","timestamp":"2026-06-01 12:53:06:536"}
+{"isOperational":true,"level":"error","message":"POST /api/v1/students - Status: 400 - Message: Student with email 'joshuamichaelozibo@gmail.com' already exists Student with email 'joshuamichaelozibo@gmail.com' already exists","stack":"Error: Student with email 'joshuamichaelozibo@gmail.com' already exists\n    at Module.createStudent (file:///C:/Users/user/Desktop/cj_work/student_verification_system/backend/src/services/student.service.js:24:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async createStudent (file:///C:/Users/user/Desktop/cj_work/student_verification_system/backend/src/controllers/student.controller.js:8:21)","statusCode":400,"timestamp":"2026-06-01 12:53:07:537"}
+{"level":"http","message":"\u001b[0mPOST /api/v1/students \u001b[33m400\u001b[0m 489.321 ms - 550\u001b[0m","timestamp":"2026-06-01 12:53:07:537"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/upload \u001b[32m204\u001b[0m 0.274 ms - 0\u001b[0m","timestamp":"2026-06-01 12:53:21:5321"}
+{"level":"info","message":"Successfully stored locally: http://localhost:5000/uploads/student-photo-1780314802124-709885157.jpg","timestamp":"2026-06-01 12:53:22:5322"}
+{"level":"http","message":"\u001b[0mPOST /api/v1/upload \u001b[32m201\u001b[0m 152.175 ms - 216\u001b[0m","timestamp":"2026-06-01 12:53:22:5322"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/students \u001b[32m204\u001b[0m 0.137 ms - 0\u001b[0m","timestamp":"2026-06-01 12:53:22:5322"}
+{"level":"http","message":"\u001b[0mPOST /api/v1/students \u001b[32m201\u001b[0m 641.202 ms - 615\u001b[0m","timestamp":"2026-06-01 12:53:22:5322"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/students?page=1&limit=8 \u001b[32m204\u001b[0m 0.438 ms - 0\u001b[0m","timestamp":"2026-06-01 12:53:22:5322"}
+{"level":"http","message":"\u001b[0mGET /api/v1/students?page=1&limit=8 \u001b[32m200\u001b[0m 604.992 ms - -\u001b[0m","timestamp":"2026-06-01 12:53:23:5323"}
+{"level":"http","message":"\u001b[0mGET /uploads/student-photo-1780314802124-709885157.jpg \u001b[32m200\u001b[0m 4.234 ms - 37908\u001b[0m","timestamp":"2026-06-01 12:53:23:5323"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/students?page=1&limit=8 \u001b[32m204\u001b[0m 0.193 ms - 0\u001b[0m","timestamp":"2026-06-01 12:53:48:5348"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/students/meta/faculties \u001b[32m204\u001b[0m 0.168 ms - 0\u001b[0m","timestamp":"2026-06-01 12:53:48:5348"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/students/meta/departments \u001b[32m204\u001b[0m 0.130 ms - 0\u001b[0m","timestamp":"2026-06-01 12:53:48:5348"}
+{"level":"http","message":"\u001b[0mGET /api/v1/students/meta/faculties \u001b[36m304\u001b[0m 310.502 ms - -\u001b[0m","timestamp":"2026-06-01 12:53:49:5349"}
+{"level":"http","message":"\u001b[0mGET /api/v1/students/meta/departments \u001b[36m304\u001b[0m 310.386 ms - -\u001b[0m","timestamp":"2026-06-01 12:53:49:5349"}
+{"level":"http","message":"\u001b[0mGET /api/v1/students?page=1&limit=8 \u001b[36m304\u001b[0m 620.708 ms - -\u001b[0m","timestamp":"2026-06-01 12:53:49:5349"}
+{"level":"http","message":"\u001b[0mGET /uploads/student-photo-1780314802124-709885157.jpg \u001b[36m304\u001b[0m 5.802 ms - -\u001b[0m","timestamp":"2026-06-01 12:53:49:5349"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/students/6a1d72b257a3991a7b7c5903 \u001b[32m204\u001b[0m 0.527 ms - 0\u001b[0m","timestamp":"2026-06-01 12:53:52:5352"}
+{"level":"http","message":"\u001b[0mGET /api/v1/students/6a1d72b257a3991a7b7c5903 \u001b[32m200\u001b[0m 474.528 ms - 872\u001b[0m","timestamp":"2026-06-01 12:53:52:5352"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/logs?student=6a1d72b257a3991a7b7c5903&limit=5 \u001b[32m204\u001b[0m 0.137 ms - 0\u001b[0m","timestamp":"2026-06-01 12:53:52:5352"}
+{"level":"http","message":"\u001b[0mGET /api/v1/logs?student=6a1d72b257a3991a7b7c5903&limit=5 \u001b[32m200\u001b[0m 459.500 ms - 91\u001b[0m","timestamp":"2026-06-01 12:53:53:5353"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/students?limit=3 \u001b[32m204\u001b[0m 0.128 ms - 0\u001b[0m","timestamp":"2026-06-01 12:54:09:549"}
+{"level":"http","message":"\u001b[0mGET /api/v1/students?limit=3 \u001b[32m200\u001b[0m 618.409 ms - -\u001b[0m","timestamp":"2026-06-01 12:54:10:5410"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/verify \u001b[32m204\u001b[0m 0.141 ms - 0\u001b[0m","timestamp":"2026-06-01 12:54:16:5416"}
+{"level":"http","message":"\u001b[0mPOST /api/v1/verify \u001b[32m200\u001b[0m 637.695 ms - -\u001b[0m","timestamp":"2026-06-01 12:54:17:5417"}
+{"level":"http","message":"\u001b[0mGET /uploads/student-photo-1780314802124-709885157.jpg \u001b[36m304\u001b[0m 1.227 ms - -\u001b[0m","timestamp":"2026-06-01 12:54:17:5417"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/students?page=1&limit=8 \u001b[32m204\u001b[0m 0.188 ms - 0\u001b[0m","timestamp":"2026-06-01 12:55:51:5551"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/students/meta/faculties \u001b[32m204\u001b[0m 0.132 ms - 0\u001b[0m","timestamp":"2026-06-01 12:55:51:5551"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/students/meta/departments \u001b[32m204\u001b[0m 0.124 ms - 0\u001b[0m","timestamp":"2026-06-01 12:55:51:5551"}
+{"level":"http","message":"\u001b[0mGET /api/v1/students/meta/faculties \u001b[36m304\u001b[0m 286.849 ms - -\u001b[0m","timestamp":"2026-06-01 12:55:51:5551"}
+{"level":"http","message":"\u001b[0mGET /api/v1/students/meta/departments \u001b[36m304\u001b[0m 286.575 ms - -\u001b[0m","timestamp":"2026-06-01 12:55:51:5551"}
+{"level":"http","message":"\u001b[0mGET /api/v1/students?page=1&limit=8 \u001b[36m304\u001b[0m 571.917 ms - -\u001b[0m","timestamp":"2026-06-01 12:55:52:5552"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/students?limit=3 \u001b[32m204\u001b[0m 0.212 ms - 0\u001b[0m","timestamp":"2026-06-01 12:59:14:5914"}
+{"level":"http","message":"\u001b[0mGET /api/v1/students?limit=3 \u001b[36m304\u001b[0m 570.484 ms - -\u001b[0m","timestamp":"2026-06-01 12:59:15:5915"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/students?limit=3 \u001b[32m204\u001b[0m 0.162 ms - 0\u001b[0m","timestamp":"2026-06-01 12:59:40:5940"}
+{"level":"http","message":"\u001b[0mGET /api/v1/students?limit=3 \u001b[36m304\u001b[0m 589.856 ms - -\u001b[0m","timestamp":"2026-06-01 12:59:41:5941"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/students?page=1&limit=8 \u001b[32m204\u001b[0m 0.120 ms - 0\u001b[0m","timestamp":"2026-06-01 12:59:55:5955"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/students/meta/faculties \u001b[32m204\u001b[0m 0.122 ms - 0\u001b[0m","timestamp":"2026-06-01 12:59:55:5955"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/students/meta/departments \u001b[32m204\u001b[0m 0.145 ms - 0\u001b[0m","timestamp":"2026-06-01 12:59:55:5955"}
+{"level":"http","message":"\u001b[0mGET /api/v1/students/meta/faculties \u001b[36m304\u001b[0m 294.130 ms - -\u001b[0m","timestamp":"2026-06-01 12:59:55:5955"}
+{"level":"http","message":"\u001b[0mGET /api/v1/students/meta/departments \u001b[36m304\u001b[0m 297.198 ms - -\u001b[0m","timestamp":"2026-06-01 12:59:55:5955"}
+{"level":"http","message":"\u001b[0mGET /api/v1/students?page=1&limit=8 \u001b[36m304\u001b[0m 598.830 ms - -\u001b[0m","timestamp":"2026-06-01 12:59:55:5955"}
+{"level":"http","message":"\u001b[0mGET /uploads/student-photo-1780314802124-709885157.jpg \u001b[36m304\u001b[0m 0.770 ms - -\u001b[0m","timestamp":"2026-06-01 12:59:56:5956"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/students/6a1d72b257a3991a7b7c5903 \u001b[32m204\u001b[0m 0.280 ms - 0\u001b[0m","timestamp":"2026-06-01 12:59:59:5959"}
+{"level":"http","message":"\u001b[0mGET /api/v1/students/6a1d72b257a3991a7b7c5903 \u001b[36m304\u001b[0m 461.137 ms - -\u001b[0m","timestamp":"2026-06-01 13:00:00:00"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/logs?student=6a1d72b257a3991a7b7c5903&limit=5 \u001b[32m204\u001b[0m 0.131 ms - 0\u001b[0m","timestamp":"2026-06-01 13:00:00:00"}
+{"level":"http","message":"\u001b[0mGET /api/v1/logs?student=6a1d72b257a3991a7b7c5903&limit=5 \u001b[32m200\u001b[0m 569.560 ms - -\u001b[0m","timestamp":"2026-06-01 13:00:00:00"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/students/6a1d72b257a3991a7b7c5903 \u001b[32m204\u001b[0m 0.141 ms - 0\u001b[0m","timestamp":"2026-06-01 13:01:27:127"}
+{"level":"http","message":"\u001b[0mGET /api/v1/students/6a1d72b257a3991a7b7c5903 \u001b[36m304\u001b[0m 424.202 ms - -\u001b[0m","timestamp":"2026-06-01 13:01:27:127"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/logs?student=6a1d72b257a3991a7b7c5903&limit=5 \u001b[32m204\u001b[0m 0.154 ms - 0\u001b[0m","timestamp":"2026-06-01 13:01:27:127"}
+{"level":"http","message":"\u001b[0mGET /uploads/student-photo-1780314802124-709885157.jpg \u001b[36m304\u001b[0m 1.736 ms - -\u001b[0m","timestamp":"2026-06-01 13:01:27:127"}
+{"level":"http","message":"\u001b[0mGET /api/v1/logs?student=6a1d72b257a3991a7b7c5903&limit=5 \u001b[36m304\u001b[0m 561.906 ms - -\u001b[0m","timestamp":"2026-06-01 13:01:28:128"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/students/6a1d72b257a3991a7b7c5903 \u001b[32m204\u001b[0m 0.178 ms - 0\u001b[0m","timestamp":"2026-06-01 13:02:17:217"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/qr/generate/6a1d72b257a3991a7b7c5903 \u001b[32m204\u001b[0m 0.168 ms - 0\u001b[0m","timestamp":"2026-06-01 13:02:17:217"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/logs?student=6a1d72b257a3991a7b7c5903&limit=5 \u001b[32m204\u001b[0m 0.125 ms - 0\u001b[0m","timestamp":"2026-06-01 13:02:17:217"}
+{"level":"http","message":"\u001b[0mGET /api/v1/students/6a1d72b257a3991a7b7c5903 \u001b[36m304\u001b[0m 509.479 ms - -\u001b[0m","timestamp":"2026-06-01 13:02:17:217"}
+{"level":"http","message":"\u001b[0mPOST /api/v1/qr/generate/6a1d72b257a3991a7b7c5903 \u001b[32m201\u001b[0m 923.450 ms - -\u001b[0m","timestamp":"2026-06-01 13:02:17:217"}
+{"level":"http","message":"\u001b[0mGET /api/v1/logs?student=6a1d72b257a3991a7b7c5903&limit=5 \u001b[36m304\u001b[0m 1708.336 ms - -\u001b[0m","timestamp":"2026-06-01 13:02:18:218"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/students/6a1d72b257a3991a7b7c5903 \u001b[32m204\u001b[0m 0.158 ms - 0\u001b[0m","timestamp":"2026-06-01 13:02:24:224"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/logs?student=6a1d72b257a3991a7b7c5903&limit=5 \u001b[32m204\u001b[0m 0.128 ms - 0\u001b[0m","timestamp":"2026-06-01 13:02:24:224"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/qr/generate/6a1d72b257a3991a7b7c5903 \u001b[32m204\u001b[0m 0.120 ms - 0\u001b[0m","timestamp":"2026-06-01 13:02:24:224"}
+{"level":"http","message":"\u001b[0mPOST /api/v1/qr/generate/6a1d72b257a3991a7b7c5903 \u001b[32m201\u001b[0m 443.162 ms - -\u001b[0m","timestamp":"2026-06-01 13:02:24:224"}
+{"level":"http","message":"\u001b[0mGET /api/v1/students/6a1d72b257a3991a7b7c5903 \u001b[36m304\u001b[0m 453.250 ms - -\u001b[0m","timestamp":"2026-06-01 13:02:24:224"}
+{"level":"http","message":"\u001b[0mGET /api/v1/logs?student=6a1d72b257a3991a7b7c5903&limit=5 \u001b[36m304\u001b[0m 753.034 ms - -\u001b[0m","timestamp":"2026-06-01 13:02:25:225"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/qr/generate/6a1d72b257a3991a7b7c5903 \u001b[32m204\u001b[0m 0.174 ms - 0\u001b[0m","timestamp":"2026-06-01 13:03:21:321"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/students/6a1d72b257a3991a7b7c5903 \u001b[32m204\u001b[0m 0.136 ms - 0\u001b[0m","timestamp":"2026-06-01 13:03:21:321"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/logs?student=6a1d72b257a3991a7b7c5903&limit=5 \u001b[32m204\u001b[0m 0.122 ms - 0\u001b[0m","timestamp":"2026-06-01 13:03:21:321"}
+{"isOperational":true,"level":"error","message":"POST /api/v1/qr/generate/6a1d72b257a3991a7b7c5903 - Status: 401 - Message: Authentication failed. Invalid or expired token. Authentication failed. Invalid or expired token.","stack":"Error: Authentication failed. Invalid or expired token.\n    at protect (file:///C:/Users/user/Desktop/cj_work/student_verification_system/backend/src/middleware/auth.js:26:13)\n    at Layer.handleRequest (C:\\Users\\user\\Desktop\\cj_work\\student_verification_system\\backend\\node_modules\\router\\lib\\layer.js:152:17)\n    at trimPrefix (C:\\Users\\user\\Desktop\\cj_work\\student_verification_system\\backend\\node_modules\\router\\index.js:342:13)\n    at C:\\Users\\user\\Desktop\\cj_work\\student_verification_system\\backend\\node_modules\\router\\index.js:297:9\n    at processParams (C:\\Users\\user\\Desktop\\cj_work\\student_verification_system\\backend\\node_modules\\router\\index.js:582:12)\n    at next (C:\\Users\\user\\Desktop\\cj_work\\student_verification_system\\backend\\node_modules\\router\\index.js:291:5)\n    at router.handle (C:\\Users\\user\\Desktop\\cj_work\\student_verification_system\\backend\\node_modules\\router\\index.js:186:3)\n    at router (C:\\Users\\user\\Desktop\\cj_work\\student_verification_system\\backend\\node_modules\\router\\index.js:60:12)\n    at Layer.handleRequest (C:\\Users\\user\\Desktop\\cj_work\\student_verification_system\\backend\\node_modules\\router\\lib\\layer.js:152:17)\n    at trimPrefix (C:\\Users\\user\\Desktop\\cj_work\\student_verification_system\\backend\\node_modules\\router\\index.js:342:13)","statusCode":401,"timestamp":"2026-06-01 13:03:21:321"}
+{"level":"http","message":"\u001b[0mPOST /api/v1/qr/generate/6a1d72b257a3991a7b7c5903 \u001b[33m401\u001b[0m 1.991 ms - -\u001b[0m","timestamp":"2026-06-01 13:03:21:321"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/auth/refresh \u001b[32m204\u001b[0m 0.118 ms - 0\u001b[0m","timestamp":"2026-06-01 13:03:21:321"}
+{"isOperational":true,"level":"error","message":"GET /api/v1/students/6a1d72b257a3991a7b7c5903 - Status: 401 - Message: Authentication failed. Invalid or expired token. Authentication failed. Invalid or expired token.","stack":"Error: Authentication failed. Invalid or expired token.\n    at protect (file:///C:/Users/user/Desktop/cj_work/student_verification_system/backend/src/middleware/auth.js:26:13)\n    at Layer.handleRequest (C:\\Users\\user\\Desktop\\cj_work\\student_verification_system\\backend\\node_modules\\router\\lib\\layer.js:152:17)\n    at trimPrefix (C:\\Users\\user\\Desktop\\cj_work\\student_verification_system\\backend\\node_modules\\router\\index.js:342:13)\n    at C:\\Users\\user\\Desktop\\cj_work\\student_verification_system\\backend\\node_modules\\router\\index.js:297:9\n    at processParams (C:\\Users\\user\\Desktop\\cj_work\\student_verification_system\\backend\\node_modules\\router\\index.js:582:12)\n    at next (C:\\Users\\user\\Desktop\\cj_work\\student_verification_system\\backend\\node_modules\\router\\index.js:291:5)\n    at router.handle (C:\\Users\\user\\Desktop\\cj_work\\student_verification_system\\backend\\node_modules\\router\\index.js:186:3)\n    at router (C:\\Users\\user\\Desktop\\cj_work\\student_verification_system\\backend\\node_modules\\router\\index.js:60:12)\n    at Layer.handleRequest (C:\\Users\\user\\Desktop\\cj_work\\student_verification_system\\backend\\node_modules\\router\\lib\\layer.js:152:17)\n    at trimPrefix (C:\\Users\\user\\Desktop\\cj_work\\student_verification_system\\backend\\node_modules\\router\\index.js:342:13)","statusCode":401,"timestamp":"2026-06-01 13:03:21:321"}
+{"isOperational":true,"level":"error","message":"GET /api/v1/logs?student=6a1d72b257a3991a7b7c5903&limit=5 - Status: 401 - Message: Authentication failed. Invalid or expired token. Authentication failed. Invalid or expired token.","stack":"Error: Authentication failed. Invalid or expired token.\n    at protect (file:///C:/Users/user/Desktop/cj_work/student_verification_system/backend/src/middleware/auth.js:26:13)\n    at Layer.handleRequest (C:\\Users\\user\\Desktop\\cj_work\\student_verification_system\\backend\\node_modules\\router\\lib\\layer.js:152:17)\n    at trimPrefix (C:\\Users\\user\\Desktop\\cj_work\\student_verification_system\\backend\\node_modules\\router\\index.js:342:13)\n    at C:\\Users\\user\\Desktop\\cj_work\\student_verification_system\\backend\\node_modules\\router\\index.js:297:9\n    at processParams (C:\\Users\\user\\Desktop\\cj_work\\student_verification_system\\backend\\node_modules\\router\\index.js:582:12)\n    at next (C:\\Users\\user\\Desktop\\cj_work\\student_verification_system\\backend\\node_modules\\router\\index.js:291:5)\n    at router.handle (C:\\Users\\user\\Desktop\\cj_work\\student_verification_system\\backend\\node_modules\\router\\index.js:186:3)\n    at router (C:\\Users\\user\\Desktop\\cj_work\\student_verification_system\\backend\\node_modules\\router\\index.js:60:12)\n    at Layer.handleRequest (C:\\Users\\user\\Desktop\\cj_work\\student_verification_system\\backend\\node_modules\\router\\lib\\layer.js:152:17)\n    at trimPrefix (C:\\Users\\user\\Desktop\\cj_work\\student_verification_system\\backend\\node_modules\\router\\index.js:342:13)","statusCode":401,"timestamp":"2026-06-01 13:03:21:321"}
+{"level":"http","message":"\u001b[0mGET /api/v1/students/6a1d72b257a3991a7b7c5903 \u001b[33m401\u001b[0m 1.808 ms - -\u001b[0m","timestamp":"2026-06-01 13:03:21:321"}
+{"level":"http","message":"\u001b[0mGET /api/v1/logs?student=6a1d72b257a3991a7b7c5903&limit=5 \u001b[33m401\u001b[0m 1.652 ms - -\u001b[0m","timestamp":"2026-06-01 13:03:21:321"}
+{"level":"http","message":"\u001b[0mPOST /api/v1/auth/refresh \u001b[32m200\u001b[0m 141.594 ms - 253\u001b[0m","timestamp":"2026-06-01 13:03:21:321"}
+{"level":"http","message":"\u001b[0mPOST /api/v1/qr/generate/6a1d72b257a3991a7b7c5903 \u001b[32m201\u001b[0m 425.893 ms - -\u001b[0m","timestamp":"2026-06-01 13:03:21:321"}
+{"level":"http","message":"\u001b[0mGET /api/v1/students/6a1d72b257a3991a7b7c5903 \u001b[36m304\u001b[0m 438.731 ms - -\u001b[0m","timestamp":"2026-06-01 13:03:21:321"}
+{"level":"http","message":"\u001b[0mGET /api/v1/logs?student=6a1d72b257a3991a7b7c5903&limit=5 \u001b[36m304\u001b[0m 574.123 ms - -\u001b[0m","timestamp":"2026-06-01 13:03:21:321"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/students/6a1d72b257a3991a7b7c5903 \u001b[32m204\u001b[0m 0.312 ms - 0\u001b[0m","timestamp":"2026-06-01 13:04:17:417"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/qr/generate/6a1d72b257a3991a7b7c5903 \u001b[32m204\u001b[0m 0.127 ms - 0\u001b[0m","timestamp":"2026-06-01 13:04:17:417"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/logs?student=6a1d72b257a3991a7b7c5903&limit=5 \u001b[32m204\u001b[0m 0.447 ms - 0\u001b[0m","timestamp":"2026-06-01 13:04:17:417"}
+{"level":"http","message":"\u001b[0mGET /api/v1/students/6a1d72b257a3991a7b7c5903 \u001b[36m304\u001b[0m 627.818 ms - -\u001b[0m","timestamp":"2026-06-01 13:04:17:417"}
+{"level":"http","message":"\u001b[0mPOST /api/v1/qr/generate/6a1d72b257a3991a7b7c5903 \u001b[32m201\u001b[0m 633.673 ms - -\u001b[0m","timestamp":"2026-06-01 13:04:17:417"}
+{"level":"http","message":"\u001b[0mGET /api/v1/logs?student=6a1d72b257a3991a7b7c5903&limit=5 \u001b[36m304\u001b[0m 776.647 ms - -\u001b[0m","timestamp":"2026-06-01 13:04:17:417"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/students?limit=3 \u001b[32m204\u001b[0m 0.188 ms - 0\u001b[0m","timestamp":"2026-06-01 13:04:53:453"}
+{"level":"http","message":"\u001b[0mGET /api/v1/students?limit=3 \u001b[36m304\u001b[0m 612.291 ms - -\u001b[0m","timestamp":"2026-06-01 13:04:54:454"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/verify \u001b[32m204\u001b[0m 0.255 ms - 0\u001b[0m","timestamp":"2026-06-01 13:04:59:459"}
+{"level":"http","message":"\u001b[0mPOST /api/v1/verify \u001b[32m200\u001b[0m 611.340 ms - -\u001b[0m","timestamp":"2026-06-01 13:05:00:50"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/qr/generate/6a1d72b257a3991a7b7c5903 \u001b[32m204\u001b[0m 0.111 ms - 0\u001b[0m","timestamp":"2026-06-01 13:05:00:50"}
+{"level":"http","message":"\u001b[0mPOST /api/v1/qr/generate/6a1d72b257a3991a7b7c5903 \u001b[32m201\u001b[0m 456.939 ms - -\u001b[0m","timestamp":"2026-06-01 13:05:00:50"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/students/6a1d72b257a3991a7b7c5903 \u001b[32m204\u001b[0m 0.209 ms - 0\u001b[0m","timestamp":"2026-06-01 13:05:16:516"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/qr/generate/6a1d72b257a3991a7b7c5903 \u001b[32m204\u001b[0m 0.149 ms - 0\u001b[0m","timestamp":"2026-06-01 13:05:16:516"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/logs?student=6a1d72b257a3991a7b7c5903&limit=5 \u001b[32m204\u001b[0m 0.314 ms - 0\u001b[0m","timestamp":"2026-06-01 13:05:16:516"}
+{"level":"http","message":"\u001b[0mGET /api/v1/students/6a1d72b257a3991a7b7c5903 \u001b[36m304\u001b[0m 440.860 ms - -\u001b[0m","timestamp":"2026-06-01 13:05:17:517"}
+{"level":"http","message":"\u001b[0mPOST /api/v1/qr/generate/6a1d72b257a3991a7b7c5903 \u001b[32m201\u001b[0m 479.287 ms - -\u001b[0m","timestamp":"2026-06-01 13:05:17:517"}
+{"level":"http","message":"\u001b[0mGET /api/v1/logs?student=6a1d72b257a3991a7b7c5903&limit=5 \u001b[32m200\u001b[0m 613.300 ms - -\u001b[0m","timestamp":"2026-06-01 13:05:17:517"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/students?page=1&limit=8 \u001b[32m204\u001b[0m 0.256 ms - 0\u001b[0m","timestamp":"2026-06-01 13:05:24:524"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/students/meta/faculties \u001b[32m204\u001b[0m 0.177 ms - 0\u001b[0m","timestamp":"2026-06-01 13:05:24:524"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/students/meta/departments \u001b[32m204\u001b[0m 0.133 ms - 0\u001b[0m","timestamp":"2026-06-01 13:05:24:524"}
+{"level":"http","message":"\u001b[0mGET /api/v1/students/meta/faculties \u001b[36m304\u001b[0m 313.583 ms - -\u001b[0m","timestamp":"2026-06-01 13:05:24:524"}
+{"level":"http","message":"\u001b[0mGET /api/v1/students/meta/departments \u001b[36m304\u001b[0m 323.187 ms - -\u001b[0m","timestamp":"2026-06-01 13:05:24:524"}
+{"level":"http","message":"\u001b[0mGET /api/v1/students?page=1&limit=8 \u001b[36m304\u001b[0m 617.384 ms - -\u001b[0m","timestamp":"2026-06-01 13:05:24:524"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/students?limit=3 \u001b[32m204\u001b[0m 0.160 ms - 0\u001b[0m","timestamp":"2026-06-01 13:05:27:527"}
+{"level":"http","message":"\u001b[0mGET /api/v1/students?limit=3 \u001b[36m304\u001b[0m 618.011 ms - -\u001b[0m","timestamp":"2026-06-01 13:05:28:528"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/students?page=1&limit=8 \u001b[32m204\u001b[0m 0.125 ms - 0\u001b[0m","timestamp":"2026-06-01 13:05:30:530"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/students/meta/faculties \u001b[32m204\u001b[0m 0.125 ms - 0\u001b[0m","timestamp":"2026-06-01 13:05:30:530"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/students/meta/departments \u001b[32m204\u001b[0m 0.123 ms - 0\u001b[0m","timestamp":"2026-06-01 13:05:30:530"}
+{"level":"http","message":"\u001b[0mGET /api/v1/students/meta/faculties \u001b[36m304\u001b[0m 327.482 ms - -\u001b[0m","timestamp":"2026-06-01 13:05:30:530"}
+{"level":"http","message":"\u001b[0mGET /api/v1/students/meta/departments \u001b[36m304\u001b[0m 342.443 ms - -\u001b[0m","timestamp":"2026-06-01 13:05:30:530"}
+{"level":"http","message":"\u001b[0mGET /api/v1/students?page=1&limit=8 \u001b[36m304\u001b[0m 629.711 ms - -\u001b[0m","timestamp":"2026-06-01 13:05:31:531"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/students?limit=100 \u001b[32m204\u001b[0m 0.133 ms - 0\u001b[0m","timestamp":"2026-06-01 13:05:34:534"}
+{"level":"http","message":"\u001b[0mGET /api/v1/students?limit=100 \u001b[32m200\u001b[0m 681.566 ms - -\u001b[0m","timestamp":"2026-06-01 13:05:35:535"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/qr/generate/6a1d72b257a3991a7b7c5903 \u001b[32m204\u001b[0m 0.130 ms - 0\u001b[0m","timestamp":"2026-06-01 13:05:35:535"}
+{"level":"http","message":"\u001b[0mPOST /api/v1/qr/generate/6a1d72b257a3991a7b7c5903 \u001b[32m201\u001b[0m 464.528 ms - -\u001b[0m","timestamp":"2026-06-01 13:05:36:536"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/qr/generate/6a1d6e9657a3991a7b7c58ff \u001b[32m204\u001b[0m 0.153 ms - 0\u001b[0m","timestamp":"2026-06-01 13:05:55:555"}
+{"level":"http","message":"\u001b[0mPOST /api/v1/qr/generate/6a1d6e9657a3991a7b7c58ff \u001b[32m201\u001b[0m 677.347 ms - -\u001b[0m","timestamp":"2026-06-01 13:05:56:556"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/qr/generate/6a1d47cba4d7d071f0e87be1 \u001b[32m204\u001b[0m 0.136 ms - 0\u001b[0m","timestamp":"2026-06-01 13:05:59:559"}
+{"level":"http","message":"\u001b[0mPOST /api/v1/qr/generate/6a1d47cba4d7d071f0e87be1 \u001b[32m201\u001b[0m 496.505 ms - 472\u001b[0m","timestamp":"2026-06-01 13:05:59:559"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/logs?page=1&limit=12&range=week \u001b[32m204\u001b[0m 0.149 ms - 0\u001b[0m","timestamp":"2026-06-01 13:06:11:611"}
+{"level":"http","message":"\u001b[0mGET /api/v1/logs?page=1&limit=12&range=week \u001b[32m200\u001b[0m 637.851 ms - -\u001b[0m","timestamp":"2026-06-01 13:06:12:612"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/logs?page=1&limit=12&range=week \u001b[32m204\u001b[0m 0.112 ms - 0\u001b[0m","timestamp":"2026-06-01 13:06:41:641"}
+{"level":"http","message":"\u001b[0mGET /api/v1/logs?page=1&limit=12&range=week \u001b[36m304\u001b[0m 618.877 ms - -\u001b[0m","timestamp":"2026-06-01 13:06:42:642"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/students?limit=100 \u001b[32m204\u001b[0m 0.126 ms - 0\u001b[0m","timestamp":"2026-06-01 13:06:43:643"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/qr/generate/6a1d72b257a3991a7b7c5903 \u001b[32m204\u001b[0m 0.144 ms - 0\u001b[0m","timestamp":"2026-06-01 13:06:43:643"}
+{"level":"http","message":"\u001b[0mGET /uploads/student-photo-1780314802124-709885157.jpg \u001b[36m304\u001b[0m 2.014 ms - -\u001b[0m","timestamp":"2026-06-01 13:06:43:643"}
+{"level":"http","message":"\u001b[0mPOST /api/v1/qr/generate/6a1d72b257a3991a7b7c5903 \u001b[32m201\u001b[0m 461.780 ms - -\u001b[0m","timestamp":"2026-06-01 13:06:44:644"}
+{"level":"http","message":"\u001b[0mGET /api/v1/students?limit=100 \u001b[36m304\u001b[0m 620.296 ms - -\u001b[0m","timestamp":"2026-06-01 13:06:44:644"}
+{"isOperational":true,"level":"error","message":"GET /api/v1/qr/verify/549854f069c21770204a4780515bb269 - Status: 401 - Message: Authentication required. Please log in. Authentication required. Please log in.","stack":"Error: Authentication required. Please log in.\n    at protect (file:///C:/Users/user/Desktop/cj_work/student_verification_system/backend/src/middleware/auth.js:18:13)\n    at Layer.handleRequest (C:\\Users\\user\\Desktop\\cj_work\\student_verification_system\\backend\\node_modules\\router\\lib\\layer.js:152:17)\n    at trimPrefix (C:\\Users\\user\\Desktop\\cj_work\\student_verification_system\\backend\\node_modules\\router\\index.js:342:13)\n    at C:\\Users\\user\\Desktop\\cj_work\\student_verification_system\\backend\\node_modules\\router\\index.js:297:9\n    at processParams (C:\\Users\\user\\Desktop\\cj_work\\student_verification_system\\backend\\node_modules\\router\\index.js:582:12)\n    at next (C:\\Users\\user\\Desktop\\cj_work\\student_verification_system\\backend\\node_modules\\router\\index.js:291:5)\n    at router.handle (C:\\Users\\user\\Desktop\\cj_work\\student_verification_system\\backend\\node_modules\\router\\index.js:186:3)\n    at router (C:\\Users\\user\\Desktop\\cj_work\\student_verification_system\\backend\\node_modules\\router\\index.js:60:12)\n    at Layer.handleRequest (C:\\Users\\user\\Desktop\\cj_work\\student_verification_system\\backend\\node_modules\\router\\lib\\layer.js:152:17)\n    at trimPrefix (C:\\Users\\user\\Desktop\\cj_work\\student_verification_system\\backend\\node_modules\\router\\index.js:342:13)","statusCode":401,"timestamp":"2026-06-01 13:08:47:847"}
+{"level":"http","message":"\u001b[0mGET /api/v1/qr/verify/549854f069c21770204a4780515bb269 \u001b[33m401\u001b[0m 2.399 ms - -\u001b[0m","timestamp":"2026-06-01 13:08:47:847"}
+{"isOperational":true,"level":"error","message":"GET /favicon.ico - Status: 404 - Message: Route GET /favicon.ico not found Route GET /favicon.ico not found","stack":"Error: Route GET /favicon.ico not found\n    at file:///C:/Users/user/Desktop/cj_work/student_verification_system/backend/src/app.js:88:8\n    at Layer.handleRequest (C:\\Users\\user\\Desktop\\cj_work\\student_verification_system\\backend\\node_modules\\router\\lib\\layer.js:152:17)\n    at trimPrefix (C:\\Users\\user\\Desktop\\cj_work\\student_verification_system\\backend\\node_modules\\router\\index.js:342:13)\n    at C:\\Users\\user\\Desktop\\cj_work\\student_verification_system\\backend\\node_modules\\router\\index.js:297:9\n    at processParams (C:\\Users\\user\\Desktop\\cj_work\\student_verification_system\\backend\\node_modules\\router\\index.js:582:12)\n    at next (C:\\Users\\user\\Desktop\\cj_work\\student_verification_system\\backend\\node_modules\\router\\index.js:291:5)\n    at compression (C:\\Users\\user\\Desktop\\cj_work\\student_verification_system\\backend\\node_modules\\compression\\index.js:243:5)\n    at Layer.handleRequest (C:\\Users\\user\\Desktop\\cj_work\\student_verification_system\\backend\\node_modules\\router\\lib\\layer.js:152:17)\n    at trimPrefix (C:\\Users\\user\\Desktop\\cj_work\\student_verification_system\\backend\\node_modules\\router\\index.js:342:13)\n    at C:\\Users\\user\\Desktop\\cj_work\\student_verification_system\\backend\\node_modules\\router\\index.js:297:9","statusCode":404,"timestamp":"2026-06-01 13:08:50:850"}
+{"level":"http","message":"\u001b[0mGET /favicon.ico \u001b[33m404\u001b[0m 1.869 ms - -\u001b[0m","timestamp":"2026-06-01 13:08:50:850"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/qr/generate/6a1d72b257a3991a7b7c5903 \u001b[32m204\u001b[0m 0.893 ms - 0\u001b[0m","timestamp":"2026-06-01 13:12:51:1251"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/students?limit=100 \u001b[32m204\u001b[0m 0.257 ms - 0\u001b[0m","timestamp":"2026-06-01 13:12:51:1251"}
+{"level":"http","message":"\u001b[0mPOST /api/v1/qr/generate/6a1d72b257a3991a7b7c5903 \u001b[32m201\u001b[0m 469.681 ms - -\u001b[0m","timestamp":"2026-06-01 13:12:51:1251"}
+{"level":"http","message":"\u001b[0mGET /api/v1/students?limit=100 \u001b[36m304\u001b[0m 616.684 ms - -\u001b[0m","timestamp":"2026-06-01 13:12:51:1251"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/qr/generate/6a1d72b257a3991a7b7c5903 \u001b[32m204\u001b[0m 0.163 ms - 0\u001b[0m","timestamp":"2026-06-01 13:13:22:1322"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/students?limit=100 \u001b[32m204\u001b[0m 0.263 ms - 0\u001b[0m","timestamp":"2026-06-01 13:13:22:1322"}
+{"level":"http","message":"\u001b[0mPOST /api/v1/qr/generate/6a1d72b257a3991a7b7c5903 \u001b[32m201\u001b[0m 470.734 ms - -\u001b[0m","timestamp":"2026-06-01 13:13:22:1322"}
+{"level":"http","message":"\u001b[0mGET /api/v1/students?limit=100 \u001b[36m304\u001b[0m 600.505 ms - -\u001b[0m","timestamp":"2026-06-01 13:13:22:1322"}
+{"level":"warn","message":"⚠️ Cloudinary credentials missing. File uploads will fallback to local filesystem storage.","timestamp":"2026-06-01 13:19:01:191"}
+{"level":"info","message":"Connecting to MongoDB database...","timestamp":"2026-06-01 13:19:01:191"}
+{"level":"warn","message":"⚠️ Cloudinary credentials missing. File uploads will fallback to local filesystem storage.","timestamp":"2026-06-01 13:19:01:191"}
+{"level":"info","message":"Connecting to MongoDB database...","timestamp":"2026-06-01 13:19:01:191"}
+{"level":"info","message":"MongoDB Connected successfully: ac-sfajjqr-shard-00-01.wijeevb.mongodb.net","timestamp":"2026-06-01 13:19:03:193"}
+{"level":"info","message":"=========================================","timestamp":"2026-06-01 13:19:03:193"}
+{"level":"info","message":"🚀 Server running on http://localhost:5000","timestamp":"2026-06-01 13:19:03:193"}
+{"level":"info","message":"Environment: development","timestamp":"2026-06-01 13:19:03:193"}
+{"level":"info","message":"=========================================","timestamp":"2026-06-01 13:19:03:193"}
+{"level":"info","message":"MongoDB Connected successfully: ac-sfajjqr-shard-00-01.wijeevb.mongodb.net","timestamp":"2026-06-01 13:19:03:193"}
+{"level":"info","message":"=========================================","timestamp":"2026-06-01 13:19:03:193"}
+{"level":"info","message":"🚀 Server running on http://localhost:5000","timestamp":"2026-06-01 13:19:03:193"}
+{"level":"info","message":"Environment: development","timestamp":"2026-06-01 13:19:03:193"}
+{"level":"info","message":"=========================================","timestamp":"2026-06-01 13:19:03:193"}
+{"level":"warn","message":"⚠️ Cloudinary credentials missing. File uploads will fallback to local filesystem storage.","timestamp":"2026-06-01 13:19:07:197"}
+{"level":"info","message":"Connecting to MongoDB database...","timestamp":"2026-06-01 13:19:07:197"}
+{"level":"warn","message":"⚠️ Cloudinary credentials missing. File uploads will fallback to local filesystem storage.","timestamp":"2026-06-01 13:19:08:198"}
+{"level":"info","message":"Connecting to MongoDB database...","timestamp":"2026-06-01 13:19:08:198"}
+{"level":"info","message":"MongoDB Connected successfully: ac-sfajjqr-shard-00-01.wijeevb.mongodb.net","timestamp":"2026-06-01 13:19:09:199"}
+{"level":"info","message":"=========================================","timestamp":"2026-06-01 13:19:09:199"}
+{"level":"info","message":"🚀 Server running on http://localhost:5000","timestamp":"2026-06-01 13:19:09:199"}
+{"level":"info","message":"Environment: development","timestamp":"2026-06-01 13:19:09:199"}
+{"level":"info","message":"=========================================","timestamp":"2026-06-01 13:19:09:199"}
+{"level":"info","message":"MongoDB Connected successfully: ac-sfajjqr-shard-00-01.wijeevb.mongodb.net","timestamp":"2026-06-01 13:19:09:199"}
+{"level":"info","message":"=========================================","timestamp":"2026-06-01 13:19:09:199"}
+{"level":"info","message":"🚀 Server running on http://localhost:5000","timestamp":"2026-06-01 13:19:09:199"}
+{"level":"info","message":"Environment: development","timestamp":"2026-06-01 13:19:09:199"}
+{"level":"info","message":"=========================================","timestamp":"2026-06-01 13:19:09:199"}
+{"level":"warn","message":"⚠️ Cloudinary credentials missing. File uploads will fallback to local filesystem storage.","timestamp":"2026-06-01 13:19:17:1917"}
+{"level":"info","message":"Connecting to MongoDB database...","timestamp":"2026-06-01 13:19:17:1917"}
+{"level":"warn","message":"⚠️ Cloudinary credentials missing. File uploads will fallback to local filesystem storage.","timestamp":"2026-06-01 13:19:17:1917"}
+{"level":"info","message":"Connecting to MongoDB database...","timestamp":"2026-06-01 13:19:17:1917"}
+{"level":"info","message":"MongoDB Connected successfully: ac-sfajjqr-shard-00-01.wijeevb.mongodb.net","timestamp":"2026-06-01 13:19:18:1918"}
+{"level":"info","message":"=========================================","timestamp":"2026-06-01 13:19:18:1918"}
+{"level":"info","message":"🚀 Server running on http://localhost:5000","timestamp":"2026-06-01 13:19:18:1918"}
+{"level":"info","message":"Environment: development","timestamp":"2026-06-01 13:19:18:1918"}
+{"level":"info","message":"=========================================","timestamp":"2026-06-01 13:19:18:1918"}
+{"level":"info","message":"MongoDB Connected successfully: ac-sfajjqr-shard-00-01.wijeevb.mongodb.net","timestamp":"2026-06-01 13:19:18:1918"}
+{"level":"info","message":"=========================================","timestamp":"2026-06-01 13:19:18:1918"}
+{"level":"info","message":"🚀 Server running on http://localhost:5000","timestamp":"2026-06-01 13:19:18:1918"}
+{"level":"info","message":"Environment: development","timestamp":"2026-06-01 13:19:18:1918"}
+{"level":"info","message":"=========================================","timestamp":"2026-06-01 13:19:18:1918"}
+{"level":"warn","message":"⚠️ Cloudinary credentials missing. File uploads will fallback to local filesystem storage.","timestamp":"2026-06-01 13:19:31:1931"}
+{"level":"info","message":"Connecting to MongoDB database...","timestamp":"2026-06-01 13:19:31:1931"}
+{"level":"warn","message":"⚠️ Cloudinary credentials missing. File uploads will fallback to local filesystem storage.","timestamp":"2026-06-01 13:19:31:1931"}
+{"level":"info","message":"Connecting to MongoDB database...","timestamp":"2026-06-01 13:19:31:1931"}
+{"level":"info","message":"MongoDB Connected successfully: ac-sfajjqr-shard-00-01.wijeevb.mongodb.net","timestamp":"2026-06-01 13:19:32:1932"}
+{"level":"info","message":"=========================================","timestamp":"2026-06-01 13:19:32:1932"}
+{"level":"info","message":"🚀 Server running on http://localhost:5000","timestamp":"2026-06-01 13:19:32:1932"}
+{"level":"info","message":"Environment: development","timestamp":"2026-06-01 13:19:32:1932"}
+{"level":"info","message":"=========================================","timestamp":"2026-06-01 13:19:32:1932"}
+{"level":"info","message":"MongoDB Connected successfully: ac-sfajjqr-shard-00-01.wijeevb.mongodb.net","timestamp":"2026-06-01 13:19:33:1933"}
+{"level":"info","message":"=========================================","timestamp":"2026-06-01 13:19:33:1933"}
+{"level":"info","message":"🚀 Server running on http://localhost:5000","timestamp":"2026-06-01 13:19:33:1933"}
+{"level":"info","message":"Environment: development","timestamp":"2026-06-01 13:19:33:1933"}
+{"level":"info","message":"=========================================","timestamp":"2026-06-01 13:19:33:1933"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/students?page=1&limit=8 \u001b[32m204\u001b[0m 5.337 ms - 0\u001b[0m","timestamp":"2026-06-01 13:19:58:1958"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/students/meta/departments \u001b[32m204\u001b[0m 0.345 ms - 0\u001b[0m","timestamp":"2026-06-01 13:19:58:1958"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/students/meta/faculties \u001b[32m204\u001b[0m 0.580 ms - 0\u001b[0m","timestamp":"2026-06-01 13:19:58:1958"}
+{"isOperational":true,"level":"error","message":"GET /api/v1/students?page=1&limit=8 - Status: 401 - Message: Authentication failed. Invalid or expired token. Authentication failed. Invalid or expired token.","stack":"Error: Authentication failed. Invalid or expired token.\n    at protect (file:///C:/Users/user/Desktop/cj_work/student_verification_system/backend/src/middleware/auth.js:26:13)\n    at Layer.handleRequest (C:\\Users\\user\\Desktop\\cj_work\\student_verification_system\\backend\\node_modules\\router\\lib\\layer.js:152:17)\n    at trimPrefix (C:\\Users\\user\\Desktop\\cj_work\\student_verification_system\\backend\\node_modules\\router\\index.js:342:13)\n    at C:\\Users\\user\\Desktop\\cj_work\\student_verification_system\\backend\\node_modules\\router\\index.js:297:9\n    at processParams (C:\\Users\\user\\Desktop\\cj_work\\student_verification_system\\backend\\node_modules\\router\\index.js:582:12)\n    at next (C:\\Users\\user\\Desktop\\cj_work\\student_verification_system\\backend\\node_modules\\router\\index.js:291:5)\n    at router.handle (C:\\Users\\user\\Desktop\\cj_work\\student_verification_system\\backend\\node_modules\\router\\index.js:186:3)\n    at router (C:\\Users\\user\\Desktop\\cj_work\\student_verification_system\\backend\\node_modules\\router\\index.js:60:12)\n    at Layer.handleRequest (C:\\Users\\user\\Desktop\\cj_work\\student_verification_system\\backend\\node_modules\\router\\lib\\layer.js:152:17)\n    at trimPrefix (C:\\Users\\user\\Desktop\\cj_work\\student_verification_system\\backend\\node_modules\\router\\index.js:342:13)","statusCode":401,"timestamp":"2026-06-01 13:19:58:1958"}
+{"isOperational":true,"level":"error","message":"GET /api/v1/students/meta/departments - Status: 401 - Message: Authentication failed. Invalid or expired token. Authentication failed. Invalid or expired token.","stack":"Error: Authentication failed. Invalid or expired token.\n    at protect (file:///C:/Users/user/Desktop/cj_work/student_verification_system/backend/src/middleware/auth.js:26:13)\n    at Layer.handleRequest (C:\\Users\\user\\Desktop\\cj_work\\student_verification_system\\backend\\node_modules\\router\\lib\\layer.js:152:17)\n    at trimPrefix (C:\\Users\\user\\Desktop\\cj_work\\student_verification_system\\backend\\node_modules\\router\\index.js:342:13)\n    at C:\\Users\\user\\Desktop\\cj_work\\student_verification_system\\backend\\node_modules\\router\\index.js:297:9\n    at processParams (C:\\Users\\user\\Desktop\\cj_work\\student_verification_system\\backend\\node_modules\\router\\index.js:582:12)\n    at next (C:\\Users\\user\\Desktop\\cj_work\\student_verification_system\\backend\\node_modules\\router\\index.js:291:5)\n    at router.handle (C:\\Users\\user\\Desktop\\cj_work\\student_verification_system\\backend\\node_modules\\router\\index.js:186:3)\n    at router (C:\\Users\\user\\Desktop\\cj_work\\student_verification_system\\backend\\node_modules\\router\\index.js:60:12)\n    at Layer.handleRequest (C:\\Users\\user\\Desktop\\cj_work\\student_verification_system\\backend\\node_modules\\router\\lib\\layer.js:152:17)\n    at trimPrefix (C:\\Users\\user\\Desktop\\cj_work\\student_verification_system\\backend\\node_modules\\router\\index.js:342:13)","statusCode":401,"timestamp":"2026-06-01 13:19:58:1958"}
+{"isOperational":true,"level":"error","message":"GET /api/v1/students/meta/faculties - Status: 401 - Message: Authentication failed. Invalid or expired token. Authentication failed. Invalid or expired token.","stack":"Error: Authentication failed. Invalid or expired token.\n    at protect (file:///C:/Users/user/Desktop/cj_work/student_verification_system/backend/src/middleware/auth.js:26:13)\n    at Layer.handleRequest (C:\\Users\\user\\Desktop\\cj_work\\student_verification_system\\backend\\node_modules\\router\\lib\\layer.js:152:17)\n    at trimPrefix (C:\\Users\\user\\Desktop\\cj_work\\student_verification_system\\backend\\node_modules\\router\\index.js:342:13)\n    at C:\\Users\\user\\Desktop\\cj_work\\student_verification_system\\backend\\node_modules\\router\\index.js:297:9\n    at processParams (C:\\Users\\user\\Desktop\\cj_work\\student_verification_system\\backend\\node_modules\\router\\index.js:582:12)\n    at next (C:\\Users\\user\\Desktop\\cj_work\\student_verification_system\\backend\\node_modules\\router\\index.js:291:5)\n    at router.handle (C:\\Users\\user\\Desktop\\cj_work\\student_verification_system\\backend\\node_modules\\router\\index.js:186:3)\n    at router (C:\\Users\\user\\Desktop\\cj_work\\student_verification_system\\backend\\node_modules\\router\\index.js:60:12)\n    at Layer.handleRequest (C:\\Users\\user\\Desktop\\cj_work\\student_verification_system\\backend\\node_modules\\router\\lib\\layer.js:152:17)\n    at trimPrefix (C:\\Users\\user\\Desktop\\cj_work\\student_verification_system\\backend\\node_modules\\router\\index.js:342:13)","statusCode":401,"timestamp":"2026-06-01 13:19:58:1958"}
+{"level":"http","message":"\u001b[0mGET /api/v1/students?page=1&limit=8 \u001b[33m401\u001b[0m 18.250 ms - -\u001b[0m","timestamp":"2026-06-01 13:19:58:1958"}
+{"level":"http","message":"\u001b[0mGET /api/v1/students/meta/departments \u001b[33m401\u001b[0m 6.872 ms - -\u001b[0m","timestamp":"2026-06-01 13:19:58:1958"}
+{"level":"http","message":"\u001b[0mGET /api/v1/students/meta/faculties \u001b[33m401\u001b[0m 12.612 ms - -\u001b[0m","timestamp":"2026-06-01 13:19:58:1958"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/auth/refresh \u001b[32m204\u001b[0m 0.299 ms - 0\u001b[0m","timestamp":"2026-06-01 13:19:58:1958"}
+{"level":"http","message":"\u001b[0mPOST /api/v1/auth/refresh \u001b[32m200\u001b[0m 438.604 ms - 253\u001b[0m","timestamp":"2026-06-01 13:19:59:1959"}
+{"level":"http","message":"\u001b[0mGET /api/v1/students/meta/faculties \u001b[36m304\u001b[0m 312.482 ms - -\u001b[0m","timestamp":"2026-06-01 13:19:59:1959"}
+{"level":"http","message":"\u001b[0mGET /api/v1/students/meta/departments \u001b[36m304\u001b[0m 319.487 ms - -\u001b[0m","timestamp":"2026-06-01 13:19:59:1959"}
+{"level":"http","message":"\u001b[0mGET /api/v1/students?page=1&limit=8 \u001b[36m304\u001b[0m 618.314 ms - -\u001b[0m","timestamp":"2026-06-01 13:19:59:1959"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/students?limit=3 \u001b[32m204\u001b[0m 0.318 ms - 0\u001b[0m","timestamp":"2026-06-01 13:20:02:202"}
+{"level":"http","message":"\u001b[0mGET /api/v1/students?limit=3 \u001b[36m304\u001b[0m 615.419 ms - -\u001b[0m","timestamp":"2026-06-01 13:20:02:202"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/students?page=1&limit=8 \u001b[32m204\u001b[0m 0.226 ms - 0\u001b[0m","timestamp":"2026-06-01 13:20:04:204"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/students/meta/departments \u001b[32m204\u001b[0m 0.221 ms - 0\u001b[0m","timestamp":"2026-06-01 13:20:04:204"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/students/meta/faculties \u001b[32m204\u001b[0m 0.224 ms - 0\u001b[0m","timestamp":"2026-06-01 13:20:04:204"}
+{"level":"http","message":"\u001b[0mGET /api/v1/students/meta/departments \u001b[36m304\u001b[0m 344.973 ms - -\u001b[0m","timestamp":"2026-06-01 13:20:05:205"}
+{"level":"http","message":"\u001b[0mGET /api/v1/students/meta/faculties \u001b[36m304\u001b[0m 347.387 ms - -\u001b[0m","timestamp":"2026-06-01 13:20:05:205"}
+{"level":"http","message":"\u001b[0mGET /api/v1/students?page=1&limit=8 \u001b[36m304\u001b[0m 627.674 ms - -\u001b[0m","timestamp":"2026-06-01 13:20:05:205"}
+{"level":"http","message":"\u001b[0mGET /api/v1/students?limit=3 \u001b[36m304\u001b[0m 629.851 ms - -\u001b[0m","timestamp":"2026-06-01 13:20:07:207"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/analytics \u001b[32m204\u001b[0m 0.196 ms - 0\u001b[0m","timestamp":"2026-06-01 13:20:07:207"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/logs?limit=6 \u001b[32m204\u001b[0m 0.327 ms - 0\u001b[0m","timestamp":"2026-06-01 13:20:07:207"}
+{"level":"http","message":"\u001b[0mGET /api/v1/logs?limit=6 \u001b[32m200\u001b[0m 601.931 ms - -\u001b[0m","timestamp":"2026-06-01 13:20:08:208"}
+{"level":"http","message":"\u001b[0mGET /api/v1/analytics \u001b[32m200\u001b[0m 2030.845 ms - -\u001b[0m","timestamp":"2026-06-01 13:20:09:209"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/students?page=1&limit=8 \u001b[32m204\u001b[0m 0.250 ms - 0\u001b[0m","timestamp":"2026-06-01 13:20:22:2022"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/students/meta/faculties \u001b[32m204\u001b[0m 0.157 ms - 0\u001b[0m","timestamp":"2026-06-01 13:20:22:2022"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/students/meta/departments \u001b[32m204\u001b[0m 0.238 ms - 0\u001b[0m","timestamp":"2026-06-01 13:20:22:2022"}
+{"level":"http","message":"\u001b[0mGET /api/v1/students/meta/departments \u001b[36m304\u001b[0m 317.041 ms - -\u001b[0m","timestamp":"2026-06-01 13:20:22:2022"}
+{"level":"http","message":"\u001b[0mGET /api/v1/students/meta/faculties \u001b[36m304\u001b[0m 325.896 ms - -\u001b[0m","timestamp":"2026-06-01 13:20:22:2022"}
+{"level":"http","message":"\u001b[0mGET /api/v1/students?page=1&limit=8 \u001b[36m304\u001b[0m 644.028 ms - -\u001b[0m","timestamp":"2026-06-01 13:20:23:2023"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/students/6a1d47cca4d7d071f0e87be5 \u001b[32m204\u001b[0m 0.133 ms - 0\u001b[0m","timestamp":"2026-06-01 13:20:37:2037"}
+{"level":"http","message":"\u001b[0mPATCH /api/v1/students/6a1d47cca4d7d071f0e87be5 \u001b[32m200\u001b[0m 594.588 ms - 933\u001b[0m","timestamp":"2026-06-01 13:20:38:2038"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/students?page=1&limit=8 \u001b[32m204\u001b[0m 0.136 ms - 0\u001b[0m","timestamp":"2026-06-01 13:20:38:2038"}
+{"level":"http","message":"\u001b[0mGET /api/v1/students?page=1&limit=8 \u001b[32m200\u001b[0m 641.791 ms - -\u001b[0m","timestamp":"2026-06-01 13:20:39:2039"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/analytics \u001b[32m204\u001b[0m 0.181 ms - 0\u001b[0m","timestamp":"2026-06-01 13:20:45:2045"}
+{"level":"http","message":"\u001b[0mOPTIONS /api/v1/logs?limit=6 \u001b[32m204\u001b[0m 0.216 ms - 0\u001b[0m","timestamp":"2026-06-01 13:20:45:2045"}
+{"level":"http","message":"\u001b[0mGET /api/v1/logs?limit=6 \u001b[36m304\u001b[0m 626.986 ms - -\u001b[0m","timestamp":"2026-06-01 13:20:45:2045"}
+{"level":"http","message":"\u001b[0mGET /api/v1/analytics \u001b[32m200\u001b[0m 1141.229 ms - -\u001b[0m","timestamp":"2026-06-01 13:20:46:2046"}
+{"level":"warn","message":"⚠️ Cloudinary credentials missing. File uploads will fallback to local filesystem storage.","timestamp":"2026-06-01 13:21:02:212"}
+{"level":"info","message":"Connecting to MongoDB database...","timestamp":"2026-06-01 13:21:02:212"}
+{"level":"warn","message":"⚠️ Cloudinary credentials missing. File uploads will fallback to local filesystem storage.","timestamp":"2026-06-01 13:21:03:213"}
+{"level":"info","message":"Connecting to MongoDB database...","timestamp":"2026-06-01 13:21:03:213"}
+{"level":"info","message":"MongoDB Connected successfully: ac-sfajjqr-shard-00-00.wijeevb.mongodb.net","timestamp":"2026-06-01 13:21:04:214"}
+{"level":"info","message":"=========================================","timestamp":"2026-06-01 13:21:04:214"}
+{"level":"info","message":"🚀 Server running on http://localhost:5000","timestamp":"2026-06-01 13:21:04:214"}
+{"level":"info","message":"Environment: development","timestamp":"2026-06-01 13:21:04:214"}
+{"level":"info","message":"=========================================","timestamp":"2026-06-01 13:21:04:214"}
+{"level":"info","message":"MongoDB Connected successfully: ac-sfajjqr-shard-00-00.wijeevb.mongodb.net","timestamp":"2026-06-01 13:21:04:214"}
+{"level":"info","message":"=========================================","timestamp":"2026-06-01 13:21:04:214"}
+{"level":"info","message":"🚀 Server running on http://localhost:5000","timestamp":"2026-06-01 13:21:04:214"}
+{"level":"info","message":"Environment: development","timestamp":"2026-06-01 13:21:04:214"}
+{"level":"info","message":"=========================================","timestamp":"2026-06-01 13:21:04:214"}
+{"level":"http","message":"\u001b[0mGET /api/v1/qr/verify/VERIFY-SCI-19-0001 \u001b[32m200\u001b[0m 1027.004 ms - -\u001b[0m","timestamp":"2026-06-01 13:21:36:2136"}
+{"isOperational":true,"level":"error","message":"GET /favicon.ico - Status: 404 - Message: Route GET /favicon.ico not found Route GET /favicon.ico not found","stack":"Error: Route GET /favicon.ico not found\n    at file:///C:/Users/user/Desktop/cj_work/student_verification_system/backend/src/app.js:88:8\n    at Layer.handleRequest (C:\\Users\\user\\Desktop\\cj_work\\student_verification_system\\backend\\node_modules\\router\\lib\\layer.js:152:17)\n    at trimPrefix (C:\\Users\\user\\Desktop\\cj_work\\student_verification_system\\backend\\node_modules\\router\\index.js:342:13)\n    at C:\\Users\\user\\Desktop\\cj_work\\student_verification_system\\backend\\node_modules\\router\\index.js:297:9\n    at processParams (C:\\Users\\user\\Desktop\\cj_work\\student_verification_system\\backend\\node_modules\\router\\index.js:582:12)\n    at next (C:\\Users\\user\\Desktop\\cj_work\\student_verification_system\\backend\\node_modules\\router\\index.js:291:5)\n    at compression (C:\\Users\\user\\Desktop\\cj_work\\student_verification_system\\backend\\node_modules\\compression\\index.js:243:5)\n    at Layer.handleRequest (C:\\Users\\user\\Desktop\\cj_work\\student_verification_system\\backend\\node_modules\\router\\lib\\layer.js:152:17)\n    at trimPrefix (C:\\Users\\user\\Desktop\\cj_work\\student_verification_system\\backend\\node_modules\\router\\index.js:342:13)\n    at C:\\Users\\user\\Desktop\\cj_work\\student_verification_system\\backend\\node_modules\\router\\index.js:297:9","statusCode":404,"timestamp":"2026-06-01 13:21:36:2136"}
+{"level":"http","message":"\u001b[0mGET /favicon.ico \u001b[33m404\u001b[0m 5.592 ms - -\u001b[0m","timestamp":"2026-06-01 13:21:36:2136"}
+{"level":"warn","message":"⚠️ Cloudinary credentials missing. File uploads will fallback to local filesystem storage.","timestamp":"2026-06-01 13:22:51:2251"}
+{"level":"info","message":"Connecting to MongoDB database...","timestamp":"2026-06-01 13:22:51:2251"}
+{"level":"warn","message":"⚠️ Cloudinary credentials missing. File uploads will fallback to local filesystem storage.","timestamp":"2026-06-01 13:22:52:2252"}
+{"level":"info","message":"Connecting to MongoDB database...","timestamp":"2026-06-01 13:22:52:2252"}
+{"level":"info","message":"MongoDB Connected successfully: ac-sfajjqr-shard-00-02.wijeevb.mongodb.net","timestamp":"2026-06-01 13:22:55:2255"}
+{"level":"info","message":"MongoDB Connected successfully: ac-sfajjqr-shard-00-02.wijeevb.mongodb.net","timestamp":"2026-06-01 13:22:55:2255"}
+{"level":"info","message":"=========================================","timestamp":"2026-06-01 13:22:55:2255"}
+{"level":"info","message":"🚀 Server running on http://localhost:5000","timestamp":"2026-06-01 13:22:55:2255"}
+{"level":"info","message":"Environment: development","timestamp":"2026-06-01 13:22:55:2255"}
+{"level":"info","message":"=========================================","timestamp":"2026-06-01 13:22:55:2255"}
+{"level":"info","message":"=========================================","timestamp":"2026-06-01 13:22:55:2255"}
+{"level":"info","message":"🚀 Server running on http://localhost:5000","timestamp":"2026-06-01 13:22:55:2255"}
+{"level":"info","message":"Environment: development","timestamp":"2026-06-01 13:22:55:2255"}
+{"level":"info","message":"=========================================","timestamp":"2026-06-01 13:22:55:2255"}
+{"level":"warn","message":"⚠️ Cloudinary credentials missing. File uploads will fallback to local filesystem storage.","timestamp":"2026-06-01 13:24:43:2443"}
+{"level":"info","message":"Connecting to MongoDB database...","timestamp":"2026-06-01 13:24:44:2444"}
+{"level":"warn","message":"⚠️ Cloudinary credentials missing. File uploads will fallback to local filesystem storage.","timestamp":"2026-06-01 13:24:44:2444"}
+{"level":"info","message":"Connecting to MongoDB database...","timestamp":"2026-06-01 13:24:44:2444"}
+{"level":"info","message":"MongoDB Connected successfully: ac-sfajjqr-shard-00-02.wijeevb.mongodb.net","timestamp":"2026-06-01 13:24:47:2447"}
+{"level":"info","message":"MongoDB Connected successfully: ac-sfajjqr-shard-00-02.wijeevb.mongodb.net","timestamp":"2026-06-01 13:24:47:2447"}
+{"level":"info","message":"=========================================","timestamp":"2026-06-01 13:24:47:2447"}
+{"level":"info","message":"🚀 Server running on http://localhost:5000","timestamp":"2026-06-01 13:24:47:2447"}
+{"level":"info","message":"Environment: development","timestamp":"2026-06-01 13:24:47:2447"}
+{"level":"info","message":"=========================================","timestamp":"2026-06-01 13:24:47:2447"}
+{"level":"info","message":"=========================================","timestamp":"2026-06-01 13:24:47:2447"}
+{"level":"info","message":"🚀 Server running on http://localhost:5000","timestamp":"2026-06-01 13:24:47:2447"}
+{"level":"info","message":"Environment: development","timestamp":"2026-06-01 13:24:47:2447"}
+{"level":"info","message":"=========================================","timestamp":"2026-06-01 13:24:47:2447"}
+{"level":"http","message":"\u001b[0mGET /api/v1/qr/verify/VERIFY-SCI-19-0001 \u001b[32m200\u001b[0m 678.798 ms - -\u001b[0m","timestamp":"2026-06-01 13:25:01:251"}
+{"level":"http","message":"\u001b[0mGET /api/v1/qr/verify/VERIFY-SCI-19-0001 \u001b[36m304\u001b[0m 646.486 ms - -\u001b[0m","timestamp":"2026-06-01 13:25:30:2530"}
+{"level":"warn","message":"⚠️ Cloudinary credentials missing. File uploads will fallback to local filesystem storage.","timestamp":"2026-06-01 13:26:59:2659"}
+{"level":"info","message":"Connecting to MongoDB database...","timestamp":"2026-06-01 13:26:59:2659"}
+{"level":"warn","message":"⚠️ Cloudinary credentials missing. File uploads will fallback to local filesystem storage.","timestamp":"2026-06-01 13:26:59:2659"}
+{"level":"info","message":"Connecting to MongoDB database...","timestamp":"2026-06-01 13:26:59:2659"}
+{"level":"info","message":"MongoDB Connected successfully: ac-sfajjqr-shard-00-01.wijeevb.mongodb.net","timestamp":"2026-06-01 13:27:03:273"}
+{"level":"info","message":"=========================================","timestamp":"2026-06-01 13:27:03:273"}
+{"level":"info","message":"🚀 Server running on http://localhost:5000","timestamp":"2026-06-01 13:27:03:273"}
+{"level":"info","message":"Environment: development","timestamp":"2026-06-01 13:27:03:273"}
+{"level":"info","message":"=========================================","timestamp":"2026-06-01 13:27:03:273"}
+{"level":"info","message":"MongoDB Connected successfully: ac-sfajjqr-shard-00-01.wijeevb.mongodb.net","timestamp":"2026-06-01 13:27:03:273"}
+{"level":"info","message":"=========================================","timestamp":"2026-06-01 13:27:03:273"}
+{"level":"info","message":"🚀 Server running on http://localhost:5000","timestamp":"2026-06-01 13:27:03:273"}
+{"level":"info","message":"Environment: development","timestamp":"2026-06-01 13:27:04:274"}
+{"level":"info","message":"=========================================","timestamp":"2026-06-01 13:27:04:274"}
+{"level":"http","message":"\u001b[0mGET /api/v1/qr/verify/VERIFY-SCI-19-0001 \u001b[36m304\u001b[0m 946.057 ms - -\u001b[0m","timestamp":"2026-06-01 13:27:29:2729"}
