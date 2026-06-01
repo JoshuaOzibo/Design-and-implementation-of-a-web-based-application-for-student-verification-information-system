@@ -6,6 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { QRCode } from "@/components/svis/QRCode";
 import { Download, RotateCw, Printer, Loader2 } from "lucide-react";
+import * as htmlToImage from "html-to-image";
 import { useState } from "react";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { studentApi, StudentProfile } from "../api/student.api";
@@ -239,7 +240,35 @@ function Page() {
 
   const handleDownload = () => {
     if (!s) return;
-    toast.success(`Download student badge PDF for ${s.fullName}`);
+    const node = document.getElementById("student-id-card-preview");
+    if (!node) {
+      toast.error("ID card preview element not found");
+      return;
+    }
+
+    const toastId = toast.loading(`Generating ID Card image for ${s.fullName}...`);
+
+    htmlToImage
+      .toPng(node, {
+        backgroundColor: "#ffffff",
+        style: {
+          transform: "scale(1)",
+        },
+        cacheBust: true,
+      })
+      .then((dataUrl) => {
+        const link = document.createElement("a");
+        link.download = `SVIS-Badge-${s.matricNumber.replace(/\//g, "-")}.png`;
+        link.href = dataUrl;
+        link.click();
+        toast.dismiss(toastId);
+        toast.success("ID Card downloaded successfully!");
+      })
+      .catch((err) => {
+        console.error("Failed to export ID Card image:", err);
+        toast.dismiss(toastId);
+        toast.error("Could not download ID Card image. Please try again.");
+      });
   };
 
   if (loadingStudents) {
@@ -349,7 +378,7 @@ function Page() {
                   <div className="grid gap-6 p-6 md:grid-cols-[auto_1fr_auto] md:items-center">
                     <div className="h-32 w-32 overflow-hidden rounded-md border bg-slate-50 flex items-center justify-center">
                       {s.photo ? (
-                        <img src={s.photo} alt={s.fullName} className="h-full w-full object-cover" />
+                        <img src={s.photo} alt={s.fullName} className="h-full w-full object-cover" crossOrigin="anonymous" />
                       ) : (
                         <span className="font-bold text-2xl text-slate-400">
                           {s.fullName.slice(0, 2).toUpperCase()}
