@@ -19,8 +19,7 @@ export const Route = createFileRoute("/login")({
 });
 
 const schema = z.object({
-  staffId: z.string().min(2, "Enter your staff ID"),
-  email: z.string().email("Enter a valid email"),
+  identifier: z.string().min(2, "Enter your institutional email or staff ID"),
   password: z.string().min(6, "Minimum 6 characters"),
   remember: z.boolean().optional(),
 });
@@ -32,16 +31,18 @@ function Login() {
   
   const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm<Values>({
     resolver: zodResolver(schema),
-    defaultValues: { staffId: "", email: "", password: "", remember: true },
+    defaultValues: { identifier: "", password: "", remember: true },
   });
 
   const onSubmit = async (v: Values) => {
     try {
-      const res = await authApi.login({
-        staffId: v.staffId,
-        email: v.email,
+      const isEmail = v.identifier.includes("@");
+      const payload = {
         password: v.password,
-      });
+        ...(isEmail ? { email: v.identifier } : { staffId: v.identifier }),
+      };
+
+      const res = await authApi.login(payload);
 
       if (res.success) {
         login(res.data.accessToken, res.data.user);
@@ -51,7 +52,7 @@ function Login() {
         toast.error(res.message || "Failed to sign in");
       }
     } catch (err: any) {
-      toast.error(err.message || "Authentication error occurred");
+      toast.error(err.response?.data?.message || err.message || "Authentication error occurred");
     }
   };
 
@@ -82,14 +83,9 @@ function Login() {
               </div>
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
                 <div>
-                  <Label htmlFor="staffId">Staff ID</Label>
-                  <Input id="staffId" placeholder="e.g. ICT/2019/0421" className="mt-1.5" {...register("staffId")} />
-                  {errors.staffId && <p className="mt-1 text-xs text-destructive">{errors.staffId.message}</p>}
-                </div>
-                <div>
-                  <Label htmlFor="email">Institutional email</Label>
-                  <Input id="email" type="email" placeholder="name@university.edu" className="mt-1.5" {...register("email")} />
-                  {errors.email && <p className="mt-1 text-xs text-destructive">{errors.email.message}</p>}
+                  <Label htmlFor="identifier">Institutional Email or Staff ID</Label>
+                  <Input id="identifier" placeholder="e.g. name@university.edu or SEC/2026/012" className="mt-1.5" {...register("identifier")} />
+                  {errors.identifier && <p className="mt-1 text-xs text-destructive">{errors.identifier.message}</p>}
                 </div>
                 <div>
                   <div className="flex items-center justify-between">
@@ -112,8 +108,14 @@ function Login() {
               </form>
             </CardContent>
           </Card>
-          <div className="mt-4 text-center text-xs text-muted-foreground">
-            <Link to="/" className="hover:text-foreground">← Back to home</Link>
+          <div className="mt-4 flex flex-col items-center gap-2 text-xs text-muted-foreground">
+            <div>
+              Don't have an account?{" "}
+              <Link to="/signup" className="text-primary hover:underline font-medium">
+                Register here
+              </Link>
+            </div>
+            <Link to="/" className="hover:text-foreground mt-2">← Back to home</Link>
           </div>
         </div>
       </div>
