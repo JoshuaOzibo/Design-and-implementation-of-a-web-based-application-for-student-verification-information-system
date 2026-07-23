@@ -1,0 +1,7 @@
+{
+  "name": "student-verification-system",
+  "private": true,
+  "scripts": {
+    "build": "cd frontend && npm run build"
+  }
+}
