@@ -1,19 +1,22 @@
+# Environment variables
+.env
+.env.*
+!.env.example
+
 # Dependencies
 node_modules/
 
-# Environment variables
-.env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-
 # Logs
-logs/
+logs/*
+!logs/.gitkeep
 *.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Uploaded Files
+uploads/*
+!uploads/.gitkeep
 
 # Runtime data
 pids
@@ -47,13 +50,9 @@ Thumbs.db
 # ESLint cache
 .eslintcache
 
-# Optional npm cache
-.npm
-
-# Optional yarn cache
+# Package caches
+.npm/
 .yarn/
-
-# Optional pnpm cache
 .pnpm-store/
 
 # MongoDB local files
@@ -67,5 +66,4 @@ playwright-report/
 
 # Misc
 *.tgz
-
 project_phase.text

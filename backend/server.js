@@ -9,7 +9,7 @@ process.on("uncaughtException", (error) => {
   process.exit(1);
 });
 
-const PORT = config.port || 5000;
+const PORT = config.port || 5001;
 let server;
 
 const startServer = async () => {
