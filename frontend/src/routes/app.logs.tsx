@@ -192,15 +192,15 @@ function Page() {
 
                     return (
                       <TableRow key={l._id}>
-                        <TableCell className="text-xs">
+                        <TableCell className="text-xs whitespace-nowrap min-w-[110px]">
                           <div className="font-medium text-foreground">{formattedDate}</div>
                           <div className="text-muted-foreground">{formattedTime}</div>
                         </TableCell>
-                        <TableCell className="text-sm font-medium">
+                        <TableCell className="text-sm font-medium whitespace-nowrap">
                           {staffName}
                         </TableCell>
-                        <TableCell className="text-xs font-mono">{l.type}</TableCell>
-                        <TableCell className="font-medium">
+                        <TableCell className="text-xs font-mono whitespace-nowrap">{l.type}</TableCell>
+                        <TableCell className="font-medium whitespace-nowrap">
                           {l.student ? (
                             <Link to="/app/student/$id" params={{ id: l.student._id }} className="hover:underline text-primary">
                               {l.student.fullName}
@@ -209,9 +209,9 @@ function Page() {
                             "Unregistered profile"
                           )}
                         </TableCell>
-                        <TableCell className="text-xs text-muted-foreground font-mono">{l.matricNumber}</TableCell>
-                        <TableCell className="text-xs text-muted-foreground">{l.location || "N/A"}</TableCell>
-                        <TableCell className="text-right">
+                        <TableCell className="text-xs text-muted-foreground font-mono whitespace-nowrap">{l.matricNumber}</TableCell>
+                        <TableCell className="text-xs text-muted-foreground whitespace-nowrap">{l.location || "N/A"}</TableCell>
+                        <TableCell className="text-right whitespace-nowrap">
                           <div className="flex flex-col items-end gap-1">
                             <VerificationBadge status={l.status === "verified" ? "verified" : "invalid"} />
                             {l.reason && (
