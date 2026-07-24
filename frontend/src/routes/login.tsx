@@ -4,7 +4,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
-import { useForm } from "react-hook-form";
+import { useEffect } from "react";
+import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { Logo } from "@/components/svis/Logo";
@@ -27,12 +28,18 @@ type Values = z.infer<typeof schema>;
 
 function Login() {
   const navigate = useNavigate();
-  const { login } = useAuth();
+  const { login, isAuthenticated, isLoading } = useAuth();
   
-  const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm<Values>({
+  const { register, handleSubmit, control, formState: { errors, isSubmitting } } = useForm<Values>({
     resolver: zodResolver(schema),
     defaultValues: { identifier: "", password: "", remember: true },
   });
+
+  useEffect(() => {
+    if (!isLoading && isAuthenticated) {
+      navigate({ to: "/app/dashboard" });
+    }
+  }, [isLoading, isAuthenticated, navigate]);
 
   const onSubmit = async (v: Values) => {
     try {
@@ -95,9 +102,22 @@ function Login() {
                   <Input id="password" type="password" className="mt-1.5" {...register("password")} />
                   {errors.password && <p className="mt-1 text-xs text-destructive">{errors.password.message}</p>}
                 </div>
-                <label className="flex items-center gap-2 text-sm text-muted-foreground">
-                  <Checkbox {...register("remember")} defaultChecked /> Remember this device
-                </label>
+                <div className="flex items-center gap-2">
+                  <Controller
+                    name="remember"
+                    control={control}
+                    render={({ field }) => (
+                      <Checkbox
+                        id="remember"
+                        checked={field.value}
+                        onCheckedChange={field.onChange}
+                      />
+                    )}
+                  />
+                  <Label htmlFor="remember" className="text-sm font-normal text-muted-foreground cursor-pointer">
+                    Remember this device
+                  </Label>
+                </div>
                 <Button type="submit" className="w-full" disabled={isSubmitting}>
                   {isSubmitting ? "Signing in…" : "Sign in securely"}
                 </Button>
