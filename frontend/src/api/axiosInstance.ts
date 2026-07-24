@@ -90,13 +90,9 @@ axiosInstance.interceptors.response.use(
         processQueue(refreshError, null);
         isRefreshing = false;
 
-        // Clear tokens and force user log out
+        // Clear tokens cleanly on refresh failure
         localStorage.removeItem("accessToken");
         localStorage.removeItem("user");
-        
-        if (typeof window !== "undefined") {
-          window.location.href = "/login";
-        }
         
         return Promise.reject(refreshError);
       }

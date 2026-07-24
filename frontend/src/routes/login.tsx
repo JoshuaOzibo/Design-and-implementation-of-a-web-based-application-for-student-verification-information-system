@@ -2,10 +2,7 @@ import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Checkbox } from "@/components/ui/checkbox";
-import { useEffect } from "react";
-import { useForm, Controller } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { Logo } from "@/components/svis/Logo";
@@ -30,16 +27,10 @@ function Login() {
   const navigate = useNavigate();
   const { login, isAuthenticated, isLoading } = useAuth();
   
-  const { register, handleSubmit, control, formState: { errors, isSubmitting } } = useForm<Values>({
+  const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm<Values>({
     resolver: zodResolver(schema),
     defaultValues: { identifier: "", password: "", remember: true },
   });
-
-  useEffect(() => {
-    if (!isLoading && isAuthenticated) {
-      navigate({ to: "/app/dashboard" });
-    }
-  }, [isLoading, isAuthenticated, navigate]);
 
   const onSubmit = async (v: Values) => {
     try {
@@ -90,33 +81,32 @@ function Login() {
               </div>
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
                 <div>
-                  <Label htmlFor="identifier">Institutional Email or Staff ID</Label>
+                  <label htmlFor="identifier" className="block text-sm font-medium text-foreground">
+                    Institutional Email or Staff ID
+                  </label>
                   <Input id="identifier" placeholder="e.g. name@university.edu or SEC/2026/012" className="mt-1.5" {...register("identifier")} />
                   {errors.identifier && <p className="mt-1 text-xs text-destructive">{errors.identifier.message}</p>}
                 </div>
                 <div>
                   <div className="flex items-center justify-between">
-                    <Label htmlFor="password">Password</Label>
+                    <label htmlFor="password" className="block text-sm font-medium text-foreground">
+                      Password
+                    </label>
                     <a href="#" className="text-xs text-primary hover:underline">Forgot password?</a>
                   </div>
                   <Input id="password" type="password" className="mt-1.5" {...register("password")} />
                   {errors.password && <p className="mt-1 text-xs text-destructive">{errors.password.message}</p>}
                 </div>
                 <div className="flex items-center gap-2">
-                  <Controller
-                    name="remember"
-                    control={control}
-                    render={({ field }) => (
-                      <Checkbox
-                        id="remember"
-                        checked={field.value}
-                        onCheckedChange={field.onChange}
-                      />
-                    )}
+                  <input
+                    type="checkbox"
+                    id="remember"
+                    className="h-4 w-4 rounded border-border accent-primary cursor-pointer"
+                    {...register("remember")}
                   />
-                  <Label htmlFor="remember" className="text-sm font-normal text-muted-foreground cursor-pointer">
+                  <label htmlFor="remember" className="text-sm text-muted-foreground cursor-pointer select-none">
                     Remember this device
-                  </Label>
+                  </label>
                 </div>
                 <Button type="submit" className="w-full" disabled={isSubmitting}>
                   {isSubmitting ? "Signing in…" : "Sign in securely"}
@@ -143,3 +133,4 @@ function Login() {
   );
 }
 export default Login;
+
