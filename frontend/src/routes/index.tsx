@@ -37,8 +37,8 @@ function Landing() {
             <a href="#contact" className="hover:text-foreground">Contact</a>
           </nav>
           <div className="flex items-center gap-2">
-            <Button asChild variant="ghost"><Link to="/login">Staff Login</Link></Button>
-            <Button asChild><Link to="/app/verify">Verify Student</Link></Button>
+            <Button asChild variant="ghost" className="hidden sm:inline-flex"><Link to="/login">Staff Login</Link></Button>
+            <Button asChild className="text-xs sm:text-sm"><Link to="/app/verify">Verify Student</Link></Button>
           </div>
         </div>
       </header>
@@ -57,9 +57,9 @@ function Landing() {
             <p className="mt-4 max-w-xl text-base text-muted-foreground md:text-lg">
               Verify student identity and academic information instantly through a centralized digital platform built for university administrators, faculty, and security personnel.
             </p>
-            <div className="mt-7 flex flex-wrap gap-3">
-              <Button asChild size="lg"><Link to="/app/verify">Verify Student <ArrowRight className="ml-1 h-4 w-4" /></Link></Button>
-              <Button asChild size="lg" variant="outline"><Link to="/login">Staff Login</Link></Button>
+            <div className="mt-7 flex flex-col sm:flex-row gap-3">
+              <Button asChild size="lg" className="w-full sm:w-auto justify-center"><Link to="/app/verify">Verify Student <ArrowRight className="ml-1 h-4 w-4" /></Link></Button>
+              <Button asChild size="lg" variant="outline" className="w-full sm:w-auto justify-center"><Link to="/login">Staff Login</Link></Button>
             </div>
             <div className="mt-8 flex flex-wrap items-center gap-6 text-xs text-muted-foreground">
               <div className="flex items-center gap-2"><Lock className="h-4 w-4" /> End-to-end encrypted</div>
