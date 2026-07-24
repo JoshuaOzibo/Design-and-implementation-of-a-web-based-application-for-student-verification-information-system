@@ -173,7 +173,7 @@ function Dashboard() {
       </div>
 
       <div className="grid gap-4 lg:grid-cols-3">
-        <Card className="lg:col-span-2">
+        <Card className="lg:col-span-2 min-w-0">
           <CardHeader className="flex flex-row items-center justify-between pb-3">
             <CardTitle className="text-base">Recent verifications</CardTitle>
             <Button asChild variant="ghost" size="sm"><Link to="/app/logs">View all <ArrowUpRight className="ml-1 h-3.5 w-3.5" /></Link></Button>
@@ -228,7 +228,7 @@ function Dashboard() {
           </CardContent>
         </Card>
  
-        <Card>
+        <Card className="min-w-0">
           <CardHeader className="pb-3"><CardTitle className="text-base">Quick actions</CardTitle></CardHeader>
           <CardContent className="w-full overflow-x-auto">
             <div className="grid gap-2.5 min-w-[200px]">

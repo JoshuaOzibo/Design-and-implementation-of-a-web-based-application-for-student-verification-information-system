@@ -5,6 +5,7 @@ import {
 import {
   Sidebar, SidebarContent, SidebarGroup, SidebarGroupContent, SidebarGroupLabel,
   SidebarMenu, SidebarMenuButton, SidebarMenuItem, SidebarHeader, SidebarFooter,
+  useSidebar,
 } from "@/components/ui/sidebar";
 import { Logo } from "./Logo";
 
@@ -28,6 +29,7 @@ const ops: SidebarItem[] = [
 const sys: SidebarItem[] = [{ title: "Settings", url: "/app/settings", icon: Settings }];
 
 export function AppSidebar() {
+  const { setOpenMobile, isMobile } = useSidebar();
   const path = useRouterState({ select: (s) => s.location.pathname });
   const renderItems = (items: SidebarItem[]) =>
     items.map((it) => {
@@ -42,7 +44,16 @@ export function AppSidebar() {
       return (
         <SidebarMenuItem key={it.title}>
           <SidebarMenuButton asChild isActive={active}>
-            <Link to={it.url} search={it.search as any} className="flex items-center gap-2.5">
+            <Link
+              to={it.url}
+              search={it.search as any}
+              onClick={() => {
+                if (isMobile) {
+                  setOpenMobile(false);
+                }
+              }}
+              className="flex items-center gap-2.5"
+            >
               <it.icon className="h-4 w-4" />
               <span>{it.title}</span>
             </Link>
