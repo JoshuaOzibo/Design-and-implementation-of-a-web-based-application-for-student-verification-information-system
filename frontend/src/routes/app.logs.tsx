@@ -155,83 +155,85 @@ function Page() {
               <Loader2 className="h-8 w-8 animate-spin text-primary" />
             </div>
           ) : (
-            <Table>
-              <TableHeader>
-                <TableRow>
-                  <TableHead>Date / Time</TableHead>
-                  <TableHead>Scanned By</TableHead>
-                  <TableHead>Type</TableHead>
-                  <TableHead>Student Name</TableHead>
-                  <TableHead>Matric Number</TableHead>
-                  <TableHead>Location</TableHead>
-                  <TableHead className="text-right">Status</TableHead>
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                {logsList.map((l) => {
-                  let formattedDate = "";
-                  let formattedTime = "";
-                  try {
-                    const dateObj = new Date(l.createdAt);
-                    formattedDate = dateObj.toLocaleDateString(undefined, {
-                      year: "numeric",
-                      month: "short",
-                      day: "numeric",
-                    });
-                    formattedTime = dateObj.toLocaleTimeString(undefined, {
-                      hour: "2-digit",
-                      minute: "2-digit",
-                    });
-                  } catch (e) {
-                    formattedDate = "Unknown Date";
-                    formattedTime = "Unknown Time";
-                  }
+            <div className="w-full overflow-x-auto">
+              <Table>
+                <TableHeader>
+                  <TableRow>
+                    <TableHead>Date / Time</TableHead>
+                    <TableHead>Scanned By</TableHead>
+                    <TableHead>Type</TableHead>
+                    <TableHead>Student Name</TableHead>
+                    <TableHead>Matric Number</TableHead>
+                    <TableHead>Location</TableHead>
+                    <TableHead className="text-right">Status</TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  {logsList.map((l) => {
+                    let formattedDate = "";
+                    let formattedTime = "";
+                    try {
+                      const dateObj = new Date(l.createdAt);
+                      formattedDate = dateObj.toLocaleDateString(undefined, {
+                        year: "numeric",
+                        month: "short",
+                        day: "numeric",
+                      });
+                      formattedTime = dateObj.toLocaleTimeString(undefined, {
+                        hour: "2-digit",
+                        minute: "2-digit",
+                      });
+                    } catch (e) {
+                      formattedDate = "Unknown Date";
+                      formattedTime = "Unknown Time";
+                    }
 
-                  const staffName = l.staff ? l.staff.fullName : "System Agent";
+                    const staffName = l.staff ? l.staff.fullName : "System Agent";
 
-                  return (
-                    <TableRow key={l._id}>
-                      <TableCell className="text-xs">
-                        <div className="font-medium text-foreground">{formattedDate}</div>
-                        <div className="text-muted-foreground">{formattedTime}</div>
-                      </TableCell>
-                      <TableCell className="text-sm font-medium">
-                        {staffName}
-                      </TableCell>
-                      <TableCell className="text-xs font-mono">{l.type}</TableCell>
-                      <TableCell className="font-medium">
-                        {l.student ? (
-                          <Link to="/app/student/$id" params={{ id: l.student._id }} className="hover:underline text-primary">
-                            {l.student.fullName}
-                          </Link>
-                        ) : (
-                          "Unregistered profile"
-                        )}
-                      </TableCell>
-                      <TableCell className="text-xs text-muted-foreground font-mono">{l.matricNumber}</TableCell>
-                      <TableCell className="text-xs text-muted-foreground">{l.location || "N/A"}</TableCell>
-                      <TableCell className="text-right">
-                        <div className="flex flex-col items-end gap-1">
-                          <VerificationBadge status={l.status === "verified" ? "verified" : "invalid"} />
-                          {l.reason && (
-                            <span className="text-[10px] text-destructive block max-w-[150px] truncate" title={l.reason}>
-                              {l.reason}
-                            </span>
+                    return (
+                      <TableRow key={l._id}>
+                        <TableCell className="text-xs">
+                          <div className="font-medium text-foreground">{formattedDate}</div>
+                          <div className="text-muted-foreground">{formattedTime}</div>
+                        </TableCell>
+                        <TableCell className="text-sm font-medium">
+                          {staffName}
+                        </TableCell>
+                        <TableCell className="text-xs font-mono">{l.type}</TableCell>
+                        <TableCell className="font-medium">
+                          {l.student ? (
+                            <Link to="/app/student/$id" params={{ id: l.student._id }} className="hover:underline text-primary">
+                              {l.student.fullName}
+                            </Link>
+                          ) : (
+                            "Unregistered profile"
                           )}
-                        </div>
+                        </TableCell>
+                        <TableCell className="text-xs text-muted-foreground font-mono">{l.matricNumber}</TableCell>
+                        <TableCell className="text-xs text-muted-foreground">{l.location || "N/A"}</TableCell>
+                        <TableCell className="text-right">
+                          <div className="flex flex-col items-end gap-1">
+                            <VerificationBadge status={l.status === "verified" ? "verified" : "invalid"} />
+                            {l.reason && (
+                              <span className="text-[10px] text-destructive block max-w-[150px] truncate" title={l.reason}>
+                                {l.reason}
+                              </span>
+                            )}
+                          </div>
+                        </TableCell>
+                      </TableRow>
+                    );
+                  })}
+                  {logsList.length === 0 && (
+                    <TableRow>
+                      <TableCell colSpan={7} className="py-12 text-center text-sm text-muted-foreground">
+                        No verification logs found matching query parameters.
                       </TableCell>
                     </TableRow>
-                  );
-                })}
-                {logsList.length === 0 && (
-                  <TableRow>
-                    <TableCell colSpan={7} className="py-12 text-center text-sm text-muted-foreground">
-                      No verification logs found matching query parameters.
-                    </TableCell>
-                  </TableRow>
-                )}
-              </TableBody>
-            </Table>
+                  )}
+                </TableBody>
+              </Table>
+            </div>
           )}
 
           {/* Pagination Footer */}

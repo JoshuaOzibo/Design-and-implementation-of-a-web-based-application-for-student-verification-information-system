@@ -430,9 +430,8 @@ function Page() {
         </CardContent>
       </Card>
 
-      {/* Add / Edit Student Dialog */}
       <Dialog open={isFormOpen} onOpenChange={setIsFormOpen}>
-        <DialogContent className="max-w-xl">
+        <DialogContent className="max-w-xl max-h-[90vh] overflow-y-auto">
           <form onSubmit={handleSubmit}>
             <DialogHeader>
               <DialogTitle>{editingStudent ? "Edit Student Profile" : "Add Student Record"}</DialogTitle>

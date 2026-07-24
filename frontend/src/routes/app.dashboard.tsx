@@ -179,60 +179,64 @@ function Dashboard() {
             <Button asChild variant="ghost" size="sm"><Link to="/app/logs">View all <ArrowUpRight className="ml-1 h-3.5 w-3.5" /></Link></Button>
           </CardHeader>
           <CardContent className="p-0">
-            <Table>
-              <TableHeader>
-                <TableRow>
-                  <TableHead>Student</TableHead>
-                  <TableHead>Matric</TableHead>
-                  <TableHead>Type</TableHead>
-                  <TableHead>Location</TableHead>
-                  <TableHead>Time</TableHead>
-                  <TableHead className="text-right">Status</TableHead>
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                {recentLogs.map((l) => {
-                  let formattedTime = "";
-                  try {
-                    formattedTime = new Date(l.createdAt).toLocaleTimeString(undefined, {
-                      hour: "2-digit",
-                      minute: "2-digit",
-                    });
-                  } catch (e) {
-                    formattedTime = "unknown";
-                  }
-                  return (
-                    <TableRow key={l._id}>
-                      <TableCell className="font-medium">{l.student?.fullName || "Unregistered ID"}</TableCell>
-                      <TableCell className="text-muted-foreground">{l.matricNumber}</TableCell>
-                      <TableCell>{l.type}</TableCell>
-                      <TableCell className="text-muted-foreground">{l.location}</TableCell>
-                      <TableCell className="text-muted-foreground">{formattedTime}</TableCell>
-                      <TableCell className="text-right">
-                        <VerificationBadge status={l.status === "verified" ? "verified" : "invalid"} />
+            <div className="w-full overflow-x-auto">
+              <Table>
+                <TableHeader>
+                  <TableRow>
+                    <TableHead>Student</TableHead>
+                    <TableHead>Matric</TableHead>
+                    <TableHead>Type</TableHead>
+                    <TableHead>Location</TableHead>
+                    <TableHead>Time</TableHead>
+                    <TableHead className="text-right">Status</TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  {recentLogs.map((l) => {
+                    let formattedTime = "";
+                    try {
+                      formattedTime = new Date(l.createdAt).toLocaleTimeString(undefined, {
+                        hour: "2-digit",
+                        minute: "2-digit",
+                      });
+                    } catch (e) {
+                      formattedTime = "unknown";
+                    }
+                    return (
+                      <TableRow key={l._id}>
+                        <TableCell className="font-medium">{l.student?.fullName || "Unregistered ID"}</TableCell>
+                        <TableCell className="text-muted-foreground">{l.matricNumber}</TableCell>
+                        <TableCell>{l.type}</TableCell>
+                        <TableCell className="text-muted-foreground">{l.location}</TableCell>
+                        <TableCell className="text-muted-foreground">{formattedTime}</TableCell>
+                        <TableCell className="text-right">
+                          <VerificationBadge status={l.status === "verified" ? "verified" : "invalid"} />
+                        </TableCell>
+                      </TableRow>
+                    );
+                  })}
+                  {recentLogs.length === 0 && (
+                    <TableRow>
+                      <TableCell colSpan={6} className="py-12 text-center text-sm text-muted-foreground">
+                        No student checkpoint verifications recorded yet.
                       </TableCell>
                     </TableRow>
-                  );
-                })}
-                {recentLogs.length === 0 && (
-                  <TableRow>
-                    <TableCell colSpan={6} className="py-12 text-center text-sm text-muted-foreground">
-                      No student checkpoint verifications recorded yet.
-                    </TableCell>
-                  </TableRow>
-                )}
-              </TableBody>
-            </Table>
+                  )}
+                </TableBody>
+              </Table>
+            </div>
           </CardContent>
         </Card>
-
+ 
         <Card>
           <CardHeader className="pb-3"><CardTitle className="text-base">Quick actions</CardTitle></CardHeader>
-          <CardContent className="grid gap-2.5">
-            <QuickAction to="/app/verify" icon={ShieldCheck} label="Verify Student" />
-            <QuickAction to="/app/students" icon={Search} label="Search Student" />
-            <QuickAction to="/app/qr" icon={QrCode} label="Generate Student QR" />
-            <QuickAction to="/app/students" icon={Users} label="Manage Records" />
+          <CardContent className="w-full overflow-x-auto">
+            <div className="grid gap-2.5 min-w-[200px]">
+              <QuickAction to="/app/verify" icon={ShieldCheck} label="Verify Student" />
+              <QuickAction to="/app/students" icon={Search} label="Search Student" />
+              <QuickAction to="/app/qr" icon={QrCode} label="Generate Student QR" />
+              <QuickAction to="/app/students" icon={Users} label="Manage Records" />
+            </div>
           </CardContent>
         </Card>
       </div>
